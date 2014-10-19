@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="sys_ml_gam" version="3">
+  <DEPS>
+    <ID name="sys_ml_gam" mc="Package" uid="c07a85c7-63be-4898-a38d-8ff1cc773c09"/>
+    <COMPID name="overview diagram" mc="ClassDiagram" uid="886a9a30-e4ea-4909-a50a-c628be685173"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="sys_ml_gam" mc="Package" uid="c07a85c7-63be-4898-a38d-8ff1cc773c09"/>
+    <PID name="Sys_ml_GAM" mc="Project" uid="afddb219-cdda-458d-a6e6-b12502f348da"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[sys_ml_gam]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Product">
+        <COMPID name="overview diagram" mc="ClassDiagram" uid="886a9a30-e4ea-4909-a50a-c628be685173"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

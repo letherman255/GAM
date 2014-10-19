@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Sys_ml_GAM" version="3">
+  <DEPS>
+    <ID name="Sys_ml_GAM" mc="AnalystProject" uid="dd99021d-f613-4445-a250-80756ce646b1"/>
+    <COMPID name="Sys_ml_GAM" mc="PropertyContainer" uid="ed82981c-04f8-4183-bca1-6be6bbe83c3e"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Sys_ml_GAM" mc="AnalystProject" uid="dd99021d-f613-4445-a250-80756ce646b1"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Sys_ml_GAM]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="PropertyRoot">
+        <COMPID name="Sys_ml_GAM" mc="PropertyContainer" uid="ed82981c-04f8-4183-bca1-6be6bbe83c3e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
