@@ -18,6 +18,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%constraint]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[constraint]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -29,6 +30,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%non-functional_constraint]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[non-functional constraint]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -40,6 +42,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%exception]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[exception]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -51,6 +54,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%postcondition]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[postcondition]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -62,6 +66,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%precondition]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[precondition]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>

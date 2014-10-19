@@ -18,6 +18,7 @@
           <ATTRIBUTES>
             <ATT name="IsHidden">false</ATT>
             <ATT name="LabelKey"><![CDATA[%summary]]></ATT>
+            <ATT name="MimeType"></ATT>
             <ATT name="Name"><![CDATA[summary]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
