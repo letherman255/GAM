@@ -2,6 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Block" version="3">
   <DEPS>
     <ID name="Block" mc="Class" uid="13affc0e-809c-49f9-a98d-7084b080bb5e"/>
+    <COMPID name="TEST" mc="DataType" uid="fdf859fe-4b35-4fc0-ba9c-22d6582fb111"/>
     <COMPID name="id =&quot;1&quot;" mc="DataType" uid="05213e6d-4727-4814-a895-f5a416aef99a"/>
     <FOREIGNID name="Block" mc="Stereotype" uid="00bc42a4-0000-19c9-0000-000000000000"/>
   </DEPS>
@@ -22,6 +23,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="id =&quot;1&quot;" mc="DataType" uid="05213e6d-4727-4814-a895-f5a416aef99a"/>
+        <COMPID name="TEST" mc="DataType" uid="fdf859fe-4b35-4fc0-ba9c-22d6582fb111"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="Block" mc="Stereotype" uid="00bc42a4-0000-19c9-0000-000000000000"/>
