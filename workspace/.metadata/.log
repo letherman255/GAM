@@ -2097,3 +2097,666 @@ org.eclipse.papyrus.core.services.ServiceNotFoundException: Can't get the curren
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2014-10-25 14:22:33.286 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=fr_FR
+Framework arguments:  org.eclipse.platform
+Command-line arguments:  -os win32 -ws win32 -arch x86 org.eclipse.platform
+
+!ENTRY org.eclipse.objectteams.otequinox.hook 1 0 2014-10-25 14:22:33.457
+!MESSAGE Created equinox adaptor hook: org.eclipse.objectteams.otequinox.internal.hook.TransformerHook.
+ 	(To disable this and subsequent INFO messages from OT/Equinox set otequinox.debug to WARN or ERROR).
+
+!ENTRY org.eclipse.objectteams.otequinox.hook 1 0 2014-10-25 14:22:34.159
+!MESSAGE OT/Equinox: connected the transformer service
+
+!ENTRY org.eclipse.objectteams.otequinox.hook 1 0 2014-10-25 14:22:34.315
+!MESSAGE hot-patched a bug in class org.apache.bcel.generic.InstructionHandle
+	see https://bugs.eclipse.org/bugs/show_bug.cgi?id=344350
+
+!ENTRY org.eclipse.objectteams.otequinox.hook 1 0 2014-10-25 14:22:34.315
+!MESSAGE hot-patched a bug in class org.apache.bcel.generic.BranchHandle
+	see https://bugs.eclipse.org/bugs/show_bug.cgi?id=344350
+
+!ENTRY org.eclipse.ui 2 0 2014-10-25 14:22:38.668
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2014-10-25 14:22:38.668
+!MESSAGE Commands should really have a category: plug-in='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui', id='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui.OpenTextualEditorForStereotypeApplicationsCommand', categoryId='org.eclipse.papyrus.core.papyrusEditor'
+
+!ENTRY org.eclipse.ui 4 4 2014-10-25 14:22:42.273
+!MESSAGE Invalid preference page path: gPM
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:51.960
+!MESSAGE NLS unused message: CreateModelWizard_new_papyrus_model_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.116
+!MESSAGE NLS unused message: ModelPackageableElementCompartmentEditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.116
+!MESSAGE NLS unused message: ComponentAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.132
+!MESSAGE NLS unused message: ComponentOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.132
+!MESSAGE NLS unused message: ComponentNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.132
+!MESSAGE NLS unused message: SignalAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.147
+!MESSAGE NLS unused message: InterfaceAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.147
+!MESSAGE NLS unused message: InterfaceOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.147
+!MESSAGE NLS unused message: InterfaceNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.163
+!MESSAGE NLS unused message: ModelPackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.163
+!MESSAGE NLS unused message: EnumerationEnumerationLiteralCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.163
+!MESSAGE NLS unused message: DataTypeAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.179
+!MESSAGE NLS unused message: DataTypeOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.179
+!MESSAGE NLS unused message: PackagePackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.179
+!MESSAGE NLS unused message: ClassAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.194
+!MESSAGE NLS unused message: ClassOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.194
+!MESSAGE NLS unused message: ClassNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.194
+!MESSAGE NLS unused message: Nodes1Group_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.194
+!MESSAGE NLS unused message: Nodes1Group_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.210
+!MESSAGE NLS unused message: Edges2Group_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.210
+!MESSAGE NLS unused message: Edges2Group_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.210
+!MESSAGE NLS unused message: Class1CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.225
+!MESSAGE NLS unused message: Class1CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.225
+!MESSAGE NLS unused message: ClassifierTemplateParameter2CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.225
+!MESSAGE NLS unused message: ClassifierTemplateParameter2CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.225
+!MESSAGE NLS unused message: Comment5CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.241
+!MESSAGE NLS unused message: Comment5CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.241
+!MESSAGE NLS unused message: Component4CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.241
+!MESSAGE NLS unused message: Component4CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.241
+!MESSAGE NLS unused message: Constraint5CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.257
+!MESSAGE NLS unused message: Constraint5CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.257
+!MESSAGE NLS unused message: DataType6CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.257
+!MESSAGE NLS unused message: DataType6CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.272
+!MESSAGE NLS unused message: DurationObservation7CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.272
+!MESSAGE NLS unused message: DurationObservation7CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.272
+!MESSAGE NLS unused message: Enumeration8CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.272
+!MESSAGE NLS unused message: Enumeration8CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.288
+!MESSAGE NLS unused message: Enumerationliteral9CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.288
+!MESSAGE NLS unused message: Enumerationliteral9CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.288
+!MESSAGE NLS unused message: Interface10CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.288
+!MESSAGE NLS unused message: Interface10CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.303
+!MESSAGE NLS unused message: InstanceSpecification11CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.303
+!MESSAGE NLS unused message: InstanceSpecification11CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.303
+!MESSAGE NLS unused message: PrimitiveType12CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.319
+!MESSAGE NLS unused message: PrimitiveType12CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.319
+!MESSAGE NLS unused message: Model13CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.319
+!MESSAGE NLS unused message: Model13CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.319
+!MESSAGE NLS unused message: Operation14CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.335
+!MESSAGE NLS unused message: Operation14CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.335
+!MESSAGE NLS unused message: OperationTemplateParameterCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.335
+!MESSAGE NLS unused message: OperationTemplateParameterCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.335
+!MESSAGE NLS unused message: Package16CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.350
+!MESSAGE NLS unused message: Package16CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.350
+!MESSAGE NLS unused message: Property17CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.350
+!MESSAGE NLS unused message: Property17CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.350
+!MESSAGE NLS unused message: Reception18CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.366
+!MESSAGE NLS unused message: Reception18CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.366
+!MESSAGE NLS unused message: RedefinableTemplateSignature19CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.366
+!MESSAGE NLS unused message: RedefinableTemplateSignature19CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.397
+!MESSAGE NLS unused message: Signal20CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.413
+!MESSAGE NLS unused message: Signal20CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.413
+!MESSAGE NLS unused message: Slot21CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.413
+!MESSAGE NLS unused message: Slot21CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.413
+!MESSAGE NLS unused message: TemplateParameter22CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.428
+!MESSAGE NLS unused message: TemplateParameter22CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.428
+!MESSAGE NLS unused message: TemplateSignatureCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.428
+!MESSAGE NLS unused message: TemplateSignatureCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.428
+!MESSAGE NLS unused message: TimeObservation22CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.444
+!MESSAGE NLS unused message: TimeObservation22CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.444
+!MESSAGE NLS unused message: ConnectableElementTemplateParameter25CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.444
+!MESSAGE NLS unused message: ConnectableElementTemplateParameter25CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.444
+!MESSAGE NLS unused message: Abstraction1CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.459
+!MESSAGE NLS unused message: Abstraction1CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.459
+!MESSAGE NLS unused message: Association2CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.459
+!MESSAGE NLS unused message: Association2CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.475
+!MESSAGE NLS unused message: AssociationBranch3CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.475
+!MESSAGE NLS unused message: AssociationBranch3CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.475
+!MESSAGE NLS unused message: AssociationClass4CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.475
+!MESSAGE NLS unused message: AssociationClass4CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.491
+!MESSAGE NLS unused message: ContainmentLink5CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.491
+!MESSAGE NLS unused message: ContainmentLink5CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.491
+!MESSAGE NLS unused message: Dependency6CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.491
+!MESSAGE NLS unused message: Dependency6CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.506
+!MESSAGE NLS unused message: DependencyBranch7CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.506
+!MESSAGE NLS unused message: DependencyBranch7CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.506
+!MESSAGE NLS unused message: ElementImport8CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.506
+!MESSAGE NLS unused message: ElementImport8CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.522
+!MESSAGE NLS unused message: Generalization9CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.522
+!MESSAGE NLS unused message: Generalization9CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.522
+!MESSAGE NLS unused message: GeneralizationSet10CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.537
+!MESSAGE NLS unused message: GeneralizationSet10CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.537
+!MESSAGE NLS unused message: InstanceSpecificationLinkCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.537
+!MESSAGE NLS unused message: InstanceSpecificationLinkCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.537
+!MESSAGE NLS unused message: InterfaceRealization12CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.553
+!MESSAGE NLS unused message: InterfaceRealization12CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.553
+!MESSAGE NLS unused message: Link13CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.553
+!MESSAGE NLS unused message: Link13CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.553
+!MESSAGE NLS unused message: PackageImport14CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.569
+!MESSAGE NLS unused message: PackageImport14CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.569
+!MESSAGE NLS unused message: PackageMerge15CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.569
+!MESSAGE NLS unused message: PackageMerge15CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.584
+!MESSAGE NLS unused message: ProfileApplication16CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.584
+!MESSAGE NLS unused message: ProfileApplication16CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.584
+!MESSAGE NLS unused message: Realization17CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.584
+!MESSAGE NLS unused message: Realization17CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.600
+!MESSAGE NLS unused message: Substitution18CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.600
+!MESSAGE NLS unused message: Substitution18CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.600
+!MESSAGE NLS unused message: Usage19CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.600
+!MESSAGE NLS unused message: Usage19CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.615
+!MESSAGE NLS unused message: TemplateBinding20CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-10-25 14:22:52.615
+!MESSAGE NLS unused message: TemplateBinding20CreationTool_desc in: messages
+
+!ENTRY org.eclipse.ui.workbench 2 0 2014-10-25 14:30:24.008
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2014-10-25 14:30:24.008
+!MESSAGE Conflict for 'org.eclipse.ui.edit.redo':
+HandlerActivation(commandId=org.eclipse.ui.edit.redo,
+	handler=ActionHandler(RetargetAction(redo)),
+	expression=ActiveShellExpression(Shell {UML/SysML - SysML_GAM/model.di - Eclipse Platform}),sourcePriority=17408)
+HandlerActivation(commandId=org.eclipse.ui.edit.redo,
+	handler=ActionHandler(org.eclipse.ui.console.actions.TextViewerAction@7d6614),
+	expression=ActiveShellExpression(Shell {}),sourcePriority=17408)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2014-10-25 14:30:24.008
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2014-10-25 14:30:24.008
+!MESSAGE Conflict for 'org.eclipse.ui.edit.undo':
+HandlerActivation(commandId=org.eclipse.ui.edit.undo,
+	handler=ActionHandler(org.eclipse.ui.console.actions.TextViewerAction@1d9400f),
+	expression=ActiveShellExpression(Shell {}),sourcePriority=17408)
+HandlerActivation(commandId=org.eclipse.ui.edit.undo,
+	handler=ActionHandler(RetargetAction(undo)),
+	expression=ActiveShellExpression(Shell {UML/SysML - SysML_GAM/model.di - Eclipse Platform}),sourcePriority=17408)
+
+!ENTRY org.eclipse.help 4 0 2014-10-25 14:35:43.977
+!MESSAGE Error reading help table of contents file /"org.eclipse.emf.compare.mpatch.doc/toc.xml" (skipping file)
+!STACK 0
+java.io.FileNotFoundException
+	at org.eclipse.help.internal.toc.TocFileParser.parse(TocFileParser.java:49)
+	at org.eclipse.help.internal.toc.TocFileProvider.getTocContributions(TocFileProvider.java:47)
+	at org.eclipse.help.internal.toc.TocManager.getAndCacheTocContributions(TocManager.java:210)
+	at org.eclipse.help.internal.toc.TocManager.getTocContributionsForToc(TocManager.java:199)
+	at org.eclipse.help.internal.toc.TocManager.getRootTocContributions(TocManager.java:306)
+	at org.eclipse.help.internal.toc.TocManager.getTocs(TocManager.java:68)
+	at org.eclipse.help.internal.search.IndexingOperation.getAllDocuments(IndexingOperation.java:482)
+	at org.eclipse.help.internal.search.IndexingOperation.getAddedDocuments(IndexingOperation.java:355)
+	at org.eclipse.help.internal.search.IndexingOperation.execute(IndexingOperation.java:88)
+	at org.eclipse.help.internal.search.LocalSearchManager.updateIndex(LocalSearchManager.java:671)
+	at org.eclipse.help.internal.search.LocalSearchManager.ensureIndexUpdated(LocalSearchManager.java:645)
+	at org.eclipse.help.internal.search.federated.IndexerJob.run(IndexerJob.java:31)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.help 4 0 2014-10-25 14:35:44.024
+!MESSAGE Required attribute "label" missing from "topic" element in "/fr.tm.elibel.smartqvt.doc/toc.xml" (skipping element)
+
+!ENTRY org.eclipse.help.base 4 0 2014-10-25 14:35:45.678
+!MESSAGE An error occured while pre-processing help XHTML document "/org.eclipse.eclipsemonkey.help/html/installing.html" for search indexing
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 38; columnNumber: 39; Le type d'élément "img" doit se terminer par la balise de fin correspondante "</img>".
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.help.internal.dynamic.DocumentReader.read(DocumentReader.java:56)
+	at org.eclipse.help.internal.dynamic.XMLProcessor.process(XMLProcessor.java:49)
+	at org.eclipse.help.internal.xhtml.DynamicXHTMLProcessor.process(DynamicXHTMLProcessor.java:76)
+	at org.eclipse.help.internal.search.XHTMLSearchParticipant.preprocess(XHTMLSearchParticipant.java:106)
+	at org.eclipse.help.search.SearchParticipantXML.addDocument(SearchParticipantXML.java:296)
+	at org.eclipse.help.internal.search.HTMLSearchParticipant.addDocument(HTMLSearchParticipant.java:51)
+	at org.eclipse.help.internal.search.SearchIndex.addDocument(SearchIndex.java:230)
+	at org.eclipse.help.internal.search.IndexingOperation.addDocuments(IndexingOperation.java:252)
+	at org.eclipse.help.internal.search.IndexingOperation.addNewDocuments(IndexingOperation.java:159)
+	at org.eclipse.help.internal.search.IndexingOperation.execute(IndexingOperation.java:106)
+	at org.eclipse.help.internal.search.LocalSearchManager.updateIndex(LocalSearchManager.java:671)
+	at org.eclipse.help.internal.search.LocalSearchManager.ensureIndexUpdated(LocalSearchManager.java:645)
+	at org.eclipse.help.internal.search.federated.IndexerJob.run(IndexerJob.java:31)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.help.base 4 0 2014-10-25 14:35:46.161
+!MESSAGE An error occured while pre-processing help XHTML document "/org.eclipse.eclipsemonkey.help/html/source-code.html" for search indexing
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 21; columnNumber: 3; Le type d'élément "br" doit se terminer par la balise de fin correspondante "</br>".
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.help.internal.dynamic.DocumentReader.read(DocumentReader.java:56)
+	at org.eclipse.help.internal.dynamic.XMLProcessor.process(XMLProcessor.java:49)
+	at org.eclipse.help.internal.xhtml.DynamicXHTMLProcessor.process(DynamicXHTMLProcessor.java:76)
+	at org.eclipse.help.internal.search.XHTMLSearchParticipant.preprocess(XHTMLSearchParticipant.java:106)
+	at org.eclipse.help.search.SearchParticipantXML.addDocument(SearchParticipantXML.java:296)
+	at org.eclipse.help.internal.search.HTMLSearchParticipant.addDocument(HTMLSearchParticipant.java:51)
+	at org.eclipse.help.internal.search.SearchIndex.addDocument(SearchIndex.java:230)
+	at org.eclipse.help.internal.search.IndexingOperation.addDocuments(IndexingOperation.java:252)
+	at org.eclipse.help.internal.search.IndexingOperation.addNewDocuments(IndexingOperation.java:159)
+	at org.eclipse.help.internal.search.IndexingOperation.execute(IndexingOperation.java:106)
+	at org.eclipse.help.internal.search.LocalSearchManager.updateIndex(LocalSearchManager.java:671)
+	at org.eclipse.help.internal.search.LocalSearchManager.ensureIndexUpdated(LocalSearchManager.java:645)
+	at org.eclipse.help.internal.search.federated.IndexerJob.run(IndexerJob.java:31)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help documentation could not be indexed completely.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch18.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch09s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch16s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/pt03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch15s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Exception occurred while adding document /org.eclipse.eclipsemonkey.help/html/installing.html to index.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Fin prématurée du fichier.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at org.eclipse.help.search.SearchParticipantXML.addDocument(SearchParticipantXML.java:297)
+	at org.eclipse.help.internal.search.HTMLSearchParticipant.addDocument(HTMLSearchParticipant.java:51)
+	at org.eclipse.help.internal.search.SearchIndex.addDocument(SearchIndex.java:230)
+	at org.eclipse.help.internal.search.IndexingOperation.addDocuments(IndexingOperation.java:252)
+	at org.eclipse.help.internal.search.IndexingOperation.addNewDocuments(IndexingOperation.java:159)
+	at org.eclipse.help.internal.search.IndexingOperation.execute(IndexingOperation.java:106)
+	at org.eclipse.help.internal.search.LocalSearchManager.updateIndex(LocalSearchManager.java:671)
+	at org.eclipse.help.internal.search.LocalSearchManager.ensureIndexUpdated(LocalSearchManager.java:645)
+	at org.eclipse.help.internal.search.federated.IndexerJob.run(IndexerJob.java:31)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch09.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Exception occurred while adding document /org.eclipse.eclipsemonkey.help/html/source-code.html to index.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Fin prématurée du fichier.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at org.eclipse.help.search.SearchParticipantXML.addDocument(SearchParticipantXML.java:297)
+	at org.eclipse.help.internal.search.HTMLSearchParticipant.addDocument(HTMLSearchParticipant.java:51)
+	at org.eclipse.help.internal.search.SearchIndex.addDocument(SearchIndex.java:230)
+	at org.eclipse.help.internal.search.IndexingOperation.addDocuments(IndexingOperation.java:252)
+	at org.eclipse.help.internal.search.IndexingOperation.addNewDocuments(IndexingOperation.java:159)
+	at org.eclipse.help.internal.search.IndexingOperation.execute(IndexingOperation.java:106)
+	at org.eclipse.help.internal.search.LocalSearchManager.updateIndex(LocalSearchManager.java:671)
+	at org.eclipse.help.internal.search.LocalSearchManager.ensureIndexUpdated(LocalSearchManager.java:645)
+	at org.eclipse.help.internal.search.federated.IndexerJob.run(IndexerJob.java:31)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch09s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch01s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch02s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.topcased.doc.experimental/reference/api/modelSimulation/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s06.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s09.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch01s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch02s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch09s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch08.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s07.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch03s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.topcased.doc.experimental/reference/api/cbchain/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch07.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s08.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch02s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s06.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.topcased.doc.experimental/reference/api/gendoc/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.topcased.doc.experimental/reference/api/gencode/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch05s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch15.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch03s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch16s05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s07.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch06.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s06.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch11s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s07.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch05.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch04s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch14.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch12s07.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch04s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s06.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.eclipse.emf.facet.doc/api_report/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch13s08.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/pt02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch16s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/bi01.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch07s03.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch16s04.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch07s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch17s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch16.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch01.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch10s02.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /org.topcased.doc.experimental/reference/api/traceability/index.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/ch17.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2014-10-25 14:35:51.434
+!MESSAGE Help document /fr.tm.elibel.smartqvt.doc/html/pt01.html cannot be opened.
