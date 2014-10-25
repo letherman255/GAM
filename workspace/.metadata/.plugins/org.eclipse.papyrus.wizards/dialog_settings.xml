@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewModelWizard">
+		<item value="" key="DiagramKindsFor_sysml"/>
+		<item value="false" key="RememberCurrentSelection"/>
+		<item value="" key="DiagramTemplatesFor_sysml"/>
+		<list key="diagramCategory">
+			<item value="sysml"/>
+		</list>
+	</section>
+</section>

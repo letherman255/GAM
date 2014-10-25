@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SysML_GAM/model2.di&apos; to &apos;Requirement.di&apos;" description="Rename resource &apos;model2.di&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="model2.di" name="Requirement.di" stamp="1413905750874" updateReferences="true"/>
+</session>
