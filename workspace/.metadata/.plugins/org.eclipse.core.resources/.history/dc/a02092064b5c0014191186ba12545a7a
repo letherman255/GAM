@@ -5,13 +5,6 @@
       <body></body>
     </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_x4EKsFxBEeSCmNhpFieQFQ" name="Gestion de l'utilisation"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_M8IGkFxFEeSCmNhpFieQFQ" name="Sécurisation du materiel" clientDependency="_M6HCcFxHEeSCmNhpFieQFQ"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_kpnPkFxFEeSCmNhpFieQFQ" name="Anti-vol"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_k89CUFxFEeSCmNhpFieQFQ" name="Anti Vandalisme"/>
-    <packagedElement xmi:type="uml:Abstraction" xmi:id="_M6HCcFxHEeSCmNhpFieQFQ" name="Copy1" supplier="_kpnPkFxFEeSCmNhpFieQFQ" client="_M8IGkFxFEeSCmNhpFieQFQ"/>
-    <packagedElement xmi:type="uml:Constraint" xmi:id="_G8b4MFxJEeSCmNhpFieQFQ" name="Constraint1">
-      <specification xmi:type="uml:LiteralString" xmi:id="_G8dGUFxJEeSCmNhpFieQFQ" value=""/>
-    </packagedElement>
     <profileApplication xmi:id="_ujUccFxBEeSCmNhpFieQFQ">
       <eAnnotations xmi:id="_ujUccVxBEeSCmNhpFieQFQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
@@ -81,8 +74,4 @@
   </uml:Model>
   <ModelElements:Problem xmi:id="_RBFbsFxDEeSCmNhpFieQFQ" base_Comment="_Pf8ZEFxDEeSCmNhpFieQFQ"/>
   <Requirements:Requirement xmi:id="_GvYs8FxEEeSCmNhpFieQFQ" text="Le système doit permettre aux seules persones membres du foyer d'avoir accès aux consoles de jeux." id="1" base_Class="_x4EKsFxBEeSCmNhpFieQFQ"/>
-  <Requirements:Requirement xmi:id="_M8RQgFxFEeSCmNhpFieQFQ" text="Le système doit protéger le materiel de la MDL." id="2" base_Class="_M8IGkFxFEeSCmNhpFieQFQ"/>
-  <Requirements:Requirement xmi:id="_kpwZgFxFEeSCmNhpFieQFQ" text="Un sous système doit assurer la protection contre le vol." id="3" base_Class="_kpnPkFxFEeSCmNhpFieQFQ"/>
-  <Requirements:Requirement xmi:id="_k9GMQFxFEeSCmNhpFieQFQ" text="Le système doit être protégé contre le vandalisme." id="4" base_Class="_k89CUFxFEeSCmNhpFieQFQ"/>
-  <Requirements:Copy xmi:id="_M6Z9YVxHEeSCmNhpFieQFQ" base_Abstraction="_M6HCcFxHEeSCmNhpFieQFQ"/>
 </xmi:XMI>
