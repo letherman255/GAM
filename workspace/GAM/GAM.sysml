@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="main">
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sysML="http://www.topcased.org/2.0/sysML" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="main">
   <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="GAM">
-    <packagedElement xmi:type="uml:Package" xmi:id="_a1VRYGciEeS2E8snfdwlSw" name="Use_Case_User">
-      <packagedElement xmi:type="uml:Actor" xmi:id="_iWShYGciEeS2E8snfdwlSw" name="MDL_User"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="_q7gqwGciEeS2E8snfdwlSw" name="Be informed about the remaining game time."/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="_JHzDMGcjEeS2E8snfdwlSw" name="Switch to another system."/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_UudkUGcjEeS2E8snfdwlSw" name="" memberEnd="_UudkUWcjEeS2E8snfdwlSw _UueLYmcjEeS2E8snfdwlSw">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_UudkUWcjEeS2E8snfdwlSw" name="mDL_User" type="_iWShYGciEeS2E8snfdwlSw" association="_UudkUGcjEeS2E8snfdwlSw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UueLYGcjEeS2E8snfdwlSw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UueLYWcjEeS2E8snfdwlSw" value="1"/>
-        </ownedEnd>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_UueLYmcjEeS2E8snfdwlSw" name="be informed about the remaining game time." type="_q7gqwGciEeS2E8snfdwlSw" association="_UudkUGcjEeS2E8snfdwlSw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UueLY2cjEeS2E8snfdwlSw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UueLZGcjEeS2E8snfdwlSw" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_WfT24GcjEeS2E8snfdwlSw" name="" memberEnd="_WfT24WcjEeS2E8snfdwlSw _WfT25GcjEeS2E8snfdwlSw">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_WfT24WcjEeS2E8snfdwlSw" name="mDL_User" type="_iWShYGciEeS2E8snfdwlSw" association="_WfT24GcjEeS2E8snfdwlSw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WfT24mcjEeS2E8snfdwlSw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WfT242cjEeS2E8snfdwlSw" value="1"/>
-        </ownedEnd>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_WfT25GcjEeS2E8snfdwlSw" name="switch to another system." type="_JHzDMGcjEeS2E8snfdwlSw" association="_WfT24GcjEeS2E8snfdwlSw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WfT25WcjEeS2E8snfdwlSw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WfT25mcjEeS2E8snfdwlSw" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_nubOQGcjEeS2E8snfdwlSw" name="Use_Case_Operator">
-      <packagedElement xmi:type="uml:Actor" xmi:id="_riO3EGcjEeS2E8snfdwlSw" name="Operator"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="_tpCykGcjEeS2E8snfdwlSw" name="Unlock a gaming system"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="_xtMkgGcjEeS2E8snfdwlSw" name="Unlock a gaming system"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="_AP4x4GckEeS2E8snfdwlSw" name="Be informed about each user's remaining game time."/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_UIQDcGckEeS2E8snfdwlSw" name="Use_Case_GAM">
       <packagedElement xmi:type="uml:Actor" xmi:id="_WHO4oGckEeS2E8snfdwlSw" name="Operator"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="_WHO4oWckEeS2E8snfdwlSw" name="Unlock a gaming system"/>
@@ -297,6 +266,23 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XTgIZmctEeS2E8snfdwlSw" value="1"/>
         </ownedEnd>
       </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_bZEWIGdaEeS7EOgOASQYBQ" name="Req_GAM">
+      <packagedElement xmi:type="uml:Package" xmi:id="_BNM0QGdcEeS7EOgOASQYBQ" name="Package1"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_CCtf8GdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_NAFzgGdcEeS7EOgOASQYBQ" isAbstract="true" id="1.1" text="The administrator must be authenticate"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_NAFzgGdcEeS7EOgOASQYBQ" name="Refine1" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_CCtf8GdcEeS7EOgOASQYBQ"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_SvK2MGdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_02QBgGdiEeS7EOgOASQYBQ" isAbstract="true" id="1.2" text="The administration system must be accessible by a web browser">
+        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_n22FcGdaEeS7EOgOASQYBQ" name="Acess managment" isAbstract="true" id="1" text="The system must be controlled remotely"/>
+      </packagedElement>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_02QBgGdiEeS7EOgOASQYBQ" name="Refine2" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_GH7ksGdjEeS7EOgOASQYBQ" name="Security" clientDependency="_wfp_QGdjEeS7EOgOASQYBQ" isAbstract="true" id="2.1" text="The system must prevent a user out with a gaming controller"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_hIluoGdjEeS7EOgOASQYBQ" name="Security" clientDependency="_iC7IkGdmEeS7EOgOASQYBQ" isAbstract="true" id="2.2" text="The system must prevent a user from moving a gaming system">
+        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_157sEGdiEeS7EOgOASQYBQ" name="Security" isAbstract="true" id="2" text="The system must be secure gaming systems"/>
+      </packagedElement>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_wfp_QGdjEeS7EOgOASQYBQ" name="Refine3" supplier="_157sEGdiEeS7EOgOASQYBQ" client="_GH7ksGdjEeS7EOgOASQYBQ"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_iC7IkGdmEeS7EOgOASQYBQ" name="Refine4" supplier="_157sEGdiEeS7EOgOASQYBQ" client="_hIluoGdjEeS7EOgOASQYBQ"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_tY9MsGdmEeS7EOgOASQYBQ" name="Acess management" clientDependency="_0Fy4IGdmEeS7EOgOASQYBQ" isAbstract="true" id="1.3" text="The administrator can register a new user"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_0Fy4IGdmEeS7EOgOASQYBQ" name="Refine5" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_tY9MsGdmEeS7EOgOASQYBQ"/>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="idProfileApplication">
