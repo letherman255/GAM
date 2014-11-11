@@ -280,9 +280,9 @@
       <packagedElement xmi:type="uml:Package" xmi:id="_BNM0QGdcEeS7EOgOASQYBQ" name="Package1"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_CCtf8GdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_NAFzgGdcEeS7EOgOASQYBQ" isAbstract="true" id="1.1" text="The administrator must be authenticate"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_NAFzgGdcEeS7EOgOASQYBQ" name="Refine1" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_CCtf8GdcEeS7EOgOASQYBQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_SvK2MGdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_02QBgGdiEeS7EOgOASQYBQ _nRKAUGjMEeSDxv2Pns8uiA _pNUgUGjzEeSMINaxRXw2yQ _W2KlwGmWEeSU-PrG8WSu6w _ertJMGmXEeSU-PrG8WSu6w" isAbstract="true" id="1.1.0" text="The administration system must be accessible by a web browser">
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_SvK2MGdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_02QBgGdiEeS7EOgOASQYBQ _nRKAUGjMEeSDxv2Pns8uiA _pNUgUGjzEeSMINaxRXw2yQ" isAbstract="true" id="1.1.0" text="The administration system must be accessible by a web browser">
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_n22FcGdaEeS7EOgOASQYBQ" name="Acess managment" clientDependency="_l3gs0GjMEeSDxv2Pns8uiA _CrJa0GjOEeSDxv2Pns8uiA" isAbstract="true" id="1" text="The system must be controlled remotely"/>
-        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_VmGCEGjzEeSMINaxRXw2yQ" name="User Managment" clientDependency="_ybHXQGmQEeSU-PrG8WSu6w" isAbstract="true" id="1.2.0" text="The interface must provide user managing fonctions"/>
+        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_VmGCEGjzEeSMINaxRXw2yQ" name="Interface Capabilities" isAbstract="true" id="1.2.0" text="The interface must provide user managing fonctions"/>
       </packagedElement>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_02QBgGdiEeS7EOgOASQYBQ" name="Refine2" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_GH7ksGdjEeS7EOgOASQYBQ" name="Security" clientDependency="_wfp_QGdjEeS7EOgOASQYBQ" isAbstract="true" id="2.1" text="The system must prevent a user to steal a gaming controller"/>
@@ -303,7 +303,7 @@
       <packagedElement xmi:type="sysML:Refine" xmi:id="_K-ZDkGjzEeSMINaxRXw2yQ" name="Refine8" supplier="_CCtf8GdcEeS7EOgOASQYBQ" client="_hIluoGdjEeS7EOgOASQYBQ"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_L9yEAGjzEeSMINaxRXw2yQ" name="Refine9" supplier="_CCtf8GdcEeS7EOgOASQYBQ" client="_hIluoGdjEeS7EOgOASQYBQ"/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_pNUgUGjzEeSMINaxRXw2yQ" name="DeriveReqt3" supplier="_VmGCEGjzEeSMINaxRXw2yQ" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_sKWSIGjzEeSMINaxRXw2yQ" name="user add" clientDependency="_cIIO4Gj3EeSMINaxRXw2yQ _b0cXQGmOEeSU-PrG8WSu6w" isAbstract="true" id="1.2.1" text="ability to add or remove a new user"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_sKWSIGjzEeSMINaxRXw2yQ" name="user add" clientDependency="_cIIO4Gj3EeSMINaxRXw2yQ _b0cXQGmOEeSU-PrG8WSu6w" isAbstract="true" id="1.2.1" text="ability to add a new user"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_cIIO4Gj3EeSMINaxRXw2yQ" name="Refine10" supplier="_VmGCEGjzEeSMINaxRXw2yQ" client="_sKWSIGjzEeSMINaxRXw2yQ"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_c_xokGj3EeSMINaxRXw2yQ" name="usage information" clientDependency="_ByuL8Gj4EeSMINaxRXw2yQ _dxX-AGmOEeSU-PrG8WSu6w" isAbstract="true" id="1.2.2" text="The interface must display the current usage of all systems&#xD;&#xA;-system id&#xD;&#xA;-controller id&#xD;&#xA;-number of players&#xD;&#xA;-time left&#xD;&#xA;-username&#xD;&#xA;"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_ByuL8Gj4EeSMINaxRXw2yQ" name="Refine11" supplier="_VmGCEGjzEeSMINaxRXw2yQ" client="_c_xokGj3EeSMINaxRXw2yQ"/>
@@ -312,33 +312,6 @@
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_gRjbwGmOEeSU-PrG8WSu6w" name="Permissions" clientDependency="_wv5dgGmOEeSU-PrG8WSu6w" isAbstract="true" id="1.2.11" text="set administrator or user"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_wv5dgGmOEeSU-PrG8WSu6w" name="Refine12" supplier="_sKWSIGjzEeSMINaxRXw2yQ" client="_gRjbwGmOEeSU-PrG8WSu6w"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_AKI98GmPEeSU-PrG8WSu6w" name="Display" isAbstract="true"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_WMXCgGmQEeSU-PrG8WSu6w" name="Parameter Managment" clientDependency="_y-yFAGmQEeSU-PrG8WSu6w" isAbstract="true" id="1.3.0" text="The interface must provide system configuration settings."/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_ybHXQGmQEeSU-PrG8WSu6w" name="DeriveReqt6" supplier="_SvK2MGdcEeS7EOgOASQYBQ" client="_VmGCEGjzEeSMINaxRXw2yQ"/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_y-yFAGmQEeSU-PrG8WSu6w" name="DeriveReqt7" supplier="_SvK2MGdcEeS7EOgOASQYBQ" client="_WMXCgGmQEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_5bMHwGmQEeSU-PrG8WSu6w" name="Game duration" clientDependency="_QxDa8GmREeSU-PrG8WSu6w" isAbstract="true" id="1.3.1" text="Give the administrator the abillity to set a daily time credit for the users."/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_QxDa8GmREeSU-PrG8WSu6w" name="DeriveReqt8" supplier="_WMXCgGmQEeSU-PrG8WSu6w" client="_5bMHwGmQEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_RmWrQGmREeSU-PrG8WSu6w" name="User informations" clientDependency="_CTDq4GmSEeSU-PrG8WSu6w" isAbstract="true" id="1.2.12" text="&#xD;&#xA;Name&#xD;&#xA;Username&#xD;&#xA;password x2 &#xD;&#xA;MDL id "/>
-      <packagedElement xmi:type="sysML:Refine" xmi:id="_CTDq4GmSEeSU-PrG8WSu6w" name="Refine13" supplier="_sKWSIGjzEeSMINaxRXw2yQ" client="_RmWrQGmREeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_uxCnUGmSEeSU-PrG8WSu6w" name="Authentification" clientDependency="_-rAJoGmSEeSU-PrG8WSu6w" isAbstract="true" id="1.4.0" text="Prevent users from using the admistration interface.&#xD;&#xA;username&#xD;&#xA;password"/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_-rAJoGmSEeSU-PrG8WSu6w" name="DeriveReqt9" supplier="_SvK2MGdcEeS7EOgOASQYBQ" client="_uxCnUGmSEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Viewpoint" xmi:id="_Ug3CoGmTEeSU-PrG8WSu6w" name="Viewpoint1"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_V2_IEGmTEeSU-PrG8WSu6w" name="Design" clientDependency="_37dTAGmTEeSU-PrG8WSu6w" isAbstract="true" id="1.5.0" text="The Graphical interface must be intuitive."/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_37dTAGmTEeSU-PrG8WSu6w" name="DeriveReqt10" supplier="_SvK2MGdcEeS7EOgOASQYBQ" client="_V2_IEGmTEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:TestCase" xmi:id="_I80iQGmUEeSU-PrG8WSu6w" name="Interface usage" clientDependency="_NekPIGmUEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Verify" xmi:id="_NekPIGmUEeSU-PrG8WSu6w" name="Verify1" supplier="_V2_IEGmTEeSU-PrG8WSu6w" client="_I80iQGmUEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:View" xmi:id="_QMGMYGmUEeSU-PrG8WSu6w" name="View1"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_ydbuoGmUEeSU-PrG8WSu6w" name="Requirement2" isAbstract="true"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_GPGiUGmVEeSU-PrG8WSu6w" name="Controllable systems" clientDependency="_dPgQ8GmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.0" text="The system must be able to lock or unlock a usb peripheral => a controller."/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_Rsmq8GmWEeSU-PrG8WSu6w" name="System managment" isAbstract="true" id="1.6.0" text="The administrator must be able to control the system regardless of the users&#xD;&#xA;"/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_W2KlwGmWEeSU-PrG8WSu6w" name="DeriveReqt11" supplier="_Rsmq8GmWEeSU-PrG8WSu6w" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_Zj6lcGmWEeSU-PrG8WSu6w" name="Lock / Unlock " clientDependency="_tqxmAGmWEeSU-PrG8WSu6w" isAbstract="true" id="1.6.1" text="To lock or unlock a controller."/>
-      <packagedElement xmi:type="sysML:Refine" xmi:id="_tqxmAGmWEeSU-PrG8WSu6w" name="Refine14" supplier="_Rsmq8GmWEeSU-PrG8WSu6w" client="_Zj6lcGmWEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_PdsG4GmXEeSU-PrG8WSu6w" name="Timer" clientDependency="_hz7eYGmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.1" text="A player has a daily time credit to use a controller."/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_dPgQ8GmXEeSU-PrG8WSu6w" name="DeriveReqt12" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_GPGiUGmVEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_ertJMGmXEeSU-PrG8WSu6w" name="DeriveReqt13" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
-      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_hz7eYGmXEeSU-PrG8WSu6w" name="DeriveReqt14" supplier="_GPGiUGmVEeSU-PrG8WSu6w" client="_PdsG4GmXEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_jLGssGmXEeSU-PrG8WSu6w" name="Time credit combination." clientDependency="_4HWdIGmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.12" text="If a user decides to play with other users on a same system (max 4 controlers) all their credit combines."/>
-      <packagedElement xmi:type="sysML:Refine" xmi:id="_4HWdIGmXEeSU-PrG8WSu6w" name="Refine15" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_jLGssGmXEeSU-PrG8WSu6w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1F1jEGjKEeSDxv2Pns8uiA" name="Package1"/>
   </packagedElement>

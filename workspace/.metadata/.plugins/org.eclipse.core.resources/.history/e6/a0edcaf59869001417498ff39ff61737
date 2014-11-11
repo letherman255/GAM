@@ -377,7 +377,7 @@
         </semanticModel>
         <contained xsi:type="di:EdgeObjectOffset" xmi:id="_37AAAmmTEeSU-PrG8WSu6w" id="stereotypeEdgeObject" offset="7,0"/>
       </contained>
-      <contained xsi:type="di:GraphNode" xmi:id="_GOgscGmVEeSU-PrG8WSu6w" position="684,185" size="138,-1">
+      <contained xsi:type="di:GraphNode" xmi:id="_GOgscGmVEeSU-PrG8WSu6w" position="687,186" size="138,-1">
         <anchorage xmi:id="_dO_6oGmXEeSU-PrG8WSu6w" graphEdge="_dPAhsGmXEeSU-PrG8WSu6w _hzbIEWmXEeSU-PrG8WSu6w"/>
         <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_GOgscWmVEeSU-PrG8WSu6w" presentation="default">
           <element href="GAM.sysml#_GPGiUGmVEeSU-PrG8WSu6w"/>
