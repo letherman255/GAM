@@ -277,6 +277,12 @@
 -username&#xD;
 </body>
       </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_VSvuYGmaEeSRd_lFGHFlFA" annotatedElement="_PdsG4GmXEeSU-PrG8WSu6w">
+        <body>At default 30 mins</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_4PRT8GmgEeSRd_lFGHFlFA" annotatedElement="_b7XZcGmgEeSRd_lFGHFlFA">
+        <body>One minute is sufficient to change of gaming system</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Package" xmi:id="_BNM0QGdcEeS7EOgOASQYBQ" name="Package1"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_CCtf8GdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_NAFzgGdcEeS7EOgOASQYBQ" isAbstract="true" id="1.1" text="The administrator must be authenticate"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_NAFzgGdcEeS7EOgOASQYBQ" name="Refine1" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_CCtf8GdcEeS7EOgOASQYBQ"/>
@@ -328,17 +334,39 @@
       <packagedElement xmi:type="sysML:Verify" xmi:id="_NekPIGmUEeSU-PrG8WSu6w" name="Verify1" supplier="_V2_IEGmTEeSU-PrG8WSu6w" client="_I80iQGmUEeSU-PrG8WSu6w"/>
       <packagedElement xmi:type="sysML:View" xmi:id="_QMGMYGmUEeSU-PrG8WSu6w" name="View1"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_ydbuoGmUEeSU-PrG8WSu6w" name="Requirement2" isAbstract="true"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_GPGiUGmVEeSU-PrG8WSu6w" name="Controllable systems" clientDependency="_dPgQ8GmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.0" text="The system must be able to lock or unlock a usb peripheral => a controller."/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_GPGiUGmVEeSU-PrG8WSu6w" name="Controllable systems" clientDependency="_dPgQ8GmXEeSU-PrG8WSu6w" isAbstract="true" id="1.1.0" text="The system must be able to lock or unlock a usb peripheral => a controller."/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_Rsmq8GmWEeSU-PrG8WSu6w" name="System managment" isAbstract="true" id="1.6.0" text="The administrator must be able to control the system regardless of the users&#xD;&#xA;"/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_W2KlwGmWEeSU-PrG8WSu6w" name="DeriveReqt11" supplier="_Rsmq8GmWEeSU-PrG8WSu6w" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_Zj6lcGmWEeSU-PrG8WSu6w" name="Lock / Unlock " clientDependency="_tqxmAGmWEeSU-PrG8WSu6w" isAbstract="true" id="1.6.1" text="To lock or unlock a controller."/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_tqxmAGmWEeSU-PrG8WSu6w" name="Refine14" supplier="_Rsmq8GmWEeSU-PrG8WSu6w" client="_Zj6lcGmWEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_PdsG4GmXEeSU-PrG8WSu6w" name="Timer" clientDependency="_hz7eYGmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.1" text="A player has a daily time credit to use a controller."/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_PdsG4GmXEeSU-PrG8WSu6w" name="Timer" clientDependency="_hz7eYGmXEeSU-PrG8WSu6w" isAbstract="true" id="1.1.1" text="A player has a daily time credit to use a controller."/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_dPgQ8GmXEeSU-PrG8WSu6w" name="DeriveReqt12" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_GPGiUGmVEeSU-PrG8WSu6w"/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_ertJMGmXEeSU-PrG8WSu6w" name="DeriveReqt13" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_SvK2MGdcEeS7EOgOASQYBQ"/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_hz7eYGmXEeSU-PrG8WSu6w" name="DeriveReqt14" supplier="_GPGiUGmVEeSU-PrG8WSu6w" client="_PdsG4GmXEeSU-PrG8WSu6w"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_jLGssGmXEeSU-PrG8WSu6w" name="Time credit combination." clientDependency="_4HWdIGmXEeSU-PrG8WSu6w" isAbstract="true" id="10.1.12" text="If a user decides to play with other users on a same system (max 4 controlers) all their credit combines."/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_jLGssGmXEeSU-PrG8WSu6w" name="Time credit combination." clientDependency="_4HWdIGmXEeSU-PrG8WSu6w _Lkv_EGmaEeSRd_lFGHFlFA _-GGr0GmdEeSRd_lFGHFlFA" isAbstract="true" id="1.1.12" text="If a user decides to play with other users on a same system (max 4 controlers) all their credit combines."/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_4HWdIGmXEeSU-PrG8WSu6w" name="Refine15" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_jLGssGmXEeSU-PrG8WSu6w"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_obtYwGmZEeSRd_lFGHFlFA" name="Switch" clientDependency="_LSS9IGmaEeSRd_lFGHFlFA _-dDMMGmdEeSRd_lFGHFlFA _RKPrIGmeEeSRd_lFGHFlFA _LI7-EGmgEeSRd_lFGHFlFA" isAbstract="true" id="1.2.1" text="A user can switch to an other gaming system at any moment"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_LSS9IGmaEeSRd_lFGHFlFA" name="DeriveReqt15" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_obtYwGmZEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_Lkv_EGmaEeSRd_lFGHFlFA" name="Refine16" supplier="_obtYwGmZEeSRd_lFGHFlFA" client="_jLGssGmXEeSU-PrG8WSu6w"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_6QQjAGmaEeSRd_lFGHFlFA" name="Over time" clientDependency="_Lzw2AGmbEeSRd_lFGHFlFA _9DZcMGmeEeSRd_lFGHFlFA" isAbstract="true" id="1.1.13" text="If a player exceed his time credit, his gaming controller will lock"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_Lzw2AGmbEeSRd_lFGHFlFA" name="Refine17" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_6QQjAGmaEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_XbnNcGmcEeSRd_lFGHFlFA" name="Requirement4" isAbstract="true"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_nho10GmcEeSRd_lFGHFlFA" name="Stop playing" clientDependency="_Qst3EGmdEeSRd_lFGHFlFA _Rf8OUGmeEeSRd_lFGHFlFA _LmrC8GmgEeSRd_lFGHFlFA" isAbstract="true" id="1.2.2" text="A player can decide to stop playing at any moment"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_Qst3EGmdEeSRd_lFGHFlFA" name="DeriveReqt16" supplier="_GPGiUGmVEeSU-PrG8WSu6w" client="_nho10GmcEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_-GGr0GmdEeSRd_lFGHFlFA" name="Refine18" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_jLGssGmXEeSU-PrG8WSu6w"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_-dDMMGmdEeSRd_lFGHFlFA" name="DeriveReqt17" supplier="_GPGiUGmVEeSU-PrG8WSu6w" client="_obtYwGmZEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_RKPrIGmeEeSRd_lFGHFlFA" name="DeriveReqt18" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_obtYwGmZEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_Rf8OUGmeEeSRd_lFGHFlFA" name="DeriveReqt19" supplier="_k6EXsGjNEeSDxv2Pns8uiA" client="_nho10GmcEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_9DZcMGmeEeSRd_lFGHFlFA" name="DeriveReqt20" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_6QQjAGmaEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_EqGH0GmfEeSRd_lFGHFlFA" name="Show time" clientDependency="_PKDfkGmfEeSRd_lFGHFlFA" isAbstract="true" id="1.1.11" text="The system must show left time to each player"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_PKDfkGmfEeSRd_lFGHFlFA" name="DeriveReqt21" supplier="_PdsG4GmXEeSU-PrG8WSu6w" client="_EqGH0GmfEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_scJgoGmfEeSRd_lFGHFlFA" name="USB interface" clientDependency="_6qwUYGmfEeSRd_lFGHFlFA _KQzcMGmgEeSRd_lFGHFlFA" isAbstract="true" id="1.2.0" text="The USB interface must provide controller managing fonctions"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_6qwUYGmfEeSRd_lFGHFlFA" name="DeriveReqt22" supplier="_GPGiUGmVEeSU-PrG8WSu6w" client="_scJgoGmfEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_KQzcMGmgEeSRd_lFGHFlFA" name="DeriveReqt23" supplier="_obtYwGmZEeSRd_lFGHFlFA" client="_scJgoGmfEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_LI7-EGmgEeSRd_lFGHFlFA" name="DeriveReqt24" supplier="_scJgoGmfEeSRd_lFGHFlFA" client="_obtYwGmZEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_LmrC8GmgEeSRd_lFGHFlFA" name="DeriveReqt25" supplier="_scJgoGmfEeSRd_lFGHFlFA" client="_nho10GmcEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_b7XZcGmgEeSRd_lFGHFlFA" name="Changing delay" clientDependency="_3MY6oGmgEeSRd_lFGHFlFA" isAbstract="true" id="1.2.11" text="The system must seek a controller change during 1 min"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_3MY6oGmgEeSRd_lFGHFlFA" name="Refine19" supplier="_obtYwGmZEeSRd_lFGHFlFA" client="_b7XZcGmgEeSRd_lFGHFlFA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1F1jEGjKEeSDxv2Pns8uiA" name="Package1"/>
   </packagedElement>
