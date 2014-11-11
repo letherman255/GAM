@@ -283,6 +283,9 @@
       <ownedComment xmi:type="uml:Comment" xmi:id="_4PRT8GmgEeSRd_lFGHFlFA" annotatedElement="_b7XZcGmgEeSRd_lFGHFlFA">
         <body>One minute is sufficient to change of gaming system</body>
       </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_mu-wMGmkEeSQKrqFUNKkeA" annotatedElement="_LIOsEGmjEeSQKrqFUNKkeA">
+        <body>The report must have the name of the user, the date and the problem encounter</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Package" xmi:id="_BNM0QGdcEeS7EOgOASQYBQ" name="Package1"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_CCtf8GdcEeS7EOgOASQYBQ" name="Acess management" clientDependency="_NAFzgGdcEeS7EOgOASQYBQ" isAbstract="true" id="1.1" text="The administrator must be authenticate"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_NAFzgGdcEeS7EOgOASQYBQ" name="Refine1" supplier="_n22FcGdaEeS7EOgOASQYBQ" client="_CCtf8GdcEeS7EOgOASQYBQ"/>
@@ -367,6 +370,22 @@
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_LmrC8GmgEeSRd_lFGHFlFA" name="DeriveReqt25" supplier="_scJgoGmfEeSRd_lFGHFlFA" client="_nho10GmcEeSRd_lFGHFlFA"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_b7XZcGmgEeSRd_lFGHFlFA" name="Changing delay" clientDependency="_3MY6oGmgEeSRd_lFGHFlFA" isAbstract="true" id="1.2.11" text="The system must seek a controller change during 1 min"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_3MY6oGmgEeSRd_lFGHFlFA" name="Refine19" supplier="_obtYwGmZEeSRd_lFGHFlFA" client="_b7XZcGmgEeSRd_lFGHFlFA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_ADTbgGmiEeSQKrqFUNKkeA" name="Controller lock" clientDependency="_o7yJgGmlEeSQKrqFUNKkeA" isAbstract="true" id="1.7.0" text="The system must prevent the steal of the controller&#xD;&#xA;"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_zVMUsGmiEeSQKrqFUNKkeA" name="Controller alert" clientDependency="_JvO40GmjEeSQKrqFUNKkeA _W2zzEGmjEeSQKrqFUNKkeA _C2BI0GmkEeSQKrqFUNKkeA" isAbstract="true" id="1.7.1" text="The system must alert the administrator of the disconnection of a controller "/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_JvO40GmjEeSQKrqFUNKkeA" name="DeriveReqt26" supplier="_ADTbgGmiEeSQKrqFUNKkeA" client="_zVMUsGmiEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_LIOsEGmjEeSQKrqFUNKkeA" name="Report" isAbstract="true" id="1.7.2" text="The system must create a report in case of problem"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_W2zzEGmjEeSQKrqFUNKkeA" name="Refine20" supplier="_LIOsEGmjEeSQKrqFUNKkeA" client="_zVMUsGmiEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_aLkvcGmjEeSQKrqFUNKkeA" name="Alert" clientDependency="_-7kFcGmjEeSQKrqFUNKkeA" isAbstract="true" id="1.7.3" text="The system must alert when a controller leaves the room "/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_-7kFcGmjEeSQKrqFUNKkeA" name="DeriveReqt27" supplier="_zVMUsGmiEeSQKrqFUNKkeA" client="_aLkvcGmjEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_C2BI0GmkEeSQKrqFUNKkeA" name="DeriveReqt28" supplier="_LIOsEGmjEeSQKrqFUNKkeA" client="_zVMUsGmiEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_GaO2cGmkEeSQKrqFUNKkeA" name="Padlock" clientDependency="_NVrloGmkEeSQKrqFUNKkeA" isAbstract="true" id="1.7.4" text="The controller must have a padlock to prevent the steal"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_NVrloGmkEeSQKrqFUNKkeA" name="DeriveReqt29" supplier="_zVMUsGmiEeSQKrqFUNKkeA" client="_GaO2cGmkEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_SYJkgGmlEeSQKrqFUNKkeA" name="Lock" isAbstract="true" id="1.7.0.1" text="The system must know when a controller is lock or not"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_o7yJgGmlEeSQKrqFUNKkeA" name="DeriveReqt30" supplier="_SYJkgGmlEeSQKrqFUNKkeA" client="_ADTbgGmiEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_E0jnMGmmEeSQKrqFUNKkeA" name="Game change" clientDependency="_5R3KoGmmEeSQKrqFUNKkeA" isAbstract="true" id="1.8.0" text="The administrator must access to the system for change the game"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_tOYxsGmmEeSQKrqFUNKkeA" name="Game" isAbstract="true" id="1.8.1" text="The game must have a similar padlock system than the controller"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_5R3KoGmmEeSQKrqFUNKkeA" name="DeriveReqt31" supplier="_tOYxsGmmEeSQKrqFUNKkeA" client="_E0jnMGmmEeSQKrqFUNKkeA"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_7LDg4GmmEeSQKrqFUNKkeA" name="" isAbstract="true"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1F1jEGjKEeSDxv2Pns8uiA" name="Package1"/>
   </packagedElement>
