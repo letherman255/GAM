@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <workbench progressCount="50" version="2.0">
+=======
+<workbench progressCount="54" version="2.0">
+>>>>>>> Analyse fonctionnelle et Diagrammes
 <workbenchAdvisor/>
 <window height="1080" maximized="true" width="1920" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -38,8 +42,13 @@
 </folder>
 </info>
 </editorArea>
+<<<<<<< HEAD
 <editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM.sysmldi" partName="GAM.sysmldi" path="E:/Projet Terminale/GAM/workspace/GAM/GAM.sysmldi" title="GAM.sysmldi" tooltip="GAM/GAM.sysmldi" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GAM/GAM.sysmldi"/>
+=======
+<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" partName="GAM_V2.sysmldi" path="Z:/SIN/PROJET SIN/1-GESTION CONSOLE/workspace/GAM/GAM_V2.sysmldi" title="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GAM/GAM_V2.sysmldi"/>
+>>>>>>> Analyse fonctionnelle et Diagrammes
 </editor>
 </editors>
 <views>
@@ -57,12 +66,23 @@
 <expanded>&#x0A;<element path="/GAM"/>
 <element path="/Plugin_Resources"/>
 </expanded>
+<<<<<<< HEAD
 <selection>&#x0A;<element path="/GAM/GAM.sysmldi"/>
+=======
+<selection>
+<element path="/GAM/GAM_V2.sysmldi"/>
+>>>>>>> Analyse fonctionnelle et Diagrammes
 </selection>
 </viewState>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
+<<<<<<< HEAD
 <view id="org.topcased.ui.navigator.view" partName="Topcased Navigator"/>
+=======
+<view id="org.topcased.ui.navigator.view" partName="Topcased Navigator">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+>>>>>>> Analyse fonctionnelle et Diagrammes
 <view id="org.eclipse.papyrus.modelexplorer.modelexplorer" partName="Model Explorer">
 <viewState/>
 </view>
@@ -2816,13 +2836,17 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.papyrus.core.papyrusEditor" path="/GAM/model.di"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.topcased.modeler.sysml.editor.SysMLEditor" path="/Plugin_Resources/GAM.sysmldi"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.topcased.modeler.sysml.editor.SysMLEditor" path="/GAM/GAM.sysmldi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.topcased.modeler.sysml.editor.SysMLEditor" path="/GAM/GAM_V2.sysmldi"/>
 </editors>
 <item historyLabel="GAM.sysmldi" index="0"/>
 <item historyLabel="model.di" index="1"/>
 <item historyLabel="GAM.sysmldi" index="2"/>
 <item historyLabel="model.di" index="1"/>
 <item historyLabel="GAM.sysmldi" index="2"/>
-<item active="true" historyLabel="GAM.sysmldi" index="3"/>
+<item historyLabel="GAM.sysmldi" index="3"/>
+<item historyLabel="GAM_V2.sysmldi" index="4"/>
+<item historyLabel="GAM.sysmldi" index="3"/>
+<item active="true" historyLabel="GAM_V2.sysmldi" index="4"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -2840,6 +2864,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi">
+<persistable path="/GAM/GAM_V2.sysmldi"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM.sysmldi" tooltip="GAM/GAM.sysmldi">
 <persistable path="/GAM/GAM.sysmldi"/>
 </file>
