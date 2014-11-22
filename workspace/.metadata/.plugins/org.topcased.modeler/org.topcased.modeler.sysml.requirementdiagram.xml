@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PaletteState>
 <entry>
-<entry active="false"/>
+<entry active="true"/>
 <entry>
 <entry active="false"/>
 <entry active="false"/>
@@ -29,7 +29,7 @@
 <entry active="false"/>
 <entry active="false"/>
 </entry>
-<entry expansion="true" extent="124" maximum="124" minimum="0" pinned="false" value="0">
+<entry expansion="true" extent="180" maximum="180" minimum="0" pinned="false" value="0">
 <entry>
 <entry active="false"/>
 <entry active="false"/>

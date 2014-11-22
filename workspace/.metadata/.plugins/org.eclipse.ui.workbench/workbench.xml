@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<workbench progressCount="50" version="2.0">
-=======
-<workbench progressCount="54" version="2.0">
->>>>>>> Analyse fonctionnelle et Diagrammes
+<workbench progressCount="55" version="2.0">
 <workbenchAdvisor/>
-<window height="1080" maximized="true" width="1920" x="0" y="0">
+<window height="980" maximized="true" width="1300" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
-<itemSize x="160"/>
+<itemSize x="306"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
@@ -17,6 +13,7 @@
 <coolItem id="fr.tm.elibel.smartqvt.launch.ui.actionSets.QvtActionSet" itemType="typeToolBarContribution" x="53" y="23"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="53" y="23"/>
 <coolItem id="org.eclipse.gmt.modisco.common.editor.actionSet" itemType="typeToolBarContribution" x="38" y="23"/>
+<coolItem id="org.eclipse.papyrus.core.papyrusEditor" itemType="typePlaceholder" x="1031" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="23"/>
 <coolItem id="org.topcased.modeler.sysml.editor.SysMLEditor" itemType="typeToolBarContribution" x="620" y="23"/>
 <coolItem id="org.topcased.requirement.core.mainToolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -27,7 +24,6 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="23"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.papyrus.core.papyrusEditor" itemType="typePlaceholder" x="1031" y="22"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -42,13 +38,8 @@
 </folder>
 </info>
 </editorArea>
-<<<<<<< HEAD
-<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM.sysmldi" partName="GAM.sysmldi" path="E:/Projet Terminale/GAM/workspace/GAM/GAM.sysmldi" title="GAM.sysmldi" tooltip="GAM/GAM.sysmldi" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GAM/GAM.sysmldi"/>
-=======
-<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" partName="GAM_V2.sysmldi" path="Z:/SIN/PROJET SIN/1-GESTION CONSOLE/workspace/GAM/GAM_V2.sysmldi" title="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" partName="GAM_V2.sysmldi" path="E:/Projet Terminale/GAM/workspace/GAM/GAM_V2.sysmldi" title="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GAM/GAM_V2.sysmldi"/>
->>>>>>> Analyse fonctionnelle et Diagrammes
 </editor>
 </editors>
 <views>
@@ -60,29 +51,34 @@
 </view>
 <view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
-<filters>&#x0A;<filter element="*.class" isEnabled="false"/>
+<filters>
+<filter element="*.class" isEnabled="false"/>
 <filter element=".*" isEnabled="false"/>
 </filters>
-<expanded>&#x0A;<element path="/GAM"/>
+<expanded>
+<element path="/GAM"/>
 <element path="/Plugin_Resources"/>
+<element path="/Plugin_Resources/aadl"/>
+<element path="/Plugin_Resources/aaxl"/>
 </expanded>
-<<<<<<< HEAD
-<selection>&#x0A;<element path="/GAM/GAM.sysmldi"/>
-=======
 <selection>
 <element path="/GAM/GAM_V2.sysmldi"/>
->>>>>>> Analyse fonctionnelle et Diagrammes
 </selection>
 </viewState>
 </view>
-<view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
-<<<<<<< HEAD
-<view id="org.topcased.ui.navigator.view" partName="Topcased Navigator"/>
-=======
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
 <view id="org.topcased.ui.navigator.view" partName="Topcased Navigator">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
->>>>>>> Analyse fonctionnelle et Diagrammes
 <view id="org.eclipse.papyrus.modelexplorer.modelexplorer" partName="Model Explorer">
 <viewState/>
 </view>
@@ -104,7 +100,9 @@
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
-<view id="fr.irisa.espresso.sme.compilation.utils.views.CompilationView" partName="SME Scenario"/>
+<view id="fr.irisa.espresso.sme.compilation.utils.views.CompilationView" partName="SME Scenario">
+<viewState/>
+</view>
 </views>
 <perspectives activePart="org.topcased.modeler.sysml.editor.SysMLEditor" activePerspective="org.topcased.modeler.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
@@ -235,16 +233,15 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7ab206" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="topLeft">
 <folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.1351493" ratioLeft="258" ratioRight="1651" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.65976334" ratioLeft="446" ratioRight="230" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.13567312" ratioLeft="259" ratioRight="1650" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.73429453" ratioLeft="713" ratioRight="258" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
