@@ -1,4 +1,0 @@
-#Fri Nov 21 16:41:07 CET 2014
-eclipse.preferences.version=1
-defaultUpstreamAttributes=\#Maturity||\#Allocate||\#Link_to||\#Covered_by||\#Justify||
-defaultCurrentAttributes=\#Allocate(allocate)||\#Covered_by(text)||\#Justify(text)||\#Link_to(link)||\#Maturity(text);;TBD(default);;TBC||
