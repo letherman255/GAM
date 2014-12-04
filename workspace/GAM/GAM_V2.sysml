@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sysML="http://www.topcased.org/2.0/sysML" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="GAM_V2">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_o61zwHoLEeS6tdLa-zuY3w" annotatedElement="_bxCcwCXMEd-dqNMA4nrGhQ">
+    <body>parties prenentes</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_sygB0noLEeS6tdLa-zuY3w" annotatedElement="_yMIJwCXMEd-dqNMA4nrGhQ">
+    <body>bloc structurel (solutions techniques)</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_4LU7QHoLEeS6tdLa-zuY3w" annotatedElement="_-Qa6sCXPEd-dqNMA4nrGhQ">
+    <body>Tableau de vérification du diagrame block fonctionnel par rapport au diagrame des exigences.</body>
+  </ownedComment>
+  <ownedComment xmi:type="uml:Comment" xmi:id="_JlXTwnoNEeS6tdLa-zuY3w" annotatedElement="_-o3P4CXPEd-dqNMA4nrGhQ">
+    <body>Tableau de vérification du diagrame block structurel par rapport au fonctionnel.</body>
+  </ownedComment>
   <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="logicalView">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_uM5wkCXLEd-dqNMA4nrGhQ" importedPackage="_Ft7nYCXLEd-dqNMA4nrGhQ"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_beQgICXLEd-dqNMA4nrGhQ" name="useCases">
@@ -416,32 +428,15 @@
       <packagedElement xmi:type="uml:CallEvent" xmi:id="_c8iKAXGMEeSvZfb17d9O-Q" name="CallEvent56"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_by-L4CXLEd-dqNMA4nrGhQ" name="structure">
-      <packagedElement xmi:type="sysML:Block" xmi:id="_pjJ26yXOEd-dqNMA4nrGhQ" name="GAM_V2">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xucdUCXOEd-dqNMA4nrGhQ" name="b1" type="_prpEgCXOEd-dqNMA4nrGhQ" aggregation="composite" association="_xucdXyXOEd-dqNMA4nrGhQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xucdUSXOEd-dqNMA4nrGhQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xucdUiXOEd-dqNMA4nrGhQ" value="1"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_yLpWsCXOEd-dqNMA4nrGhQ" name="b2" type="_pxmimyXOEd-dqNMA4nrGhQ" aggregation="composite" association="_yLpWviXOEd-dqNMA4nrGhQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yLpWsSXOEd-dqNMA4nrGhQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yLpWsiXOEd-dqNMA4nrGhQ" value="1"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="sysML:Block" xmi:id="_prpEgCXOEd-dqNMA4nrGhQ" name="Block1"/>
-      <packagedElement xmi:type="sysML:Block" xmi:id="_pxmimyXOEd-dqNMA4nrGhQ" name="Block2"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_xucdXyXOEd-dqNMA4nrGhQ" name="A_&lt;templateApproach>_&lt;block1>" memberEnd="_xucdYCXOEd-dqNMA4nrGhQ _xucdUCXOEd-dqNMA4nrGhQ">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_xucdYCXOEd-dqNMA4nrGhQ" name="source" type="_pjJ26yXOEd-dqNMA4nrGhQ" association="_xucdXyXOEd-dqNMA4nrGhQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xucdYSXOEd-dqNMA4nrGhQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xucdYiXOEd-dqNMA4nrGhQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_yLpWviXOEd-dqNMA4nrGhQ" name="A_&lt;templateApproach>_&lt;block2>" memberEnd="_yLpWvyXOEd-dqNMA4nrGhQ _yLpWsCXOEd-dqNMA4nrGhQ">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_yLpWvyXOEd-dqNMA4nrGhQ" name="source" type="_pjJ26yXOEd-dqNMA4nrGhQ" association="_yLpWviXOEd-dqNMA4nrGhQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yLpWwCXOEd-dqNMA4nrGhQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yLpWwSXOEd-dqNMA4nrGhQ" value="1"/>
-        </ownedEnd>
+      <packagedElement xmi:type="sysML:Block" xmi:id="_pjJ26yXOEd-dqNMA4nrGhQ" name="GAM_V2"/>
+      <packagedElement xmi:type="sysML:Block" xmi:id="_i9VgUHvIEeSQNZIKHwcm5Q" name="Block1"/>
+      <packagedElement xmi:type="sysML:Block" xmi:id="_vPQoIHvMEeSQNZIKHwcm5Q" name="Utilisateur">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_XLScUXvNEeSQNZIKHwcm5Q" name="Property1" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2kM_8HvNEeSQNZIKHwcm5Q" name="Nom d'utilisateur"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MlOAEHvOEeSQNZIKHwcm5Q" name="Mot de passe"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_cS3M4CXLEd-dqNMA4nrGhQ" name="events">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cS3M4CXLEd-dqNMA4nrGhQ" name="Requirement">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Nii6gHP4EeSQrOVfsqeZqg" annotatedElement="_qL_SEHP2EeS32dSOUmWVCQ">
         <body>One minute is enought to change of gaming system</body>
       </ownedComment>
@@ -455,20 +450,20 @@
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_fpPZIHGSEeS_Aa6y64wgDw" name="DeriveReqt3" supplier="_zcqVwHGREeS_Aa6y64wgDw" client="_E6cbQHGSEeS_Aa6y64wgDw"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_lbUsgHGSEeS_Aa6y64wgDw" name="Consoles" isAbstract="true" id="2.2.0" text="Le système doit empêcher l'accès direct aux systèmes de jeux"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_iagvQHP1EeS32dSOUmWVCQ" name="Design" clientDependency="_7Pfr0HP1EeS32dSOUmWVCQ" isAbstract="true" id="1.5.0" text="L'interface graphique doit être intuitive."/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_iaikcHP1EeS32dSOUmWVCQ" name="Authentification" clientDependency="_8mIHkHP1EeS32dSOUmWVCQ" isAbstract="true" id="1.4.0" text="Empecher les utilisateurs d'utiliser l'interface d'administration.&#xD;&#xA;Nom d'utilisateur &#xD;&#xA;Mot de passe"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_iaikcHP1EeS32dSOUmWVCQ" name="Authentification" clientDependency="_8mIHkHP1EeS32dSOUmWVCQ" isAbstract="true" id="1.4.0" text="Empêcher les utilisateurs d'utiliser l'interface d'administration.&#xD;&#xA;Nom d'utilisateur &#xD;&#xA;Mot de passe"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_iaikcXP1EeS32dSOUmWVCQ" name="Acess Managment" isAbstract="true" id="1.0.0" text="Le sytème doit permettre la gestion des acèss aux sysèmes de jeu.">
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_iaikcnP1EeS32dSOUmWVCQ" name="Timer" isAbstract="true" id="1.1.1" text="A player has a daily time credit to use a controller.">
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_iaikc3P1EeS32dSOUmWVCQ" name="Over time" isAbstract="true" id="1.1.13" text="If a player exceed his time credit, his gaming controller will lock"/>
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_iaikdHP1EeS32dSOUmWVCQ" name="Show time" isAbstract="true" id="1.1.11" text="The system must show left time to each player"/>
         </nestedClassifier>
-        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_CSX4sHP2EeS32dSOUmWVCQ" name="Timer" isAbstract="true" id="1.1.1" text="Chaque joueur pocède un crédit journalier de jeu.">
+        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_CSX4sHP2EeS32dSOUmWVCQ" name="Timer" isAbstract="true" id="1.1.1" text="Chaque joueur possède un crédit journalier de jeu.">
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_CSX4sXP2EeS32dSOUmWVCQ" name="Over time" isAbstract="true" id="1.1.13" text="If a player exceed his time credit, his gaming controller will lock"/>
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_CSX4snP2EeS32dSOUmWVCQ" name="Show time" isAbstract="true" id="1.1.11" text="The system must show left time to each player"/>
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_MWZiYHP2EeS32dSOUmWVCQ" name="Over time" isAbstract="true" id="1.1.13" text="Si un joueur dépasse son temps de jeu, sa commande sera bloquée"/>
           <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_O1640HP2EeS32dSOUmWVCQ" name="Show time" isAbstract="true" id="1.1.11" text="Le système doit informer chaque joueur de son crédit restant."/>
         </nestedClassifier>
       </packagedElement>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_iajLgHP1EeS32dSOUmWVCQ" name="Controllable systems" clientDependency="_i7h8MHP2EeS32dSOUmWVCQ" isAbstract="true" id="1.1.0" text="Le système doit pouvoir bloquer/débloquer un péripherique usb --> une manette"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_iajLgHP1EeS32dSOUmWVCQ" name="Controllable systems" clientDependency="_i7h8MHP2EeS32dSOUmWVCQ" isAbstract="true" id="1.1.0" text="Le système doit pouvoir bloquer/débloquer un péripherique USB --> une manette"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_iajLgXP1EeS32dSOUmWVCQ"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_iajLgnP1EeS32dSOUmWVCQ" name="Acess management" clientDependency="_9K0wEHP1EeS32dSOUmWVCQ" isAbstract="true" id="1.1.0" text="L'interface d'administration doit être acessible via un navigateur internet.">
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_iajLg3P1EeS32dSOUmWVCQ" name="Acess managment" isAbstract="true" id="1" text="The system must be controlled remotely"/>
@@ -505,21 +500,21 @@
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_oUkdcHP2EeS32dSOUmWVCQ" name="DeriveReqt8" supplier="_iajLgHP1EeS32dSOUmWVCQ" client="_lcljsHP2EeS32dSOUmWVCQ"/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_qL_SEHP2EeS32dSOUmWVCQ" name="Changing delay" clientDependency="_tLr9YHP2EeS32dSOUmWVCQ" isAbstract="true" id="1.9.11" text="Le "/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_tLr9YHP2EeS32dSOUmWVCQ" name="Refine4" supplier="_j4MYwHP2EeS32dSOUmWVCQ" client="_qL_SEHP2EeS32dSOUmWVCQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_xUWb4HP2EeS32dSOUmWVCQ" name="Stop playing" clientDependency="_zSwCQHP2EeS32dSOUmWVCQ" isAbstract="true" id="1.9.2" text="Un joueur peut arreter de jouer à n'importe quel moment."/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_xUWb4HP2EeS32dSOUmWVCQ" name="Stop playing" clientDependency="_zSwCQHP2EeS32dSOUmWVCQ" isAbstract="true" id="1.9.2" text="Un joueur peut arrêter de jouer à n'importe quel moment."/>
       <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_zSwCQHP2EeS32dSOUmWVCQ" name="DeriveReqt9" supplier="_lcljsHP2EeS32dSOUmWVCQ" client="_xUWb4HP2EeS32dSOUmWVCQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_1u2RQHP2EeS32dSOUmWVCQ" name="Time" clientDependency="_Gx14MHP3EeS32dSOUmWVCQ" isAbstract="true" id="1.1.3" text="Si un joueur utilise tout son crédit, il pourra continuer a jouer tant qu'aucun autre joueur ne demande a jouer ."/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_1u2RQHP2EeS32dSOUmWVCQ" name="Time" clientDependency="_Gx14MHP3EeS32dSOUmWVCQ" isAbstract="true" id="1.1.3" text="Si un joueur utilise tout son crédit, il pourra continuer a jouer tant qu'aucun autre joueur ne demande à jouer ."/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_B0MScHP3EeS32dSOUmWVCQ" name="Time credit " clientDependency="_HIalIHP3EeS32dSOUmWVCQ" isAbstract="true" id="1.1.2" text="Le crédit d'un joueur dépend de l'utilisation du système."/>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_D8SnYHP3EeS32dSOUmWVCQ" name="Time credit combination." clientDependency="_Hf4C4HP3EeS32dSOUmWVCQ" isAbstract="true" id="1.1.12" text="Si un utilisateur décide de jouer avec d'autres uilisateurs, leur crédit s'ajoutent."/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_Gx14MHP3EeS32dSOUmWVCQ" name="Refine5" supplier="_CSX4sHP2EeS32dSOUmWVCQ" client="_1u2RQHP2EeS32dSOUmWVCQ"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_HIalIHP3EeS32dSOUmWVCQ" name="Refine6" supplier="_CSX4sHP2EeS32dSOUmWVCQ" client="_B0MScHP3EeS32dSOUmWVCQ"/>
       <packagedElement xmi:type="sysML:Refine" xmi:id="_Hf4C4HP3EeS32dSOUmWVCQ" name="Refine7" supplier="_CSX4sHP2EeS32dSOUmWVCQ" client="_D8SnYHP3EeS32dSOUmWVCQ"/>
-      <packagedElement xmi:type="sysML:Requirement" xmi:id="_OPlcIHP3EeS32dSOUmWVCQ" name="Bloquage des manettes" isAbstract="true" id="1.7.0" text="Le système doit empêcher le vole des manettes. &#xD;&#xA;">
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_OPlcIHP3EeS32dSOUmWVCQ" name="Bloquage des manettes" isAbstract="true" id="1.7.0" text="Le système doit empêcher le vol des manettes. &#xD;&#xA;">
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_OPlcIXP3EeS32dSOUmWVCQ" name="Lock" isAbstract="true" id="1.7.4" text="The system must know when a controller is lock or not"/>
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_OPlcInP3EeS32dSOUmWVCQ" name="Report" isAbstract="true" id="1.7.3" text="The system must create a report in case of problem"/>
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_OPlcI3P3EeS32dSOUmWVCQ" name="Alert" isAbstract="true" id="1.7.1" text="The system must alert when a controller leaves the room "/>
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_UBbe8HP3EeS32dSOUmWVCQ" name="Alarme" isAbstract="true" id="1.7.1" text="Le système doit émettre une alarme si une manette quitte la salle."/>
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_PlthkHP3EeS32dSOUmWVCQ" name="Rapport" isAbstract="true" id="1.7.3" text="Le système doit créer un rapport en cas de problème."/>
-        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_Wpkl4HP3EeS32dSOUmWVCQ" name="Verouillage" isAbstract="true" id="1.7.4" text="Le système doit savoir si un peripherique est vérouillé ou non."/>
+        <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_Wpkl4HP3EeS32dSOUmWVCQ" name="Verouillage" isAbstract="true" id="1.7.4" text="Le système doit savoir si un peripherique est vérrouillé ou non."/>
         <nestedClassifier xmi:type="sysML:Requirement" xmi:id="_7nGhEHZGEeSp7MW_NKoWww" name="Résistance" isAbstract="true" id="1.7.2" text="Le système doit résister aux violences."/>
       </packagedElement>
       <packagedElement xmi:type="sysML:Requirement" xmi:id="_RGh0EHP3EeS32dSOUmWVCQ" name="Logs" clientDependency="_dVrRgHP3EeS32dSOUmWVCQ" isAbstract="true" id="1.7.3.1" text="Le rapport doit contenir le nom de l'utilisateur, la date et le problème rencontré."/>
