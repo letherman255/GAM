@@ -523,6 +523,11 @@
       <packagedElement xmi:type="sysML:Refine" xmi:id="_fx8foHP3EeS32dSOUmWVCQ" name="Refine9" supplier="_OPlcIHP3EeS32dSOUmWVCQ" client="_YK6c0HP3EeS32dSOUmWVCQ"/>
       <packagedElement xmi:type="sysML:TestCase" xmi:id="_gVWAEHZGEeSp7MW_NKoWww" name="Le système doit résister à un joueur énervé." clientDependency="_B_52MHZHEeSp7MW_NKoWww"/>
       <packagedElement xmi:type="sysML:Verify" xmi:id="_B_52MHZHEeSp7MW_NKoWww" name="Verify1" supplier="_7nGhEHZGEeSp7MW_NKoWww" client="_gVWAEHZGEeSp7MW_NKoWww"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_v-WvIH4DEeSv_oZxH_MD5A" name="Interface" clientDependency="_TJiqgH4EEeSv_oZxH_MD5A _XvTUsH4EEeSv_oZxH_MD5A" isAbstract="true" id="1.9.3" text="L'interface utilisateur doit être accessible depuis un smartphone, un tablette ou un ordinateur"/>
+      <packagedElement xmi:type="sysML:Requirement" xmi:id="_B5Ku4H4EEeSv_oZxH_MD5A" name="Design" clientDependency="_Yq-50H4EEeSv_oZxH_MD5A" isAbstract="true" id="1.9.3.1" text="L'interface utilisateur doit être intuitive"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_TJiqgH4EEeSv_oZxH_MD5A" name="DeriveReqt10" supplier="_lcljsHP2EeS32dSOUmWVCQ" client="_v-WvIH4DEeSv_oZxH_MD5A"/>
+      <packagedElement xmi:type="sysML:DeriveReqt" xmi:id="_XvTUsH4EEeSv_oZxH_MD5A" name="DeriveReqt11" supplier="_iaikcXP1EeS32dSOUmWVCQ" client="_v-WvIH4DEeSv_oZxH_MD5A"/>
+      <packagedElement xmi:type="sysML:Refine" xmi:id="_Yq-50H4EEeSv_oZxH_MD5A" name="Refine10" supplier="_v-WvIH4DEeSv_oZxH_MD5A" client="_B5Ku4H4EEeSv_oZxH_MD5A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ctO0sCXLEd-dqNMA4nrGhQ" name="collaborations">
       <packagedElement xmi:type="uml:Collaboration" xmi:id="_EAeqQCXPEd-dqNMA4nrGhQ" name="UC1"/>
