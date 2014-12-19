@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="53" version="2.0">
+<workbench progressCount="52" version="2.0">
 <workbenchAdvisor/>
-<window height="980" maximized="true" width="1300" x="0" y="0">
+<window height="1100" maximized="true" width="1300" x="2122" y="15">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="306"/>
@@ -38,7 +38,7 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" partName="GAM_V2.sysmldi" path="E:/Projet Terminale/GAM/workspace/GAM/GAM_V2.sysmldi" title="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.topcased.modeler.sysml.editor.SysMLEditor" name="GAM_V2.sysmldi" partName="GAM_V2.sysmldi" path="I:/Documents/Lycée/GAM/workspace/GAM/GAM_V2.sysmldi" title="GAM_V2.sysmldi" tooltip="GAM/GAM_V2.sysmldi" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GAM/GAM_V2.sysmldi"/>
 </editor>
 </editors>
