@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<servlet>
 		<servlet-name>Test</servlet-name>
-		<servlet-class>example.webApp</servlet-class>
+		<servlet-class>example.WebApp</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Test</servlet-name>
