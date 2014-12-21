@@ -5,11 +5,12 @@
 	id="WebApp_ID" version="3.0">
 	<servlet>
 		<servlet-name>Test</servlet-name>
-		<servlet-class>example.WebApp</servlet-class>
+		<servlet-class>com.mcnanotech.servlets.Test</servlet-class>
+		<load-on-startup>5</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Test</servlet-name>
-		<url-pattern>/test</url-pattern>
+		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
 	<display-name>JGAM</display-name>
 	<welcome-file-list>
