@@ -6,6 +6,7 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="ressources/style.css">
 <title>Gestionnaire d'accès Multimedia</title>
+<link rel="shortcut icon" href="ressources/favicon.ico"/>
 </head>
 <body>
 	<div id="bloc_page">
