@@ -1,74 +1,109 @@
-body
-{
+body {
 	background-image: url("images/bg.jpg");
 	background-attachment: fixed;
-	color: #383838 ;
+	color: #383838;
 }
 
-#bloc_page
-{
+#bloc_page {
 	width: 900px;
 	margin: auto;
 	box-shadow: 6px 6px 6px black;
 	background-image: url("images/mg.png");
-	
+}
+
+h2 {
+	width: 100px;
+	margin: auto;
 }
 /*Navigation*/
-nav
-{
-width: 600px;
-margin: auto;
+nav {
+	width: 600px;
+	margin: auto;
 }
-nav ul
-{
+
+nav ul {
 	list-style-type: none;
 }
-nav li
-{
+
+nav li {
 	display: inline-block;
 	margin-right: 20px;
 }
-nav a
-{
+
+nav a {
 	font-weight: normal;
 	text-transform: uppercase;
-	color:#686868 ;
+	color: #686868;
 	padding-bottom: 3px;
-	text-decoration:none;
+	text-decoration: none;
 }
-nav a:hover
-{
-	color:#395d84;
+
+nav a:hover {
+	color: #395d84;
 	text-decoration: overline underline;
 }
+/*Info systeme*/
+#infsys ul {
+	list-style-type: none;
+}
+
+#infsys li {
+	display: inline-block;
+	margin-right: 20px;
+}
 /*Consoles*/
-#cx
-{
-	width:548px;
-    margin: auto;
+#cx {
+	width: 848px;
+	margin: auto;
+}
+
+.seb {
+	width: 250px;
+	margin: auto;
+}
+
+#c1 {
+	display: inline-block;
+	width: 420px;
+}
+
+li.a {
+	list-style-image: url('images/stopwatch.png');
+}
+
+li.b {
+	list-style-image: url('images/stopwatch.png');
+}
+
+li.c {
+	list-style-image: url('images/stopwatch.png');
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table,th,td {
 	border: 1px solid black;
+	border-collapse: collapse;
 }
-#c1
-{
-    display: inline-block;
-    width: 270px;
-	border: 1px solid blue;
+
+th,td {
+	padding: 15px;
 }
-#c2
-{
-    display: inline-block;
-    width: 270px;
-	border: 1px solid blue;
+
+#c2 {
+	display: inline-block;
+	width: 420px;
 }
-#c3
-{
-    display: inline-block;
-    width: 270px;
-	border: 1px solid blue;
+
+#c3 {
+	display: inline-block;
+	width: 420px;
 }
-#c4
-{
-    display: inline-block;
-    width: 270px;
-	border: 1px solid blue;
+
+#c4 {
+	display: inline-block;
+	width: 420px;
 }
