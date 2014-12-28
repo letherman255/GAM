@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mcnanotech.beans.Coyote;
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPin;
@@ -22,11 +23,24 @@ public class WebApp extends HttpServlet
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-    {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 
-        Random rand = new Random();
-        int rn = rand.nextInt(250);
-        resp.getWriter().println(rn);
+    {
+        /* Création et initialisation du message. */
+        String paramAuteur = request.getParameter("auteur");
+        String message = "Transmission de variables : OK ! " + paramAuteur;
+
+        /* Création du bean */
+        Coyote premierBean = new Coyote();
+        /* Initialisation de ses propriétés */
+        premierBean.setNom("Coyote");
+        premierBean.setPrenom("Wile E.");
+
+        /* Stockage du message et du bean dans l'objet request */
+        request.setAttribute("test", message);
+        request.setAttribute("coyote", premierBean);
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/example.jsp").forward(request, response);
     }
+
 }

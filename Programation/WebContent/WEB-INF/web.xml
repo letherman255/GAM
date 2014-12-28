@@ -8,9 +8,18 @@
 		<servlet-class>com.mcnanotech.servlets.Test</servlet-class>
 		<load-on-startup>5</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>WebApp</servlet-name>
+		<servlet-class>example.WebApp</servlet-class>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Test</servlet-name>
 		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebApp</servlet-name>
+		<url-pattern>/WebApp</url-pattern>
 	</servlet-mapping>
 	<display-name>JGAM</display-name>
 	<welcome-file-list>
