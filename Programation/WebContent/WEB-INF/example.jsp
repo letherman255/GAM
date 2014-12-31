@@ -9,21 +9,22 @@
 <body>
 	<p>Ceci est une page générée depuis une JSP.</p>
 	<p>
-		<%
-		    String attribut = (String)request.getAttribute("test");
-		    out.println(attribut);
 
-		    String parametre = request.getParameter("auteur");
-		    out.println(parametre);
-		%>
+		test : ${param.test} <br>
+	   auteur: ${param.auteur}<br>
 	</p>
 	<p>
-		Récupération du bean :
-		<%
-	    Coyote notreBean = (Coyote)request.getAttribute("coyote");
-	    out.println(notreBean.getPrenom());
-	    out.println(notreBean.getNom());
-	%>
+		Récupération du bean :<br> 
+		prenom : ${coyote.prenom}<br> 
+		Nom : ${coyote.nom}<br>
+ <%
+            Integer jourDuMois = (Integer) request.getAttribute( "jour" );
+            if ( jourDuMois % 2 == 0 ){
+                out.println("Jour pair : " + jourDuMois);
+            } else {
+                out.println("Jour impair : " + jourDuMois);
+            }
+            %>
 	
 </body>
 </html>
