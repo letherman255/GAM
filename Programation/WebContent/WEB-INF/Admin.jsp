@@ -1,4 +1,4 @@
-<%@page import="com.mcnanotech.beans.Coyote"%>
+
 <%@ page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@
 					</tr>
 				</table>
 			</div>
-						<div id="c2">
+			<div id="c2">
 
 				<h2>Console 2</h2>
 				<div class="seb">
@@ -128,7 +128,7 @@
 					</tr>
 				</table>
 			</div>
-						<div id="c3">
+			<div id="c3">
 
 				<h2>Console 3</h2>
 				<div class="seb">
@@ -174,7 +174,7 @@
 					</tr>
 				</table>
 			</div>
-						<div id="c4">
+			<div id="c4">
 
 				<h2>Console 4</h2>
 				<div class="seb">
@@ -225,24 +225,6 @@
 
 		<footer> </footer>
 
-		<p>Ceci est une page générée depuis une JSP.</p>
-		<p>
-			<%
-			    String attribut = (String)request.getAttribute("test");
-			    out.println(attribut);
-
-			    String parametre = request.getParameter("auteur");
-			    out.println(parametre);
-			%>
-		</p>
-		<p>
-			Récupération du bean :
-			<%
-		    Coyote notreBean = (Coyote)request.getAttribute("coyote");
-		    out.println(notreBean.getPrenom());
-		    out.println(notreBean.getNom());
-		%>
-		</p>
 	</div>
 </body>
 </html>
