@@ -51,7 +51,8 @@
 						<td>Equipement</td>
 					</tr>
 					<tr>
-						<td>null</td>
+					<jsp:useBean id="System1" class="fr.mcnanotech.beans.System1" />
+						<td>${System1.user_1}</td>
 						<td>
 							<button type="button">lock</button>
 							<button type="button">Unlock</button>
