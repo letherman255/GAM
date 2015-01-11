@@ -17,14 +17,24 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 
+import fr.mcnanotech.beans.System1;
+import fr.mcnanotech.beans.System2;
+import fr.mcnanotech.beans.System3;
+import fr.mcnanotech.beans.System4;
+
 public class Test extends HttpServlet
 {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
         /* Transmission de la paire d'objets request/response à notre JSP */
-        this.getServletContext().getRequestDispatcher("/WEB-INF/Admin.jsp").forward(request, response);
 
+        System1 system1 = new System1();
+        system1.setUser_1("utilisateur");
+        System2 system2 = new System2();
+        System3 system3 = new System3();
+        System4 system4 = new System4();
+        this.getServletContext().getRequestDispatcher("/WEB-INF/Admin.jsp").forward(request, response);
         // System.out.println("<--Pi4J--> GPIO Control Example ... started.");
         //
         // // create gpio controller
