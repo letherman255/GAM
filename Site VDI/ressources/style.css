@@ -24,6 +24,10 @@ margin: auto;
  width: 400px;
  margin: auto;
 }
+.sp
+{
+margin-left: 100px;
+}
 p {
 	Text-align: center;
 }
@@ -36,7 +40,7 @@ h2 {
 h1 {
 	Text-align: center;
 }
-h3
+h3, h4
 {
 Text-Decoration: Underline;
 }
@@ -66,61 +70,4 @@ nav a {
 nav a:hover {
 	color: #395d84;
 	text-decoration: overline underline;
-}
-
-/*Consoles*/
-#cx {
-	width: 848px;
-	margin: auto;
-}
-
-.seb {
-	width: 250px;
-	margin: auto;
-}
-
-#c1 {
-	display: inline-block;
-	width: 420px;
-}
-
-li.a {
-	list-style-image: url('images/stopwatch.png');
-}
-
-li.b {
-	list-style-image: url('images/stopwatch.png');
-}
-
-li.c {
-	list-style-image: url('images/stopwatch.png');
-}
-
-table {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-table,th,td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-
-th,td {
-	padding: 15px;
-}
-
-#c2 {
-	display: inline-block;
-	width: 420px;
-}
-
-#c3 {
-	display: inline-block;
-	width: 420px;
-}
-
-#c4 {
-	display: inline-block;
-	width: 420px;
 }
