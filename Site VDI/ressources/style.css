@@ -10,6 +10,10 @@ body {
 	box-shadow: 6px 6px 6px black;
 	background-image: url("images/mg.png");
 }
+#stb
+{
+line-height:20px;
+}
 .article
 {
 width: 750px;
@@ -27,6 +31,10 @@ margin: auto;
 .sp
 {
 margin-left: 100px;
+}
+.flotte {
+float:left;
+margin-right: 30px;
 }
 p {
 	Text-align: center;
