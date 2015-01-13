@@ -15,7 +15,15 @@ body {
 width: 750px;
 margin: auto;
 }
-
+.chemin
+{
+ font-weight: bold;
+ border-style: outset;
+ border-width: small;
+ border-color: grey;
+ width: 400px;
+ margin: auto;
+}
 p {
 	Text-align: center;
 }
@@ -27,6 +35,10 @@ h2 {
 
 h1 {
 	Text-align: center;
+}
+h3
+{
+Text-Decoration: Underline;
 }
 
 /*Navigation*/
