@@ -27,7 +27,7 @@ public class Test extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-        /* Transmission de la paire d'objets request/response à notre JSP */
+        /* Transmission de la paire d'objets request/response ï¿½ notre JSP */
 
         System1 system1 = new System1();
         system1.setUser_1("utilisateur");
@@ -37,13 +37,14 @@ public class Test extends HttpServlet
         this.getServletContext().getRequestDispatcher("/WEB-INF/Admin.jsp").forward(request, response);
         // System.out.println("<--Pi4J--> GPIO Control Example ... started.");
         //
+        //Je suis un commentaire pour tester git !
         // // create gpio controller
         // final GpioController gpio = GpioFactory.getInstance();
         //
         // // provision gpio pin #01 as an output pin and turn on
         // final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
         // System.out.println("--> GPIO state should be: ON");
-        //
+        //jes
         // try
         // {
         // Thread.sleep(5000);
