@@ -34,14 +34,14 @@ public class RestrictionFilter implements Filter
             return;
         }
 
-        /* Récupération de la session depuis la requête */
+        /* Rï¿½cupï¿½ration de la session depuis la requï¿½te */
         HttpSession session = request.getSession();
 
         /**
          * Si l'objet utilisateur n'existe pas dans la session en cours, alors
-         * l'utilisateur n'est pas connecté.
+         * l'utilisateur n'est pas connectï¿½.
          */
-        if(session.getAttribute(ATT_SESSION_USER) == null)
+        if(session.getAttribute(ATT_SESSION_USER) == session.getAttributeNames())
         {
             /* Redirection vers la page publique */
             request.getRequestDispatcher(ACCES_CONNEXION).forward(request, response);
