@@ -21,7 +21,13 @@
 	<servlet>
 		<servlet-name>GestionTestJDBC</servlet-name>
 		<servlet-class>fr.mcnanotech.servlets.GestionTestJDBC</servlet-class>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
+<listener>
+    <listener-class>
+       fr.mcnanotech.main.Test
+    </listener-class>
+</listener>
 
 	<servlet-mapping>
 		<servlet-name>GestionTestJDBC</servlet-name>
