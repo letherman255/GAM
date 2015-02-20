@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.mcnanotech.beans.Utilisateur;
+import fr.mcnanotech.beans.User;
 import fr.mcnanotech.forms.ConnexionForm;
 
 public class Connexion extends HttpServlet {
@@ -27,7 +27,7 @@ public class Connexion extends HttpServlet {
         ConnexionForm form = new ConnexionForm();
 
         /* Traitement de la requ�te et r�cup�ration du bean en r�sultant */
-        Utilisateur utilisateur = form.connecterUtilisateur( request );
+        User utilisateur = form.connecterUtilisateur( request );
 
         /* R�cup�ration de la session depuis la requ�te */
         HttpSession session = request.getSession();

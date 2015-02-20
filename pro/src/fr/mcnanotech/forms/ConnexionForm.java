@@ -5,94 +5,121 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import fr.mcnanotech.beans.Utilisateur;
+import fr.mcnanotech.beans.User;
 
-public final class ConnexionForm {
-    private static final String CHAMP_EMAIL  = "email";
-    private static final String CHAMP_PASS   = "motdepasse";
+public final class ConnexionForm
+{
+    private static final String FIELD_USERNAME = "username";
+    private static final String FIELD_PASSWORD = "password";
 
-    private String              resultat;
-    private Map<String, String> erreurs      = new HashMap<String, String>();
+    private String resultat;
+    private Map<String, String> erreurs = new HashMap<String, String>();
 
-    public String getResultat() {
+    public String getResultat()
+    {
         return resultat;
     }
 
-    public Map<String, String> getErreurs() {
+    public Map<String, String> getErreurs()
+    {
         return erreurs;
     }
 
-    public Utilisateur connecterUtilisateur( HttpServletRequest request ) {
+    public User connecterUtilisateur(HttpServletRequest request)
+    {
         /* Récupération des champs du formulaire */
-        String email = getValeurChamp( request, CHAMP_EMAIL );
-        String motDePasse = getValeurChamp( request, CHAMP_PASS );
+        String username = getValeurChamp(request, FIELD_USERNAME);
+        String password = getValeurChamp(request, FIELD_PASSWORD);
 
-        Utilisateur utilisateur = new Utilisateur();
+        User user = new User();
 
-        /* Validation du champ email. */
-        try {
-            validationEmail( email );
-        } catch ( Exception e ) {
-            setErreur( CHAMP_EMAIL, e.getMessage() );
+
+        try
+        {
+            verifyUsername(username);
         }
-        utilisateur.setEmail( email );
+        catch(Exception e)
+        {
+            setErreur(FIELD_USERNAME, e.getMessage());
+        }
+        user.setUsername(username);
 
         /* Validation du champ mot de passe. */
-        try {
-            validationMotDePasse( motDePasse );
-        } catch ( Exception e ) {
-            setErreur( CHAMP_PASS, e.getMessage() );
+        try
+        {
+            verifyPassword(password);
         }
-        utilisateur.setMotDePasse( motDePasse );
+        catch(Exception e)
+        {
+            setErreur(FIELD_PASSWORD, e.getMessage());
+        }
+        user.setPassword(password);
 
         /* Initialisation du résultat global de la validation. */
-        if ( erreurs.isEmpty() ) {
+        if(erreurs.isEmpty())
+        {
             resultat = "Succès de la connexion.";
-        } else {
+        }
+        else
+        {
             resultat = "Échec de la connexion.";
         }
 
-        return utilisateur;
+        return user;
     }
 
-    /**
-     * Valide l'adresse email saisie.
-     */
-    private void validationEmail( String email ) throws Exception {
-        if ( email != null && !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-            throw new Exception( "Merci de saisir une adresse mail valide." );
-        }
-    }
-
-    /**
-     * Valide le mot de passe saisi.
-     */
-    private void validationMotDePasse( String motDePasse ) throws Exception {
-        if ( motDePasse != null ) {
-            if ( motDePasse.length() < 3 ) {
-                throw new Exception( "Le mot de passe doit contenir au moins 3 caractères." );
+    private void verifyUsername(String username) throws Exception
+    {
+        if(username != null)
+        {
+            if(username.length() < 3)
+            {
+                throw new Exception("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
             }
-        } else {
-            throw new Exception( "Merci de saisir votre mot de passe." );
         }
+        else
+        {
+            throw new Exception("Merci de saisir un nom d'utilisateur.");
+        }
+    }
+
+    private void verifyPassword(String password) throws Exception
+    {
+        if(password != null)
+        {
+            if(password.length() < 5)
+            {
+                throw new Exception("Le mot de passe doit contenir au moins 5 caractères.");
+            }
+        }
+        else
+        {
+            throw new Exception("Merci de saisir vôtre mot de passe.");
+        }
+
     }
 
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur( String champ, String message ) {
-        erreurs.put( champ, message );
+    private void setErreur(String champ, String message)
+    {
+        erreurs.put(champ, message);
     }
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
-    private static String getValeurChamp( HttpServletRequest request, String nomChamp ) {
-        String valeur = request.getParameter( nomChamp );
-        if ( valeur == null || valeur.trim().length() == 0 ) {
+    private static String getValeurChamp(HttpServletRequest request, String nomChamp)
+    {
+        String valeur = request.getParameter(nomChamp);
+        if(valeur == null || valeur.trim().length() == 0)
+        {
             return null;
-        } else {
+        }
+        else
+        {
             return valeur;
         }
     }

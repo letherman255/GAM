@@ -31,9 +31,6 @@ form input.sansLabel {
     margin-left: 200px;
 }
 
-form .requis {
-    color: #c00;
-}
 form .erreur {
     color: #900;
 }

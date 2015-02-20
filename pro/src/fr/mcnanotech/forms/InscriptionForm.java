@@ -1,18 +1,23 @@
 package fr.mcnanotech.forms;
 
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import fr.mcnanotech.beans.Utilisateur;
+import fr.mcnanotech.beans.User;
 
 public final class InscriptionForm
 {
-    private static final String CHAMP_EMAIL = "email";
-    private static final String CHAMP_PASS = "motdepasse";
-    private static final String CHAMP_CONF = "confirmation";
-    private static final String CHAMP_NOM = "nom";
+    private static final String FIELD_USERNAME = "username";
+    private static final String FIELD_PASSWORD = "password";
+    private static final String FIELD_CPASSWORD = "cpassword";
+    private static final String FIELD_MDLID = "mdlid";
+    private static final String FIELD_NAME = "name";
+    private static final String FIELD_SURNAME = "surname";
+
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
 
@@ -26,45 +31,66 @@ public final class InscriptionForm
         return erreurs;
     }
 
-    public Utilisateur inscrireUtilisateur(HttpServletRequest request)
+    public User inscrireUtilisateur(HttpServletRequest request)
     {
-        String email = getValeurChamp(request, CHAMP_EMAIL);
-        String motDePasse = getValeurChamp(request, CHAMP_PASS);
-        String confirmation = getValeurChamp(request, CHAMP_CONF);
-        String nom = getValeurChamp(request, CHAMP_NOM);
+        String username = getValeurChamp(request, FIELD_USERNAME);
+        String password = getValeurChamp(request, FIELD_PASSWORD);
+        String cpassword = getValeurChamp(request, FIELD_CPASSWORD);
+        String confirmation = getValeurChamp(request, FIELD_CPASSWORD);
+        String mdlid = getValeurChamp(request, FIELD_MDLID);
+        String name = getValeurChamp(request, FIELD_NAME);
+        String surname = getValeurChamp(request, FIELD_SURNAME);
 
-        Utilisateur utilisateur = new Utilisateur();
-
-        try
-        {
-            validationEmail(email);
-        }
-        catch(Exception e)
-        {
-            setErreur(CHAMP_EMAIL, e.getMessage());
-        }
-        utilisateur.setEmail(email);
+        User user = new User();
 
         try
         {
-            validationMotsDePasse(motDePasse, confirmation);
+            verifyUsername(username);
         }
         catch(Exception e)
         {
-            setErreur(CHAMP_PASS, e.getMessage());
-            setErreur(CHAMP_CONF, null);
+            setErreur(FIELD_USERNAME, e.getMessage());
         }
-        utilisateur.setMotDePasse(motDePasse);
+        user.setUsername(username);
 
         try
         {
-            validationNom(nom);
+            verifyPassword(password, cpassword);
         }
         catch(Exception e)
         {
-            setErreur(CHAMP_NOM, e.getMessage());
+            setErreur(FIELD_PASSWORD, e.getMessage());
+            setErreur(FIELD_CPASSWORD, null);
         }
-        utilisateur.setNom(nom);
+        user.setPassword(password);
+
+        try
+        {
+            verifyMDLID(mdlid);
+        }
+        catch(Exception e)
+        {
+            setErreur(FIELD_MDLID, e.getMessage());
+        }
+        user.setMdlid(mdlid); 
+        try
+        {
+            verifyName(name);
+        }
+        catch(Exception e)
+        {
+            setErreur(FIELD_NAME, e.getMessage());
+        }
+        user.setName(name);
+        try
+        {
+            verifySurname(surname);
+        }
+        catch(Exception e)
+        {
+            setErreur(FIELD_SURNAME, e.getMessage());
+        }
+        user.setSurname(surname);
 
         if(erreurs.isEmpty())
         {
@@ -75,54 +101,118 @@ public final class InscriptionForm
             resultat = "Échec de l'inscription.";
         }
 
-        return utilisateur;
+        return user;
     }
 
-    private void validationEmail( String email ) throws Exception {
-        if ( email != null ) {
-            if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-                throw new Exception( "Merci de saisir une adresse mail valide." );
+    private void verifyUsername(String username) throws Exception
+    {
+        if(username != null)
+        {
+            if(username.length() < 3)
+            {
+                throw new Exception("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
             }
-        } else {
-            throw new Exception( "Merci de saisir une adresse mail." );
+        }
+        else
+        {
+            throw new Exception("Merci de saisir un nom d'utilisateur.");
         }
     }
 
-    private void validationMotsDePasse( String motDePasse, String confirmation ) throws Exception {
-        if ( motDePasse != null && confirmation != null ) {
-            if ( !motDePasse.equals( confirmation ) ) {
-                throw new Exception( "Les mots de passe entrés sont différents, merci de les saisir à nouveau." );
-            } else if ( motDePasse.length() < 3 ) {
-                throw new Exception( "Les mots de passe doivent contenir au moins 3 caractères." );
+    private void verifyPassword(String password, String cpassword) throws Exception
+    {
+        if(password != null && cpassword != null)
+        {
+            if(!password.equals(cpassword))
+            {
+                throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
             }
-        } else {
-            throw new Exception( "Merci de saisir et confirmer votre mot de passe." );
+            else if(password.length() < 5)
+            {
+                throw new Exception("Les mots de passe doivent contenir au moins 5 caractères.");
+            }
+        }
+        else
+        {
+            throw new Exception("Merci de saisir et confirmer votre mot de passe.");
         }
     }
 
-    private void validationNom( String nom ) throws Exception {
-        if ( nom != null && nom.length() < 3 ) {
-            throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+    private void verifyMDLID(String mdlid) throws Exception
+    {
+        if(mdlid != null)
+        {
+            if(!isNumeric(mdlid))
+            {
+                throw new Exception("L'identifiant MDL doit être un nombre.");
+            }
+        }
+        else
+        {
+            throw new Exception("Merci de saisir un identidiant MDL.");
+        }
+    }
+
+    private void verifyName(String name) throws Exception
+    {
+        if(name != null)
+        {
+            if(name.length() < 3)
+            {
+                throw new Exception("Vôtre nom doit contenit au moins 3 caractères.");
+            }
+        }
+        else
+        {
+            throw new Exception("Merci de saisir un nom.");
+        }
+    }
+
+    private void verifySurname(String surname) throws Exception
+    {
+        if(surname != null)
+        {
+            if(surname.length() < 3)
+            {
+                throw new Exception("Vôtre prénom doit contenit au moins 3 caractères.");
+            }
+        }
+        else
+        {
+            throw new Exception("Merci de saisir un prénom.");
         }
     }
 
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur( String champ, String message ) {
-        erreurs.put( champ, message );
+    private void setErreur(String champ, String message)
+    {
+        erreurs.put(champ, message);
     }
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
-    private static String getValeurChamp( HttpServletRequest request, String nomChamp ) {
-        String valeur = request.getParameter( nomChamp );
-        if ( valeur == null || valeur.trim().length() == 0 ) {
+    private static String getValeurChamp(HttpServletRequest request, String nomChamp)
+    {
+        String valeur = request.getParameter(nomChamp);
+        if(valeur == null || valeur.trim().length() == 0)
+        {
             return null;
-        } else {
+        }
+        else
+        {
             return valeur.trim();
         }
+    }
+
+    public static boolean isNumeric(String str)
+    {
+        NumberFormat formatter = NumberFormat.getInstance();
+        ParsePosition pos = new ParsePosition(0);
+        formatter.parse(str, pos);
+        return str.length() == pos.getIndex();
     }
 }

@@ -13,14 +13,14 @@
                 <legend>Connexion</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>
 
-                <label for="nom">Adresse email <span class="requis">*</span></label>
-                <input type="email" id="email" name="email" value="<c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
-                <span class="erreur">${form.erreurs['email']}</span>
+                <label for="nom">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" value="<c:out value="${user.username}"/>" size="20" maxlength="60" />
+                <span class="erreur">${form.erreurs['username']}</span>
                 <br>
 
-                <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
-                <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" />
-                <span class="erreur">${form.erreurs['motdepasse']}</span>
+                <label for="password">Mot de passe </label>
+                <input type="password" id="password" name="password" value="" size="20" maxlength="20" />
+                <span class="erreur">${form.erreurs['password']}</span>
 <br>
 
                 <input type="submit" value="Connexion" class="sansLabel" />
@@ -31,7 +31,7 @@
                 <%-- Vérification de la présence d'un objet utilisateur en session --%>
                 <c:if test="${!empty sessionScope.sessionUtilisateur}">
                     <%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
-                    <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.email}</p>
+                    <p class="succes">Vous êtes connecté(e) avec le compte : ${sessionScope.sessionUtilisateur.username}</p>
                 </c:if>
             </fieldset>
         </form>

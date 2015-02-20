@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.mcnanotech.beans.Utilisateur;
+import fr.mcnanotech.beans.User;
 import fr.mcnanotech.forms.InscriptionForm;
 
 public class Inscription extends HttpServlet {
@@ -25,7 +25,7 @@ public class Inscription extends HttpServlet {
         InscriptionForm form = new InscriptionForm();
 		
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
-        Utilisateur utilisateur = form.inscrireUtilisateur( request );
+        User utilisateur = form.inscrireUtilisateur( request );
 		
         /* Stockage du formulaire et du bean dans l'objet request */
         request.setAttribute( ATT_FORM, form );
