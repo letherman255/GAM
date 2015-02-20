@@ -9,19 +9,33 @@
 	<servlet>
 		<servlet-name>Inscription</servlet-name>
 		<servlet-class>fr.mcnanotech.servlets.Inscription</servlet-class>
+
 	</servlet>
 	<servlet>
 		<servlet-name>Connexion</servlet-name>
 		<servlet-class>fr.mcnanotech.servlets.Connexion</servlet-class>
+
 	</servlet>
 	<servlet>
 		<servlet-name>Deconnexion</servlet-name>
 		<servlet-class>fr.mcnanotech.servlets.Deconnexion</servlet-class>
+		<load-on-startup>3</load-on-startup>
 	</servlet>
 	<servlet>
 		<servlet-name>GestionTestJDBC</servlet-name>
 		<servlet-class>fr.mcnanotech.servlets.GestionTestJDBC</servlet-class>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>SystemStartup</servlet-name>
+		<servlet-class>fr.mcnanotech.servlets.SystemStartup</servlet-class>
+				<load-on-startup>1</load-on-startup>
+	</servlet>
+<listener>
+    <listener-class>
+       fr.mcnanotech.main.Test
+    </listener-class>
+</listener>
 
 	<servlet-mapping>
 		<servlet-name>GestionTestJDBC</servlet-name>
@@ -38,6 +52,10 @@
 	<servlet-mapping>
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SystemStartup</servlet-name>
+		<url-pattern>/startup</url-pattern>
 	</servlet-mapping>
 	<!-- <filter> <filter-name>RestrictionFilter</filter-name> <filter-class>fr.mcnanotech.tuto.filters.RestrictionFilter</filter-class> 
 		</filter> <filter-mapping> <filter-name>RestrictionFilter</filter-name> <url-pattern>/*</url-pattern> 

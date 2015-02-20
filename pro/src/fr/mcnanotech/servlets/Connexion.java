@@ -23,18 +23,18 @@ public class Connexion extends HttpServlet {
     }
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-        /* Préparation de l'objet formulaire */
+        /* Prï¿½paration de l'objet formulaire */
         ConnexionForm form = new ConnexionForm();
 
-        /* Traitement de la requête et récupération du bean en résultant */
+        /* Traitement de la requï¿½te et rï¿½cupï¿½ration du bean en rï¿½sultant */
         Utilisateur utilisateur = form.connecterUtilisateur( request );
 
-        /* Récupération de la session depuis la requête */
+        /* Rï¿½cupï¿½ration de la session depuis la requï¿½te */
         HttpSession session = request.getSession();
 
         /**
          * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-         * Utilisateur à la session, sinon suppression du bean de la session.
+         * Utilisateur ï¿½ la session, sinon suppression du bean de la session.
          */
         if ( form.getErreurs().isEmpty() ) {
             session.setAttribute( ATT_SESSION_USER, utilisateur );
@@ -45,6 +45,7 @@ public class Connexion extends HttpServlet {
         /* Stockage du formulaire et du bean dans l'objet request */
         request.setAttribute( ATT_FORM, form );
         request.setAttribute( ATT_USER, utilisateur );
+ 
 
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
     }
