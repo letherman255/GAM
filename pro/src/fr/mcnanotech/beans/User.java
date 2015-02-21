@@ -2,11 +2,22 @@ package fr.mcnanotech.beans;
 
 public class User
 {
+    private Long id;
     private String username;
     private String password;
     private String mdlid;
     private String name;
     private String Surname;
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
 
     public String getUsername()
     {
