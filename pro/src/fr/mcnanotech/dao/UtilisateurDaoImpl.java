@@ -17,7 +17,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao
         this.daoFactory = daoFactory;
     }
 
-    private static final String SQL_SELECT_PAR_EMAIL = "SELECT id, email, nom, mot_de_passe, date_inscription FROM Utilisateur WHERE email = ?";
+    private static final String SQL_SELECT_PAR_EMAIL = "SELECT System_ID, Username, Password, MDL_ID, Name, Surname FROM users WHERE Name = ?";
 
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override
@@ -52,7 +52,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao
         return utilisateur;
     }
 
-    private static final String SQL_INSERT = "INSERT INTO Utilisateur (email, mot_de_passe, nom, date_inscription) VALUES (?, ?, ?, NOW())";
+    private static final String SQL_INSERT = "INSERT INTO users (Username, Password, MDL_ID, Name, Surname) VALUES (?, ?, ?, ?,?)";
 
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override

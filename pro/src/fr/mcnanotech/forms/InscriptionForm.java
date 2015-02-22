@@ -7,7 +7,13 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
+
+import sun.security.krb5.internal.EncAPRepPart;
+
 import fr.mcnanotech.beans.User;
+import fr.mcnanotech.dao.DAOException;
+import fr.mcnanotech.dao.UtilisateurDao;
 
 public final class InscriptionForm
 {
@@ -17,9 +23,17 @@ public final class InscriptionForm
     private static final String FIELD_MDLID = "mdlid";
     private static final String FIELD_NAME = "name";
     private static final String FIELD_SURNAME = "surname";
+    private static final String ALGO_CHIFFREMENT = "SHA-256";
 
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
+
+    private UtilisateurDao utilisateurDao;
+
+    public InscriptionForm(UtilisateurDao utilisateurDao)
+    {
+        this.utilisateurDao = utilisateurDao;
+    }
 
     public String getResultat()
     {
@@ -36,7 +50,6 @@ public final class InscriptionForm
         String username = getValeurChamp(request, FIELD_USERNAME);
         String password = getValeurChamp(request, FIELD_PASSWORD);
         String cpassword = getValeurChamp(request, FIELD_CPASSWORD);
-        String confirmation = getValeurChamp(request, FIELD_CPASSWORD);
         String mdlid = getValeurChamp(request, FIELD_MDLID);
         String name = getValeurChamp(request, FIELD_NAME);
         String surname = getValeurChamp(request, FIELD_SURNAME);
@@ -45,142 +58,198 @@ public final class InscriptionForm
 
         try
         {
+            processUsername(username, user);
+            processPassword(password, cpassword, user);
+            processMDLID(mdlid, user);
+            processName(name, user);
+            processSurname(surname, user);
+
+            if(erreurs.isEmpty())
+            {
+                utilisateurDao.creer(user);
+                resultat = "Succès de l'inscription.";
+            }
+            else
+            {
+                resultat = "Échec de l'inscription.";
+            }
+        }
+        catch(DAOException e)
+        {
+            resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    private void processUsername(String username, User user)
+    {
+        try
+        {
             verifyUsername(username);
         }
-        catch(Exception e)
+        catch(FormValidationException e)
         {
             setErreur(FIELD_USERNAME, e.getMessage());
         }
         user.setUsername(username);
 
+    }
+
+    private void processPassword(String password, String cpassword, User user)
+    {
         try
         {
             verifyPassword(password, cpassword);
         }
-        catch(Exception e)
+        catch(FormValidationException e)
         {
             setErreur(FIELD_PASSWORD, e.getMessage());
             setErreur(FIELD_CPASSWORD, null);
         }
-        user.setPassword(password);
 
+        /*
+         * Utilisation de la bibliothèque Jasypt pour chiffrer le mot de passe
+         * efficacement.
+         * L'algorithme SHA-256 est ici utilisé, avec par défaut un salage
+         * aléatoire et un grand nombre d'itérations de la fonction de hashage.
+         * La String retournée est de longueur 56 et contient le hash en Base64.
+         */
+        ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+        passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
+        passwordEncryptor.setPlainDigest(false);
+        String encryptedpassword = passwordEncryptor.encryptPassword(password);
+        System.out.println("le mot de passe est "+encryptedpassword );
+        user.setPassword(encryptedpassword);
+
+    }
+
+    private void processMDLID(String mdlid, User user)
+    {
         try
         {
             verifyMDLID(mdlid);
         }
-        catch(Exception e)
+        catch(FormValidationException e)
         {
             setErreur(FIELD_MDLID, e.getMessage());
         }
-        user.setMdlid(mdlid); 
+        user.setMdlid(mdlid);
+
+    }
+
+    private void processName(String name, User user)
+    {
         try
         {
             verifyName(name);
         }
-        catch(Exception e)
+        catch(FormValidationException e)
         {
             setErreur(FIELD_NAME, e.getMessage());
         }
         user.setName(name);
+
+    }
+
+    private void processSurname(String surname, User user)
+    {
         try
         {
             verifySurname(surname);
         }
-        catch(Exception e)
+        catch(FormValidationException e)
         {
             setErreur(FIELD_SURNAME, e.getMessage());
         }
         user.setSurname(surname);
-
-        if(erreurs.isEmpty())
-        {
-            resultat = "Succès de l'inscription.";
-        }
-        else
-        {
-            resultat = "Échec de l'inscription.";
-        }
-
-        return user;
     }
 
-    private void verifyUsername(String username) throws Exception
+    private void verifyUsername(String username) throws FormValidationException
     {
         if(username != null)
         {
             if(username.length() < 3)
             {
-                throw new Exception("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
             }
         }
         else
         {
-            throw new Exception("Merci de saisir un nom d'utilisateur.");
+            throw new FormValidationException("Merci de saisir un nom d'utilisateur.");
         }
     }
 
-    private void verifyPassword(String password, String cpassword) throws Exception
+    private void verifyPassword(String password, String cpassword) throws FormValidationException
     {
         if(password != null && cpassword != null)
         {
             if(!password.equals(cpassword))
             {
-                throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+                throw new FormValidationException("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
             }
             else if(password.length() < 5)
             {
-                throw new Exception("Les mots de passe doivent contenir au moins 5 caractères.");
+                throw new FormValidationException("Les mots de passe doivent contenir au moins 5 caractères.");
             }
         }
         else
         {
-            throw new Exception("Merci de saisir et confirmer votre mot de passe.");
+            throw new FormValidationException("Merci de saisir et confirmer votre mot de passe.");
         }
     }
 
-    private void verifyMDLID(String mdlid) throws Exception
+    private void verifyMDLID(String mdlid) throws FormValidationException
     {
         if(mdlid != null)
         {
             if(!isNumeric(mdlid))
             {
-                throw new Exception("L'identifiant MDL doit être un nombre.");
+                throw new FormValidationException("L'identifiant MDL doit être un nombre.");
             }
         }
         else
         {
-            throw new Exception("Merci de saisir un identidiant MDL.");
+            throw new FormValidationException("Merci de saisir un identidiant MDL.");
         }
     }
 
-    private void verifyName(String name) throws Exception
+    private void verifyName(String name) throws FormValidationException
     {
         if(name != null)
         {
             if(name.length() < 3)
             {
-                throw new Exception("Vôtre nom doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre nom doit contenit au moins 3 caractères.");
             }
         }
         else
         {
-            throw new Exception("Merci de saisir un nom.");
+            throw new FormValidationException("Merci de saisir un nom.");
         }
     }
 
-    private void verifySurname(String surname) throws Exception
+    private void verifySurname(String surname) throws FormValidationException
     {
         if(surname != null)
         {
             if(surname.length() < 3)
             {
-                throw new Exception("Vôtre prénom doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre prénom doit contenit au moins 3 caractères.");
             }
         }
         else
         {
-            throw new Exception("Merci de saisir un prénom.");
+            throw new FormValidationException("Merci de saisir un prénom.");
         }
+    }
+
+    public static boolean isNumeric(String str)
+    {
+        NumberFormat formatter = NumberFormat.getInstance();
+        ParsePosition pos = new ParsePosition(0);
+        formatter.parse(str, pos);
+        return str.length() == pos.getIndex();
     }
 
     /*
@@ -208,11 +277,4 @@ public final class InscriptionForm
         }
     }
 
-    public static boolean isNumeric(String str)
-    {
-        NumberFormat formatter = NumberFormat.getInstance();
-        ParsePosition pos = new ParsePosition(0);
-        formatter.parse(str, pos);
-        return str.length() == pos.getIndex();
-    }
 }

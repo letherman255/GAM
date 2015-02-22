@@ -12,7 +12,7 @@ public class SystemThread extends Thread
         {
             DateFormat df = new SimpleDateFormat("dd/MM/yy HH:MM:ss");
             Date date = new Date();
-            System.out.println(df.format(date));
+            //System.out.println(df.format(date));
             try
             {
                 sleep(5000);
