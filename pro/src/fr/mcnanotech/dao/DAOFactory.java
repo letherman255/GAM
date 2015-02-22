@@ -5,18 +5,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Properties;
-
-import fr.mcnanotech.beans.User;
 
 public class DAOFactory
 {
 
-    private static final String FICHIER_PROPERTIES = "/com/sdzee/dao/dao.properties";
+    private static final String FICHIER_PROPERTIES = "/fr/mcnanotech.dao.dao.properties";
     private static final String PROPERTY_URL = "url";
     private static final String PROPERTY_DRIVER = "driver";
     private static final String PROPERTY_NOM_UTILISATEUR = "nomutilisateur";
@@ -39,12 +34,12 @@ public class DAOFactory
      */
     public static DAOFactory getInstance() throws DAOConfigurationException
     {
-        Properties properties = new Properties();
+        Properties properties = new Properties(); // création d'un objet properties -> permet de gerer le fichier de config
         String url;
         String driver;
         String nomUtilisateur;
         String motDePasse;
-
+        // --------------------------------Recherche et lecture du fichier de configuration------------------------------------
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream fichierProperties = classLoader.getResourceAsStream(FICHIER_PROPERTIES);
 
@@ -65,7 +60,7 @@ public class DAOFactory
         {
             throw new DAOConfigurationException("Impossible de charger le fichier properties " + FICHIER_PROPERTIES, e);
         }
-
+        // ---------------------------------------chargement du driver JDBC--------------------------------------------------------
         try
         {
             Class.forName(driver);
@@ -74,13 +69,14 @@ public class DAOFactory
         {
             throw new DAOConfigurationException("Le driver est introuvable dans le classpath.", e);
         }
-
+        // --------------------------------------Instance de DAO FACTORY-----------------------------------------------------------
         DAOFactory instance = new DAOFactory(url, nomUtilisateur, motDePasse);
         return instance;
     }
 
     /* Méthode chargée de fournir une connexion à la base de données */
-    /* package */Connection getConnection() throws SQLException
+    /* package */
+    Connection getConnection() throws SQLException
     {
         return DriverManager.getConnection(url, username, password);
     }
@@ -89,23 +85,9 @@ public class DAOFactory
      * Méthodes de récupération de l'implémentation des différents DAO (un seul
      * pour le moment)
      */
-    public UserDao getUtilisateurDao()
+    public UtilisateurDao getUtilisateurDao()
     {
-        return new UserDaoImpl(this);
+        return new UtilisateurDaoImpl(this);
     }
-
-    /*
-     * Initialise la requête préparée basée sur la connexion passée en argument,
-     * avec la requête SQL et les objets donnés.
-     */
-    public static PreparedStatement initialisationRequetePreparee(Connection connexion, String sql, boolean returnGeneratedKeys, Object... objets) throws SQLException
-    {
-        PreparedStatement preparedStatement = connexion.prepareStatement(sql, returnGeneratedKeys ? Statement.RETURN_GENERATED_KEYS : Statement.NO_GENERATED_KEYS);
-        for(int i = 0; i < objets.length; i++)
-        {
-            preparedStatement.setObject(i + 1, objets[i]);
-        }
-        return preparedStatement;
-    }
-
+    
 }
