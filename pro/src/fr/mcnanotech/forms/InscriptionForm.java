@@ -12,6 +12,7 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.dao.UserDao;
+import fr.mcnanotech.dao.UserDaoImpl;
 
 public final class InscriptionForm
 {
@@ -26,11 +27,11 @@ public final class InscriptionForm
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
 
-    private UserDao utilisateurDao;
+    private UserDao userDao;
 
     public InscriptionForm(UserDao utilisateurDao)
     {
-        this.utilisateurDao = utilisateurDao;
+        this.userDao = utilisateurDao;
     }
 
     public String getResultat()
@@ -64,7 +65,7 @@ public final class InscriptionForm
 
             if(erreurs.isEmpty())
             {
-                utilisateurDao.create(user);
+                userDao.create(user);
                 resultat = "Succès de l'inscription.";
             }
             else
@@ -170,6 +171,10 @@ public final class InscriptionForm
             if(username.length() < 3)
             {
                 throw new FormValidationException("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
+            }
+            else if(userDao.find(username) != null)
+            {
+                throw new FormValidationException("Ce nom d'utilisateur est déjà utilisé, merci d'en choisir un autre.");
             }
         }
         else

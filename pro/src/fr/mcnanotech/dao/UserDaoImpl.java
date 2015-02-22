@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.beans.User;
 import static fr.mcnanotech.dao.DAOUtil.*;
 
@@ -17,27 +18,37 @@ public class UserDaoImpl implements UserDao
         this.daoFactory = daoFactory;
     }
 
-    private static final String SQL_SELECT_BY_NAME = "SELECT System_ID, Username, Password, MDL_ID, Name, Surname FROM users WHERE Name = ?";
+    private static final String SQL_SELECT_BY_USERNAME = "SELECT id, username, password, mdlid, name, surname FROM users WHERE username = ?";
 
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override
-    public User find(String name) throws DAOException
+    public User find(String username) throws DAOException
+    {
+
+        return find(SQL_SELECT_BY_USERNAME, username);
+    }
+
+    private User find(String sql, Object... objets) throws DAOException
     {
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        User utilisateur = null;
+        User user = null;
 
         try
         {
-            /* Récupération d'une connexion depuis la Factory */
+            /* RÃ©cupÃ©ration d'une connexion depuis la Factory */
             connexion = daoFactory.getConnection();
-            preparedStatement = initializePreparedRequest(connexion, SQL_SELECT_BY_NAME, false, name);
+            /*
+             * PrÃ©paration de la requÃªte avec les objets passÃ©s en arguments
+             * (ici, uniquement une adresse email) et exÃ©cution.
+             */
+            preparedStatement = initializePreparedRequest(connexion, sql, false, objets);
             resultSet = preparedStatement.executeQuery();
-            /* Parcours de la ligne de données de l'éventuel ResulSet retourné */
+            /* Parcours de la ligne de donnÃ©es retournÃ©e dans le ResultSet */
             if(resultSet.next())
             {
-                utilisateur = map(resultSet);
+                user = map(resultSet);
             }
         }
         catch(SQLException e)
@@ -49,14 +60,14 @@ public class UserDaoImpl implements UserDao
             silentCloses(resultSet, preparedStatement, connexion);
         }
 
-        return utilisateur;
+        return user;
     }
 
-    private static final String SQL_INSERT = "INSERT INTO users (Username, Password, MDL_ID, Name, Surname) VALUES (?, ?, ?, ?,?)";
+    private static final String SQL_INSERT = "INSERT INTO users (username, password, mdlid, name, surname) VALUES (?, ?, ?, ?,?)";
 
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override
-    public void create(User user) throws DAOException
+    public void create(User user) throws IllegalArgumentException, DAOException
     {
         Connection connexion = null;
         PreparedStatement preparedStatement = null;

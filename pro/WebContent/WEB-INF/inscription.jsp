@@ -15,7 +15,7 @@
                 
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" name="username" value="<c:out value="${utilisateur.username}"/>" size="20" maxlength="20" />
-                <span class="erreur">${form.erreurs['nom']}</span>
+                <span class="erreur">${form.erreurs['username']}</span>
                 <br />
 
                 <label for="password">Mot de passe </label>

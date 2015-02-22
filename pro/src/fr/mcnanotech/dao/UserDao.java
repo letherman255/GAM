@@ -6,5 +6,5 @@ public interface UserDao
 {
     void create( User user ) throws DAOException;
 
-    User find( String name ) throws DAOException;
+    User find( String username ) throws DAOException;
 }
