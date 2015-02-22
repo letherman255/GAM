@@ -6,17 +6,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public final class DAOUtilitaire {
+public final class DAOUtil {
 
     /*
      * Constructeur caché par défaut (car c'est une classe finale utilitaire,
      * contenant uniquement des méthode appelées de manière statique)
      */
-    private DAOUtilitaire() {
+    private DAOUtil() {
     }
 
     /* Fermeture silencieuse du resultset */
-    public static void fermetureSilencieuse( ResultSet resultSet ) {
+    public static void silentClose( ResultSet resultSet ) {
         if ( resultSet != null ) {
             try {
                 resultSet.close();
@@ -27,7 +27,7 @@ public final class DAOUtilitaire {
     }
 
     /* Fermeture silencieuse du statement */
-    public static void fermetureSilencieuse( Statement statement ) {
+    public static void silentClose( Statement statement ) {
         if ( statement != null ) {
             try {
                 statement.close();
@@ -38,7 +38,7 @@ public final class DAOUtilitaire {
     }
 
     /* Fermeture silencieuse de la connexion */
-    public static void fermetureSilencieuse( Connection connexion ) {
+    public static void silentClose( Connection connexion ) {
         if ( connexion != null ) {
             try {
                 connexion.close();
@@ -49,23 +49,23 @@ public final class DAOUtilitaire {
     }
 
     /* Fermetures silencieuses du statement et de la connexion */
-    public static void fermeturesSilencieuses( Statement statement, Connection connexion ) {
-        fermetureSilencieuse( statement );
-        fermetureSilencieuse( connexion );
+    public static void slientCloses( Statement statement, Connection connexion ) {
+        silentClose( statement );
+        silentClose( connexion );
     }
 
     /* Fermetures silencieuses du resultset, du statement et de la connexion */
-    public static void fermeturesSilencieuses( ResultSet resultSet, Statement statement, Connection connexion ) {
-        fermetureSilencieuse( resultSet );
-        fermetureSilencieuse( statement );
-        fermetureSilencieuse( connexion );
+    public static void silentCloses( ResultSet resultSet, Statement statement, Connection connexion ) {
+        silentClose( resultSet );
+        silentClose( statement );
+        silentClose( connexion );
     }
 
     /*
      * Initialise la requête préparée basée sur la connexion passée en argument,
      * avec la requête SQL et les objets donnés.
      */
-    public static PreparedStatement initialisationRequetePreparee( Connection connexion, String sql, boolean returnGeneratedKeys, Object... objets ) throws SQLException {
+    public static PreparedStatement initializePreparedRequest( Connection connexion, String sql, boolean returnGeneratedKeys, Object... objets ) throws SQLException {
         PreparedStatement preparedStatement = connexion.prepareStatement( sql, returnGeneratedKeys ? Statement.RETURN_GENERATED_KEYS : Statement.NO_GENERATED_KEYS );
         for ( int i = 0; i < objets.length; i++ ) {
             preparedStatement.setObject( i + 1, objets[i] );

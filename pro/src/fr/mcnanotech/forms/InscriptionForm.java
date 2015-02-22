@@ -9,11 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
-import sun.security.krb5.internal.EncAPRepPart;
-
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.DAOException;
-import fr.mcnanotech.dao.UtilisateurDao;
+import fr.mcnanotech.dao.UserDao;
 
 public final class InscriptionForm
 {
@@ -28,9 +26,9 @@ public final class InscriptionForm
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
 
-    private UtilisateurDao utilisateurDao;
+    private UserDao utilisateurDao;
 
-    public InscriptionForm(UtilisateurDao utilisateurDao)
+    public InscriptionForm(UserDao utilisateurDao)
     {
         this.utilisateurDao = utilisateurDao;
     }
@@ -47,12 +45,12 @@ public final class InscriptionForm
 
     public User inscrireUtilisateur(HttpServletRequest request)
     {
-        String username = getValeurChamp(request, FIELD_USERNAME);
-        String password = getValeurChamp(request, FIELD_PASSWORD);
-        String cpassword = getValeurChamp(request, FIELD_CPASSWORD);
-        String mdlid = getValeurChamp(request, FIELD_MDLID);
-        String name = getValeurChamp(request, FIELD_NAME);
-        String surname = getValeurChamp(request, FIELD_SURNAME);
+        String username = getFieldValue(request, FIELD_USERNAME);
+        String password = getFieldValue(request, FIELD_PASSWORD);
+        String cpassword = getFieldValue(request, FIELD_CPASSWORD);
+        String mdlid = getFieldValue(request, FIELD_MDLID);
+        String name = getFieldValue(request, FIELD_NAME);
+        String surname = getFieldValue(request, FIELD_SURNAME);
 
         User user = new User();
 
@@ -66,7 +64,7 @@ public final class InscriptionForm
 
             if(erreurs.isEmpty())
             {
-                utilisateurDao.creer(user);
+                utilisateurDao.create(user);
                 resultat = "Succès de l'inscription.";
             }
             else
@@ -119,7 +117,7 @@ public final class InscriptionForm
         passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
         passwordEncryptor.setPlainDigest(false);
         String encryptedpassword = passwordEncryptor.encryptPassword(password);
-        System.out.println("le mot de passe est "+encryptedpassword );
+        System.out.println("le mot de passe est " + encryptedpassword);
         user.setPassword(encryptedpassword);
 
     }
@@ -264,7 +262,7 @@ public final class InscriptionForm
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
-    private static String getValeurChamp(HttpServletRequest request, String nomChamp)
+    private static String getFieldValue(HttpServletRequest request, String nomChamp)
     {
         String valeur = request.getParameter(nomChamp);
         if(valeur == null || valeur.trim().length() == 0)

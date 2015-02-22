@@ -1,5 +1,6 @@
 package fr.mcnanotech.forms;
 
+@SuppressWarnings("serial")
 public class FormValidationException extends Exception {
     /*
      * Constructeur

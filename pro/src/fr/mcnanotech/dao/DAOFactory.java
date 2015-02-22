@@ -1,6 +1,5 @@
 package fr.mcnanotech.dao;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -85,9 +84,9 @@ public class DAOFactory
      * Méthodes de récupération de l'implémentation des différents DAO (un seul
      * pour le moment)
      */
-    public UtilisateurDao getUtilisateurDao()
+    public UserDao getUtilisateurDao()
     {
-        return new UtilisateurDaoImpl(this);
+        return new UserDaoImpl(this);
     }
     
 }

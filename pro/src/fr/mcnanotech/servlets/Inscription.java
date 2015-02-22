@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.DAOFactory;
-import fr.mcnanotech.dao.UtilisateurDao;
+import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.InscriptionForm;
 
+@SuppressWarnings("serial")
 public class Inscription extends HttpServlet {
     public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER         = "utilisateur";
     public static final String ATT_FORM         = "form";
     public static final String VUE              = "/WEB-INF/inscription.jsp";
 
-    private UtilisateurDao     utilisateurDao;
+    private UserDao     utilisateurDao;
 
     public void init() throws ServletException {
         /* Récupération d'une instance de notre DAO Utilisateur */

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@SuppressWarnings("serial")
 public class Deconnexion extends HttpServlet {
     public static final String URL_REDIRECTION = "/pro/connexion";
 

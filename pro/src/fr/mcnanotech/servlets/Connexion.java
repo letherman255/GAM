@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.forms.ConnexionForm;
 
+@SuppressWarnings("serial")
 public class Connexion extends HttpServlet {
     public static final String ATT_USER         = "utilisateur";
     public static final String ATT_FORM         = "form";
