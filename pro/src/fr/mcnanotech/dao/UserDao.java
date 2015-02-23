@@ -6,5 +6,5 @@ public interface UserDao
 {
     void create( User user ) throws DAOException;
 
-    User find( String username ) throws DAOException;
+    User find( String search, String msql ) throws DAOException;
 }

@@ -99,7 +99,7 @@ public final class ConnexionForm
             {
                 throw new FormValidationException("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
             }
-            else if(userDao.find(username) == null)
+            else if(userDao.find(username, "username") == null)
             {
                 throw new FormValidationException("Nom D'utilisateur inconut.");
             }
@@ -119,7 +119,7 @@ public final class ConnexionForm
             {
                 throw new FormValidationException("Le mot de passe doit contenir au moins 5 caractères.");
             }
-            else if(!processPassword(password, userDao.find(username).getPassword()))
+            else if(!processPassword(password, userDao.find(username, "username").getPassword()))
             {
                 
                 throw new FormValidationException("Mot de passe inconnut.");

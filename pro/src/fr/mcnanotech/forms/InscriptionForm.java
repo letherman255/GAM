@@ -172,7 +172,7 @@ public final class InscriptionForm
             {
                 throw new FormValidationException("Vôtre nom d'utilisateur doit contenir entre 3 et 20 caractères.");
             }
-            else if(userDao.find(username) != null)
+            else if(userDao.find(username, "username") != null)
             {
                 throw new FormValidationException("Ce nom d'utilisateur est déjà utilisé, merci d'en choisir un autre.");
             }
@@ -209,6 +209,10 @@ public final class InscriptionForm
             if(!isNumeric(mdlid))
             {
                 throw new FormValidationException("L'identifiant MDL doit être un nombre.");
+            }
+            else if(userDao.find(mdlid, "mdlid") == null)
+            {
+                throw new FormValidationException("Cet identitifiant MDL est déjà prit.");
             }
         }
         else

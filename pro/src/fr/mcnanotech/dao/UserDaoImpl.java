@@ -17,25 +17,21 @@ public class UserDaoImpl implements UserDao
     {
         this.daoFactory = daoFactory;
     }
-
-    private static final String SQL_SELECT_BY_USERNAME = "SELECT id, username, password, mdlid, name, surname FROM users WHERE username = ?";
-
-
     /* Impl�mentation de la m�thode d�finie dans l'interface UtilisateurDao */
     @Override
-    public User find(String username) throws DAOException
+    public User find(String search, String msql) throws DAOException
     {
 
-        return find(SQL_SELECT_BY_USERNAME, username);
+        return findP(msql, search);
     }
 
-    private User find(String sql, Object... objets) throws DAOException
+    private User findP(String msql, String search) throws DAOException
     {
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         User user = null;
-
+        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE username = ?";
         try
         {
             /* Récupération d'une connexion depuis la Factory */
@@ -44,7 +40,7 @@ public class UserDaoImpl implements UserDao
              * Préparation de la requête avec les objets passés en arguments
              * (ici, uniquement une adresse email) et exécution.
              */
-            preparedStatement = initializePreparedRequest(connexion, sql, false, objets);
+            preparedStatement = initializePreparedRequest(connexion, sql, false, search);
             resultSet = preparedStatement.executeQuery();
             /* Parcours de la ligne de données retournée dans le ResultSet */
             if(resultSet.next())
