@@ -6,6 +6,6 @@
         <title>Accès restreint 2</title>
     </head>
     <body>
-        <p>Vous êtes connecté(e) avec l'adresse ${sessionScope.sessionUtilisateur.email}, vous avez bien accès à l'espace restreint numéro 2.</p>
+        <p>Vous êtes connecté(e) avec l'adresse ${sessionScope.sessionUtilisateur.username}, vous avez bien accès à l'espace restreint numéro 2.</p>
     </body>
 </html>

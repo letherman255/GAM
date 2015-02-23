@@ -168,9 +168,9 @@ public final class InscriptionForm
     {
         if(username != null)
         {
-            if(username.length() < 3)
+            if(username.length() < 3 || username.length() > 20)
             {
-                throw new FormValidationException("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre nom d'utilisateur doit contenir entre 3 et 20 caractères.");
             }
             else if(userDao.find(username) != null)
             {
@@ -215,15 +215,19 @@ public final class InscriptionForm
         {
             throw new FormValidationException("Merci de saisir un identidiant MDL.");
         }
+        if(mdlid.length() > 5)
+        {
+            throw new FormValidationException("L'identifiant MDL doit être comprit entre 0 et 99999");
+        }
     }
 
     private void verifyName(String name) throws FormValidationException
     {
         if(name != null)
         {
-            if(name.length() < 3)
+            if(name.length() < 3 || name.length() > 20)
             {
-                throw new FormValidationException("Vôtre nom doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre nom doit contenir entre 3 et 20 caractères.");
             }
         }
         else
@@ -236,9 +240,9 @@ public final class InscriptionForm
     {
         if(surname != null)
         {
-            if(surname.length() < 3)
+            if(surname.length() < 3 || surname.length() > 20)
             {
-                throw new FormValidationException("Vôtre prénom doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre prénom doit contenir entre 3 et 20 caractères.");
             }
         }
         else

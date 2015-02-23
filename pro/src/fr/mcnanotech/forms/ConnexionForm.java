@@ -5,15 +5,26 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
+
 import fr.mcnanotech.beans.User;
+import fr.mcnanotech.dao.UserDao;
 
 public final class ConnexionForm
 {
     private static final String FIELD_USERNAME = "username";
     private static final String FIELD_PASSWORD = "password";
+    private static final String ALGO_CHIFFREMENT = "SHA-256";
 
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
+
+    private UserDao userDao;
+
+    public ConnexionForm(UserDao utilisateurDao)
+    {
+        this.userDao = utilisateurDao;
+    }
 
     public String getResultat()
     {
@@ -33,7 +44,6 @@ public final class ConnexionForm
 
         User user = new User();
 
-
         try
         {
             verifyUsername(username);
@@ -47,7 +57,7 @@ public final class ConnexionForm
         /* Validation du champ mot de passe. */
         try
         {
-            verifyPassword(password);
+            verifyAcces(username, password);
         }
         catch(Exception e)
         {
@@ -68,33 +78,56 @@ public final class ConnexionForm
         return user;
     }
 
-    private void verifyUsername(String username) throws Exception
+    private boolean processPassword(String plainPassword, String encryptedPassword)
+    {
+        /*
+         * Utilisation de la bibliothèque Jasypt pour comparer le mot de passe
+         *renté avec une emprunte.
+         */
+        ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+        passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
+        passwordEncryptor.setPlainDigest(false);
+        return passwordEncryptor.checkPassword(plainPassword, encryptedPassword);
+
+    }
+
+    private void verifyUsername(String username) throws FormValidationException
     {
         if(username != null)
         {
             if(username.length() < 3)
             {
-                throw new Exception("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
+                throw new FormValidationException("Vôtre nom d'utilisateur doit contenit au moins 3 caractères.");
             }
+            else if(userDao.find(username) == null)
+            {
+                throw new FormValidationException("Nom D'utilisateur inconut.");
+            }
+            System.out.println("username: "+ username);
         }
         else
         {
-            throw new Exception("Merci de saisir un nom d'utilisateur.");
+            throw new FormValidationException("Merci de saisir un nom d'utilisateur.");
         }
     }
 
-    private void verifyPassword(String password) throws Exception
+    private void verifyAcces(String username, String password) throws FormValidationException
     {
         if(password != null)
         {
             if(password.length() < 5)
             {
-                throw new Exception("Le mot de passe doit contenir au moins 5 caractères.");
+                throw new FormValidationException("Le mot de passe doit contenir au moins 5 caractères.");
             }
+            else if(!processPassword(password, userDao.find(username).getPassword()))
+            {
+                
+                throw new FormValidationException("Mot de passe inconnut.");
+            }        
         }
         else
         {
-            throw new Exception("Merci de saisir vôtre mot de passe.");
+            throw new FormValidationException("Merci de saisir vôtre mot de passe.");
         }
 
     }

@@ -20,6 +20,7 @@ public class UserDaoImpl implements UserDao
 
     private static final String SQL_SELECT_BY_USERNAME = "SELECT id, username, password, mdlid, name, surname FROM users WHERE username = ?";
 
+
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override
     public User find(String username) throws DAOException
@@ -122,4 +123,5 @@ public class UserDaoImpl implements UserDao
         user.setSurname(resultSet.getString("surname"));
         return user;
     }
+
 }

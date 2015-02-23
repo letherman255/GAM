@@ -3,6 +3,7 @@ package fr.mcnanotech.servlets;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.InscriptionForm;
 
 @SuppressWarnings("serial")
+@WebServlet("/inscription")
 public class Inscription extends HttpServlet {
     public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER         = "utilisateur";
