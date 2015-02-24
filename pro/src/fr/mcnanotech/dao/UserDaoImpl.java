@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         User user = null;
-        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE "+msql+" = ?";
+        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE " + msql + " = ?";
         try
         {
             /* Récupération d'une connexion depuis la Factory */
@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        
+
         String sql2 = "SELECT username, mdlid, name, surname FROM users;";
         try
         {
@@ -83,12 +83,13 @@ public class UserDaoImpl implements UserDao
             preparedStatement = initializePreparedRequest(connexion, sql2, false);
             resultSet = preparedStatement.executeQuery();
             /* Parcours de la ligne de données retournée dans le ResultSet */
-            while ( resultSet.next() ) {
+            while(resultSet.next())
+            {
                 String username = resultSet.getString("username");
-                String mdlid = resultSet.getInt( "mdlid" )+"";
+                String mdlid = resultSet.getInt("mdlid") + "";
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
-                String[] temp = { (String)mdlid , name, surname, username, };
+                String[] temp = {(String)mdlid, name, surname, username,};
                 dtableContent.add(temp);
             }
         }
@@ -101,6 +102,37 @@ public class UserDaoImpl implements UserDao
             silentCloses(resultSet, preparedStatement, connexion);
         }
         return dtableContent;
+    }
+
+    @Override
+    public void delete(String colum, String search) throws DAOException
+    {
+        Connection connexion = null;
+        PreparedStatement preparedStatement = null;
+
+        final String SQL_DELETE = "DELETE FROM users WHERE " + colum + " = " + search + " ;";
+
+        try
+        {
+            /* Récupération d'une connexion depuis la Factory */
+            connexion = daoFactory.getConnection();
+            /*
+             * Préparation de la requête avec les objets passés en arguments
+             * (ici, uniquement une adresse email) et exécution.
+             */
+            preparedStatement = initializePreparedRequest(connexion, SQL_DELETE, true);
+            preparedStatement.executeUpdate();
+            /* Analyse du statut retourn� par la requ�te d'insertion */
+
+        }
+        catch(SQLException e)
+        {
+            throw new DAOException(e);
+        }
+        finally
+        {
+            silentCloses(preparedStatement, connexion);
+        }
     }
 
     private static final String SQL_INSERT = "INSERT INTO users (username, password, mdlid, name, surname) VALUES (?, ?, ?, ?,?)";

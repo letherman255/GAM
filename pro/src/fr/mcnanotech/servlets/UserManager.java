@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.mcnanotech.beans.DbContent;
+import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.UserManagerForm;
@@ -37,16 +38,25 @@ public class UserManager extends HttpServlet
     {
         UserManagerForm umf = new UserManagerForm(utilisateurDao);
         DbContent content = umf.ListUsers(request);
-        ArrayList<String[]>tableContent = content.getTableContent();
-        for(int i = 0; i < tableContent.size(); i++)
-        {
-            for(int j = 0; j < tableContent.get(i).length; j++)
-            {
-                System.out.println(tableContent.get(i)[j]);
-            }
-        }
+        ArrayList<String[]> tableContent = content.getTableContent();
+
+        request.setAttribute(ARRAY, tableContent);
+        this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         
-        request.setAttribute("array", tableContent);
+        UserManagerForm umf = new UserManagerForm(utilisateurDao);
+        User user = umf.deleteUser(request);
+        
+        
+        DbContent content = umf.ListUsers(request);
+        ArrayList<String[]> tableContent = content.getTableContent();
+
+        request.setAttribute( ATT_FORM, umf );
+        request.setAttribute( ATT_USER, user );
+        request.setAttribute(ARRAY, tableContent);
         this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }
 }

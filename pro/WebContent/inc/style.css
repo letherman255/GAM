@@ -2,6 +2,11 @@
 body,p,legend,label,input {
 	font: normal 8pt verdana, helvetica, sans-serif;
 }
+body {
+	background-image: url("bg.jpg");
+	background-attachment: fixed;
+	color: #383838;
+}
 
 fieldset {
 	padding: 10px;
@@ -12,7 +17,41 @@ legend {
 	font-weight: bold;
 	color: #0568CD;
 }
+.bloc_page{
+	width: 900px;
+	margin: auto;
+	box-shadow: 6px 6px 6px black;
+	background-color:white;
+}
+/*Navigation*/
+nav {
+	width: 800px;
+	margin: auto;
+	
+}
 
+nav ul {
+	list-style-type: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	font-weight: normal;
+	font-size: 120%;
+	text-transform: uppercase;
+	color: #686868;
+	padding-bottom: 3px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #395d84;
+	text-decoration: overline underline;
+}
 /* Forms --------------------------------------------------------------------------------------- */
 form label {
 	float: left;
@@ -42,6 +81,9 @@ table,td,th {
 }
 table {
     border-collapse: collapse;
+    font-size: 200%;
+    width: 99.5%;
+    margin: auto;
 }
 td {
     padding: 7px;

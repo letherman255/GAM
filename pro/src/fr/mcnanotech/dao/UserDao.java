@@ -11,5 +11,7 @@ public interface UserDao
 
     User find(String search, String msql ) throws DAOException;
     
+    void delete(String colum, String search) throws DAOException;
+    
     ArrayList<String[]>list() throws DAOException;
 }

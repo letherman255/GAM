@@ -49,7 +49,7 @@ public final class DAOUtil {
     }
 
     /* Fermetures silencieuses du statement et de la connexion */
-    public static void slientCloses( Statement statement, Connection connexion ) {
+    public static void silentCloses( Statement statement, Connection connexion ) {
         silentClose( statement );
         silentClose( connexion );
     }
