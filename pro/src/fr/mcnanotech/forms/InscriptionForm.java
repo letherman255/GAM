@@ -210,7 +210,7 @@ public final class InscriptionForm
             {
                 throw new FormValidationException("L'identifiant MDL doit être un nombre.");
             }
-            else if(userDao.find(mdlid, "mdlid") == null)
+            else if(userDao.find(mdlid, "mdlid") != null)
             {
                 throw new FormValidationException("Cet identitifiant MDL est déjà prit.");
             }

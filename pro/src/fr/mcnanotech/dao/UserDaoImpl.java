@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.beans.User;
@@ -17,6 +18,7 @@ public class UserDaoImpl implements UserDao
     {
         this.daoFactory = daoFactory;
     }
+
     /* Impl�mentation de la m�thode d�finie dans l'interface UtilisateurDao */
     @Override
     public User find(String search, String msql) throws DAOException
@@ -31,7 +33,7 @@ public class UserDaoImpl implements UserDao
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         User user = null;
-        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE username = ?";
+        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE "+msql+" = ?";
         try
         {
             /* Récupération d'une connexion depuis la Factory */
@@ -58,6 +60,47 @@ public class UserDaoImpl implements UserDao
         }
 
         return user;
+    }
+
+    @Override
+    public ArrayList<String[]> list() throws DAOException
+    {
+        ArrayList<String[]> dtableContent = new ArrayList<String[]>();
+
+        Connection connexion = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        
+        String sql2 = "SELECT username, mdlid, name, surname FROM users;";
+        try
+        {
+            /* Récupération d'une connexion depuis la Factory */
+            connexion = daoFactory.getConnection();
+            /*
+             * Préparation de la requête avec les objets passés en arguments
+             * (ici, uniquement une adresse email) et exécution.
+             */
+            preparedStatement = initializePreparedRequest(connexion, sql2, false);
+            resultSet = preparedStatement.executeQuery();
+            /* Parcours de la ligne de données retournée dans le ResultSet */
+            while ( resultSet.next() ) {
+                String username = resultSet.getString("username");
+                String mdlid = resultSet.getInt( "mdlid" )+"";
+                String name = resultSet.getString("name");
+                String surname = resultSet.getString("surname");
+                String[] temp = { (String)mdlid , name, surname, username, };
+                dtableContent.add(temp);
+            }
+        }
+        catch(SQLException e)
+        {
+            throw new DAOException(e);
+        }
+        finally
+        {
+            silentCloses(resultSet, preparedStatement, connexion);
+        }
+        return dtableContent;
     }
 
     private static final String SQL_INSERT = "INSERT INTO users (username, password, mdlid, name, surname) VALUES (?, ?, ?, ?,?)";
