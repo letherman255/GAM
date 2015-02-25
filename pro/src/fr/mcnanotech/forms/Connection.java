@@ -10,37 +10,37 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.UserDao;
 
-public final class ConnexionForm
+public final class Connection
 {
     private static final String FIELD_USERNAME = "username";
     private static final String FIELD_PASSWORD = "password";
-    private static final String ALGO_CHIFFREMENT = "SHA-256";
+    private static final String CRYPTING = "SHA-256";
 
     private String resultat;
-    private Map<String, String> erreurs = new HashMap<String, String>();
+    private Map<String, String> errors = new HashMap<String, String>();
 
     private UserDao userDao;
 
-    public ConnexionForm(UserDao utilisateurDao)
+    public Connection(UserDao userDao)
     {
-        this.userDao = utilisateurDao;
+        this.userDao = userDao;
     }
 
-    public String getResultat()
+    public String getResult()
     {
         return resultat;
     }
 
-    public Map<String, String> getErreurs()
+    public Map<String, String> getErrors()
     {
-        return erreurs;
+        return errors;
     }
 
-    public User connecterUtilisateur(HttpServletRequest request)
+    public User connectUser(HttpServletRequest request)
     {
         /* Récupération des champs du formulaire */
-        String username = getValeurChamp(request, FIELD_USERNAME);
-        String password = getValeurChamp(request, FIELD_PASSWORD);
+        String username = getFieldValue(request, FIELD_USERNAME);
+        String password = getFieldValue(request, FIELD_PASSWORD);
 
         User user = new User();
 
@@ -50,7 +50,7 @@ public final class ConnexionForm
         }
         catch(Exception e)
         {
-            setErreur(FIELD_USERNAME, e.getMessage());
+            setError(FIELD_USERNAME, e.getMessage());
         }
         user.setUsername(username);
 
@@ -61,12 +61,12 @@ public final class ConnexionForm
         }
         catch(Exception e)
         {
-            setErreur(FIELD_PASSWORD, e.getMessage());
+            setError(FIELD_PASSWORD, e.getMessage());
         }
         user.setPassword(password);
 
         /* Initialisation du résultat global de la validation. */
-        if(erreurs.isEmpty())
+        if(errors.isEmpty())
         {
             resultat = "Succès de la connexion.";
         }
@@ -85,7 +85,7 @@ public final class ConnexionForm
          *renté avec une emprunte.
          */
         ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
-        passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
+        passwordEncryptor.setAlgorithm(CRYPTING);
         passwordEncryptor.setPlainDigest(false);
         return passwordEncryptor.checkPassword(plainPassword, encryptedPassword);
 
@@ -135,16 +135,16 @@ public final class ConnexionForm
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur(String champ, String message)
+    private void setError(String champ, String message)
     {
-        erreurs.put(champ, message);
+        errors.put(champ, message);
     }
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
-    private static String getValeurChamp(HttpServletRequest request, String nomChamp)
+    private static String getFieldValue(HttpServletRequest request, String nomChamp)
     {
         String valeur = request.getParameter(nomChamp);
         if(valeur == null || valeur.trim().length() == 0)

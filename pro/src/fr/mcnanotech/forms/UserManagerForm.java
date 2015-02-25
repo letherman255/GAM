@@ -16,7 +16,7 @@ public class UserManagerForm
 {
     private static final String FIELD_MDLID = "mdlid";
     private UserDao userDao;
-    private Map<String, String> erreurs = new HashMap<String, String>();
+    private Map<String, String> errors = new HashMap<String, String>();
 
     public UserManagerForm(UserDao utilisateurDao)
     {
@@ -32,7 +32,7 @@ public class UserManagerForm
 
     public User deleteUser(HttpServletRequest request)
     {
-        String mdlid = getValeurChamp(request, FIELD_MDLID);
+        String mdlid = getFieldValue(request, FIELD_MDLID);
         User user = new User();
         try
         {
@@ -40,9 +40,9 @@ public class UserManagerForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_MDLID, e.getMessage());
+            setErrors(FIELD_MDLID, e.getMessage());
         }
-        if(erreurs.isEmpty())
+        if(errors.isEmpty())
         {
             userDao.delete("mdlid", mdlid);
             user.setMdlid(mdlid);
@@ -59,30 +59,30 @@ public class UserManagerForm
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur(String champ, String message)
+    private void setErrors(String field, String message)
     {
-        erreurs.put(champ, message);
+        errors.put(field, message);
     }
 
-    public Map<String, String> getErreurs()
+    public Map<String, String> getErrors()
     {
-        return erreurs;
+        return errors;
     }
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
-    private static String getValeurChamp(HttpServletRequest request, String nomChamp)
+    private static String getFieldValue(HttpServletRequest request, String nomChamp)
     {
-        String valeur = request.getParameter(nomChamp);
-        if(valeur == null || valeur.trim().length() == 0)
+        String value = request.getParameter(nomChamp);
+        if(value == null || value.trim().length() == 0)
         {
             return null;
         }
         else
         {
-            return valeur;
+            return value;
         }
     }
 

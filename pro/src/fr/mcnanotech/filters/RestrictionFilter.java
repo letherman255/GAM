@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter(urlPatterns = "/*")
 public class RestrictionFilter implements Filter
 {
-    public static final String ACCES_CONNEXION = "/connexion";
+    public static final String CONNECTION_ACCES = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 
     public void init(FilterConfig config) throws ServletException
@@ -29,8 +29,8 @@ public class RestrictionFilter implements Filter
         HttpServletResponse response = (HttpServletResponse)res;
 
         /* Non-filtrage des ressources statiques */
-        String chemin = request.getRequestURI().substring(request.getContextPath().length());
-        if(chemin.startsWith("/inc"))
+        String path = request.getRequestURI().substring(request.getContextPath().length());
+        if(path.startsWith("/inc"))
         {
             chain.doFilter(request, response);
             return;
@@ -46,7 +46,7 @@ public class RestrictionFilter implements Filter
         if(session.getAttribute(ATT_SESSION_USER) == null)
         {
             /* Redirection vers la page publique */
-            request.getRequestDispatcher(ACCES_CONNEXION).forward(request, response);
+            request.getRequestDispatcher(CONNECTION_ACCES).forward(request, response);
         }
         else
         {

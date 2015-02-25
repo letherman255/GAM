@@ -25,7 +25,7 @@
 				<legend>Outils</legend>
 				<label for="mdlid">Supprimer l'utilisateur</label> <input
 					type="text" id="mdlid" name="mdlid" size="20" maxlength="60">
-				<span class="erreur">${form.erreurs['mdlid']}</span><br> <br>
+				<span class="erreur">${form.errors['mdlid']}</span><br> <br>
 				<input type="submit" value="Supprimer" class="sansLabel" /><br>
 
 			</fieldset>

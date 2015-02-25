@@ -20,34 +20,34 @@ import fr.mcnanotech.forms.UserManagerForm;
 @WebServlet("/usermanager")
 public class UserManager extends HttpServlet
 {
-    public static final String VUE = "/WEB-INF/user_manager.jsp";
+    public static final String VIEW = "/WEB-INF/user_manager.jsp";
     public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
     public static final String ARRAY = "array";
 
-    private UserDao utilisateurDao;
+    private UserDao userDao;
 
     public void init() throws ServletException
     {
         /* Récupération d'une instance de notre DAO Utilisateur */
-        this.utilisateurDao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getUtilisateurDao();
+        this.userDao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getDaoUser();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        UserManagerForm umf = new UserManagerForm(utilisateurDao);
+        UserManagerForm umf = new UserManagerForm(userDao);
         DbContent content = umf.ListUsers(request);
         ArrayList<String[]> tableContent = content.getTableContent();
 
         request.setAttribute(ARRAY, tableContent);
-        this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         
-        UserManagerForm umf = new UserManagerForm(utilisateurDao);
+        UserManagerForm umf = new UserManagerForm(userDao);
         User user = umf.deleteUser(request);
         
         
@@ -57,6 +57,6 @@ public class UserManager extends HttpServlet
         request.setAttribute( ATT_FORM, umf );
         request.setAttribute( ATT_USER, user );
         request.setAttribute(ARRAY, tableContent);
-        this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
+        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }

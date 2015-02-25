@@ -14,7 +14,7 @@ import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.dao.UserDaoImpl;
 
-public final class InscriptionForm
+public final class RegisteringForm
 {
     private static final String FIELD_USERNAME = "username";
     private static final String FIELD_PASSWORD = "password";
@@ -24,27 +24,27 @@ public final class InscriptionForm
     private static final String FIELD_SURNAME = "surname";
     private static final String ALGO_CHIFFREMENT = "SHA-256";
 
-    private String resultat;
-    private Map<String, String> erreurs = new HashMap<String, String>();
+    private String result;
+    private Map<String, String> errors = new HashMap<String, String>();
 
     private UserDao userDao;
 
-    public InscriptionForm(UserDao utilisateurDao)
+    public RegisteringForm(UserDao userDao)
     {
-        this.userDao = utilisateurDao;
+        this.userDao = userDao;
     }
 
-    public String getResultat()
+    public String getResult()
     {
-        return resultat;
+        return result;
     }
 
-    public Map<String, String> getErreurs()
+    public Map<String, String> getErrors()
     {
-        return erreurs;
+        return errors;
     }
 
-    public User inscrireUtilisateur(HttpServletRequest request)
+    public User registerUser(HttpServletRequest request)
     {
         String username = getFieldValue(request, FIELD_USERNAME);
         String password = getFieldValue(request, FIELD_PASSWORD);
@@ -63,19 +63,19 @@ public final class InscriptionForm
             processName(name, user);
             processSurname(surname, user);
 
-            if(erreurs.isEmpty())
+            if(errors.isEmpty())
             {
                 userDao.create(user);
-                resultat = "Succès de l'inscription.";
+                result = "Succès de l'inscription.";
             }
             else
             {
-                resultat = "Échec de l'inscription.";
+                result = "Échec de l'inscription.";
             }
         }
         catch(DAOException e)
         {
-            resultat = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
+            result = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
             e.printStackTrace();
         }
         return user;
@@ -89,7 +89,7 @@ public final class InscriptionForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_USERNAME, e.getMessage());
+            setError(FIELD_USERNAME, e.getMessage());
         }
         user.setUsername(username);
 
@@ -103,8 +103,8 @@ public final class InscriptionForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_PASSWORD, e.getMessage());
-            setErreur(FIELD_CPASSWORD, null);
+            setError(FIELD_PASSWORD, e.getMessage());
+            setError(FIELD_CPASSWORD, null);
         }
 
         /*
@@ -131,7 +131,7 @@ public final class InscriptionForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_MDLID, e.getMessage());
+            setError(FIELD_MDLID, e.getMessage());
         }
         user.setMdlid(mdlid);
 
@@ -145,7 +145,7 @@ public final class InscriptionForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_NAME, e.getMessage());
+            setError(FIELD_NAME, e.getMessage());
         }
         user.setName(name);
 
@@ -159,7 +159,7 @@ public final class InscriptionForm
         }
         catch(FormValidationException e)
         {
-            setErreur(FIELD_SURNAME, e.getMessage());
+            setError(FIELD_SURNAME, e.getMessage());
         }
         user.setSurname(surname);
     }
@@ -266,9 +266,9 @@ public final class InscriptionForm
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur(String champ, String message)
+    private void setError(String field, String message)
     {
-        erreurs.put(champ, message);
+        errors.put(field, message);
     }
 
     /*

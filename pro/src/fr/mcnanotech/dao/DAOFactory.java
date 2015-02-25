@@ -10,11 +10,11 @@ import java.util.Properties;
 public class DAOFactory
 {
 
-    private static final String FICHIER_PROPERTIES = "/fr/mcnanotech/dao/dao.properties";
+    private static final String PROPERTY_FILE = "/fr/mcnanotech/dao/dao.properties";
     private static final String PROPERTY_URL = "url";
     private static final String PROPERTY_DRIVER = "driver";
-    private static final String PROPERTY_NOM_UTILISATEUR = "nomutilisateur";
-    private static final String PROPERTY_MOT_DE_PASSE = "motdepasse";
+    private static final String PROPERTY_USERNAME = "nomutilisateur";
+    private static final String PROPERTY_PASSWORD = "motdepasse";
 
     private String url;
     private String username;
@@ -33,31 +33,31 @@ public class DAOFactory
      */
     public static DAOFactory getInstance() throws DAOConfigurationException
     {
-        Properties properties = new Properties(); // création d'un objet properties -> permet de gerer le fichier de config
+        Properties property = new Properties(); // création d'un objet properties -> permet de gerer le fichier de config
         String url;
         String driver;
         String nomUtilisateur;
         String motDePasse;
         // --------------------------------Recherche et lecture du fichier de configuration------------------------------------
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        InputStream fichierProperties = classLoader.getResourceAsStream(FICHIER_PROPERTIES);
+        InputStream propertyFile = classLoader.getResourceAsStream(PROPERTY_FILE);
 
-        if(fichierProperties == null)
+        if(propertyFile == null)
         {
-            throw new DAOConfigurationException("Le fichier properties " + FICHIER_PROPERTIES + " est introuvable.");
+            throw new DAOConfigurationException("Le fichier properties " + PROPERTY_FILE + " est introuvable.");
         }
 
         try
         {
-            properties.load(fichierProperties);
-            url = properties.getProperty(PROPERTY_URL);
-            driver = properties.getProperty(PROPERTY_DRIVER);
-            nomUtilisateur = properties.getProperty(PROPERTY_NOM_UTILISATEUR);
-            motDePasse = properties.getProperty(PROPERTY_MOT_DE_PASSE);
+            property.load(propertyFile);
+            url = property.getProperty(PROPERTY_URL);
+            driver = property.getProperty(PROPERTY_DRIVER);
+            nomUtilisateur = property.getProperty(PROPERTY_USERNAME);
+            motDePasse = property.getProperty(PROPERTY_PASSWORD);
         }
         catch(IOException e)
         {
-            throw new DAOConfigurationException("Impossible de charger le fichier properties " + FICHIER_PROPERTIES, e);
+            throw new DAOConfigurationException("Impossible de charger le fichier properties " + PROPERTY_FILE, e);
         }
         // ---------------------------------------chargement du driver JDBC--------------------------------------------------------
         try
@@ -84,7 +84,7 @@ public class DAOFactory
      * Méthodes de récupération de l'implémentation des différents DAO (un seul
      * pour le moment)
      */
-    public UserDao getUtilisateurDao()
+    public UserDao getDaoUser()
     {
         return new UserDaoImpl(this);
     }

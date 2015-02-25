@@ -29,28 +29,28 @@
 				<label for="username">Nom d'utilisateur</label> <input type="text"
 					id="username" name="username"
 					value="<c:out value="${utilisateur.username}"/>" size="20"
-					maxlength="20" /> <span class="erreur">${form.erreurs['username']}</span>
+					maxlength="20" /> <span class="erreur">${form.errors['username']}</span>
 				<br /> <label for="password">Mot de passe </label> <input
 					type="password" id="password" name="password" value="" size="20"
-					maxlength="20" /> <span class="erreur">${form.erreurs['password']}</span>
+					maxlength="20" /> <span class="erreur">${form.errors['password']}</span>
 				<br /> <label for="cpassword">Confirmation du mot de passe</label>
 				<input type="password" id="cpassword" name="cpassword" value=""
-					size="20" maxlength="20" /> <span class="erreur">${form.erreurs['cpassword']}</span>
+					size="20" maxlength="20" /> <span class="erreur">${form.errors['cpassword']}</span>
 				<br /> <label for="mdlid">Identifiant MDL</label> <input
 					type="text" id="mdlid" name="mdlid"
 					value="<c:out value="${utilisateur.mdlid}"/>" size="20"
-					maxlength="60" /> <span class="erreur">${form.erreurs['mdlid']}</span>
+					maxlength="60" /> <span class="erreur">${form.errors['mdlid']}</span>
 				<br /> <label for="name">Nom</label> <input type="text" id="name"
 					name="name" value="<c:out value="${utilisateur.name}"/>" size="20"
-					maxlength="60" /> <span class="erreur">${form.erreurs['name']}</span>
+					maxlength="60" /> <span class="erreur">${form.errors['name']}</span>
 				<br /> <label for="surname">Prénom</label> <input type="text"
 					id="surname" name="surname"
 					value="<c:out value="${utilisateur.surname}"/>" size="20"
-					maxlength="60" /> <span class="erreur">${form.erreurs['surname']}</span>
+					maxlength="60" /> <span class="erreur">${form.errors['surname']}</span>
 				<br /> <input type="submit" value="Inscription" class="sansLabel" />
 				<br />
 
-				<p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
+				<p class="${empty form.errors ? 'succes' : 'erreur'}">${form.result}</p>
 			</fieldset>
 		</form>
 		<br>

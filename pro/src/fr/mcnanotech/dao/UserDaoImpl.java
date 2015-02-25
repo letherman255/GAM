@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao
 
     private User findP(String msql, String search) throws DAOException
     {
-        Connection connexion = null;
+        Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         User user = null;
@@ -37,12 +37,12 @@ public class UserDaoImpl implements UserDao
         try
         {
             /* Récupération d'une connexion depuis la Factory */
-            connexion = daoFactory.getConnection();
+            connection = daoFactory.getConnection();
             /*
              * Préparation de la requête avec les objets passés en arguments
              * (ici, uniquement une adresse email) et exécution.
              */
-            preparedStatement = initializePreparedRequest(connexion, sql, false, search);
+            preparedStatement = initializePreparedRequest(connection, sql, false, search);
             resultSet = preparedStatement.executeQuery();
             /* Parcours de la ligne de données retournée dans le ResultSet */
             if(resultSet.next())
@@ -56,7 +56,7 @@ public class UserDaoImpl implements UserDao
         }
         finally
         {
-            silentCloses(resultSet, preparedStatement, connexion);
+            silentCloses(resultSet, preparedStatement, connection);
         }
 
         return user;
