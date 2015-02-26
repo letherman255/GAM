@@ -14,12 +14,12 @@ import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.RegisteringForm;
 
 @SuppressWarnings("serial")
-@WebServlet("/inscription")
+@WebServlet("/administration/inscription")
 public class Inscription extends HttpServlet {
     public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER         = "utilisateur";
     public static final String ATT_FORM         = "form";
-    public static final String VIEW              = "/WEB-INF/inscription.jsp";
+    public static final String VIEW              = "/WEB-INF/administration/inscription.jsp";
 
     private UserDao     userDao;
 

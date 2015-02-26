@@ -17,8 +17,8 @@
 			<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
 			<nav>
 				<ul>
-					<li><a href="/pro/inscription">Inscription</a></li>
-					<li><a href="/pro/usermanager">Gestion utilisateurs</a></li>
+					<li><a href="/pro/administration/inscription">Inscription</a></li>
+					<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
 					<li><a href="#">configuration système</a></li>
 					<li><a href="#">Aide</a></li>
 					<li><a href="/pro/deconnexion">Déconnexion</a></li>

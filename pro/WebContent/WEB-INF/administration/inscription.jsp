@@ -3,18 +3,18 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<link type="text/css" rel="stylesheet" href="<c:url value="/inc/style.css"/>" />
+<link type="text/css" rel="stylesheet" href="<c:url value="../inc/style.css"/>" />
 <title>Inscription</title>
 </head>
 <body>
 	<div class="bloc_page">
 		<header>
-			<img src="inc/banner_admin.jpg" alt="banner.jpg" />
+			<img src="../inc/banner_admin.jpg" alt="banner.jpg" />
 		</header>
 		<nav>
 			<ul>
-				<li><a href="/pro/inscription">Inscription</a></li>
-				<li><a href="/pro/usermanager">Gestion utilisateurs</a></li>
+				<li><a href="/pro/administration/inscription">Inscription</a></li>
+				<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
 				<li><a href="#">configuration système</a></li>
 				<li><a href="#">Aide</a></li>
 				<li><a href="/pro/deconnexion">Déconnexion</a></li>

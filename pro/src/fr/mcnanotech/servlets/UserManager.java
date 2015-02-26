@@ -17,10 +17,10 @@ import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.UserManagerForm;
 
 @SuppressWarnings("serial")
-@WebServlet("/usermanager")
+@WebServlet("/administration/usermanager")
 public class UserManager extends HttpServlet
 {
-    public static final String VIEW = "/WEB-INF/user_manager.jsp";
+    public static final String VIEW = "/WEB-INF/administration/user_manager.jsp";
     public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";

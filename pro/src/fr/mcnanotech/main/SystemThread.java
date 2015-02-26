@@ -12,7 +12,7 @@ public class SystemThread extends Thread
             SystemParam sp = new SystemParam();
             SettingsLoader sl = new SettingsLoader();
             sp = sl.loadParams(sp);
-            System.out.println("le temp quotidien lue est "+sp.getDailyCredit()+" Le Compte administrateur est: "+sp.getAdmin());
+           // System.out.println("le temp quotidien lue est "+sp.getDailyCredit()+" Le Compte administrateur 1 est: "+sp.getAdmin1()+" Le compte administrateur 2 est: "+sp.getAdmin2());
 
             try
             {

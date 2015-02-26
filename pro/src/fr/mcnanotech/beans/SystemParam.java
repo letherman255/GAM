@@ -3,7 +3,8 @@ package fr.mcnanotech.beans;
 public class SystemParam
 {
     private int dailyCredit;
-    private String admin;
+    private String admin1;
+    private String admin2;
 
     public int getDailyCredit()
     {
@@ -15,14 +16,24 @@ public class SystemParam
         this.dailyCredit = dailyCredit;
     }
 
-    public String getAdmin()
+    public String getAdmin1()
     {
-        return admin;
+        return admin1;
     }
 
-    public void setAdmin(String admin)
+    public void setAdmin1(String admin1)
     {
-        this.admin = admin;
+        this.admin1 = admin1;
+    }
+
+    public String getAdmin2()
+    {
+        return admin2;
+    }
+
+    public void setAdmin2(String admin2)
+    {
+        this.admin2 = admin2;
     }
 
 }

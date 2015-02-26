@@ -14,7 +14,8 @@ public class SettingsLoader
 {
     private static final String CREDIT = "credit_quotidien";
     private static final String PROPERTY_FILE = "system.properties";
-    private static final String ADMIN_NAME = "nom_administrateur";
+    private static final String ADMIN1 = "admin1";
+    private static final String ADMIN2 = "admin2";
 
     public SystemParam loadParams(SystemParam sp)
     {
@@ -46,7 +47,8 @@ public class SettingsLoader
         catch(Exception e)
         {}
         sp.setDailyCredit(new Integer(props.getProperty(CREDIT, "1500")));
-        sp.setAdmin(new String(props.getProperty(ADMIN_NAME, "admin")));
+        sp.setAdmin1(new String(props.getProperty(ADMIN1, "admin")));
+        sp.setAdmin2(new String(props.getProperty(ADMIN2, "matthias")));
         try
         {
             is.close();
