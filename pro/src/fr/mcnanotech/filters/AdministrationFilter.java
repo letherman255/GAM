@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter(urlPatterns = "/administration/*")
 public class AdministrationFilter implements Filter
 {
-    public static final String PUBLIC_ACCES = "/";
+    public static final String PUBLIC_ACCES = "/Forbidden.html";
     public static final String IS_ADMIN = "isAdmin";
 
     @Override

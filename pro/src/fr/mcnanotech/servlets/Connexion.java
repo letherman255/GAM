@@ -24,7 +24,9 @@ public class Connexion extends HttpServlet
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
-    public static final String VIEW = "/WEB-INF/connexion.jsp";
+    public static final String VIEW_DEF = "/WEB-INF/connexion.jsp";
+    public static final String VIEW_ADMIN = "/pro/administration/usermanager";
+    public static final String VIEW_USER = "/pro/userinterface";
 
     private UserDao userDao;
 
@@ -37,7 +39,7 @@ public class Connexion extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         /* Affichage de la page de connexion */
-        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        this.getServletContext().getRequestDispatcher(VIEW_DEF).forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -81,7 +83,17 @@ public class Connexion extends HttpServlet
         /* Stockage du formulaire et du bean dans l'objet request */
         request.setAttribute(ATT_FORM, form);
         request.setAttribute(ATT_USER, user);
-
-        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        if(session.getAttribute("isAdmin").equals("true"))
+        {
+            response.sendRedirect(VIEW_ADMIN);
+        }
+        else if(session.getAttribute("isAdmin").equals("false"))
+        {
+            response.sendRedirect(VIEW_USER);
+        }
+        else
+        {
+            this.getServletContext().getRequestDispatcher(VIEW_DEF).forward(request, response);
+        }
     }
 }

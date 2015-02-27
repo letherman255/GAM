@@ -2,6 +2,7 @@
 body,p,legend,label,input {
 	font: normal 8pt verdana, helvetica, sans-serif;
 }
+
 body {
 	background-image: url("bg.jpg");
 	background-attachment: fixed;
@@ -17,17 +18,17 @@ legend {
 	font-weight: bold;
 	color: #0568CD;
 }
-.bloc_page{
+
+.bloc_page {
 	width: 900px;
 	margin: auto;
 	box-shadow: 6px 6px 6px black;
-	background-color:white;
+	background-color: white;
 }
 /*Navigation*/
 nav {
-	width: 800px;
+	width: 870px;
 	margin: auto;
-	
 }
 
 nav ul {
@@ -79,16 +80,56 @@ form .succes {
 table,td,th {
 	border: 1px solid black;
 }
+
 table {
-    border-collapse: collapse;
-    font-size: 200%;
-    width: 99.5%;
-    margin: auto;
+	border-collapse: collapse;
+	font-size: 200%;
+	width: 99.5%;
+	margin: auto;
 }
+
 td {
-    padding: 7px;
+	padding: 7px;
 }
-th{
-	background-color:  #0568CD;
-    color: white;
+
+th {
+	background-color: #0568CD;
+	color: white;
+}
+
+/*Info systeme*/
+#infsys ul {
+	list-style-type: none;
+}
+
+#infsys li {
+	display: inline-block;
+	margin-right: 20px;
+}
+/*Consoles*/
+#cx {
+	width: 848px;
+	margin: auto;
+}
+
+.seb {
+	width: 250px;
+	margin: auto;
+}
+
+li.a {
+	list-style-image: url('inc/stopwatch.png');
+}
+
+li.b {
+	list-style-image: url('inc/stopwatch.png');
+}
+
+li.c {
+	list-style-image: url('inc/stopwatch.png');
+}
+
+.c {
+	display: inline-block;
+	width: 279px;
 }

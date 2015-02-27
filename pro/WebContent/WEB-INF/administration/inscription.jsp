@@ -13,6 +13,7 @@
 		</header>
 		<nav>
 			<ul>
+				<li><a href="/pro/administration/admininterface">Interface Admin</a></li>
 				<li><a href="/pro/administration/inscription">Inscription</a></li>
 				<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
 				<li><a href="#">configuration système</a></li>
