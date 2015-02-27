@@ -1,0 +1,18 @@
+--******************************************************
+--   AADL Standard AADL_V1.0
+--  Appendix A (normative)
+--  Predeclared Property Sets
+--  03Nov04
+--  Updated to reflect current standard & Errata 28Jun06
+--******************************************************
+----------------------------------------------------
+----------------------------------------------------
+property set AADL_Properties is
+  ----------------------------------------------------
+  ----------------------------------------------------
+  Activate_Deadline:  applies to (thread);
+  ----------------------------------------------------
+  Activate_Execution_Time:  applies to (thread);
+  ----------------------------------------------------
+  Activate_Entrypoint: aadlstring  applies to (thread);
+end AADL_Properties;

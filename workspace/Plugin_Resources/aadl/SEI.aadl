@@ -1,0 +1,20 @@
+property set SEI is
+  -- property to support security level analysis
+  SecurityLevel: inherit aadlinteger  applies to (thread, thread group, process, system);
+  SafetyCriticality: aadlinteger  applies to (thread, thread group, process, system);
+  -- property to support analysis of missrate propagation along flows
+  StreamMissRate: aadlreal  applies to (port);
+  -- property to support weight analysis 
+  NetWeight: aadlreal  applies to (system, processor, memory, bus, device);
+  GrossWeight: aadlreal  applies to (system, processor, memory, bus, device);
+  WeightLimit: aadlreal  applies to (system, processor, memory, bus, device);
+  -- properties used in architecturee consistency checker that ensures
+  -- delta based information is communicated with guaranteed delivery
+  -- state data representation
+  DataRepresentation:  applies to (data, port);
+  -- Protocol characteristics
+  -- for connections it represent the desired QoS characteristics
+  ProtocolQoS: list of  applies to (system, bus, connections);
+  -- manual priority assignment for threeads
+  Priority: aadlinteger  applies to (thread);
+end SEI;

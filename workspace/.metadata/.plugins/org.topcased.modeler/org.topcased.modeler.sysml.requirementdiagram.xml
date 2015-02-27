@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PaletteState>
+<entry>
+<entry active="true"/>
+<entry>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+</entry>
+<entry active="false"/>
+</entry>
+<entry expansion="true" extent="119" maximum="119" minimum="0" pinned="false" value="0">
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+</entry>
+<entry expansion="true" extent="257" maximum="257" minimum="0" pinned="false" value="0">
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+</entry>
+<entry expansion="true" extent="190" maximum="190" minimum="0" pinned="false" value="0">
+<entry>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+</entry>
+<entry active="false"/>
+<entry active="false"/>
+<entry active="false"/>
+</entry>
+</PaletteState>
