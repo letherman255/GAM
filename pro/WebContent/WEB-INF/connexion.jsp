@@ -11,10 +11,10 @@
 <body>
 	<div class="bloc_page">
 		<header>
-			<img src="inc/banner_admin.jpg" alt="banner.jpg" />
+			<img src="inc/banner_connect.jpg" alt="banner.jpg" />
 		</header>
 		<c:if test="${!empty sessionScope.sessionUtilisateur}">
-			<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
+			<%-- Si l'utilisateur existe en session, alors on affiche le menu. --%>
 			<nav>
 				<ul>
 					<li><a href="/pro/administration/inscription">Inscription</a></li>

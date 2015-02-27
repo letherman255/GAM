@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 @WebFilter(urlPatterns = "/administration/*")
 public class AdministrationFilter implements Filter
 {
@@ -33,24 +34,29 @@ public class AdministrationFilter implements Filter
         HttpServletResponse response = (HttpServletResponse)res;
 
         /* Récupération de la session depuis la requête */
-        HttpSession session = request.getSession();
+        
+        HttpSession session = request.getSession(false);
 
-        /**
-         * Si l'objet utilisateur n'existe pas dans la session en cours, alors
-         * l'utilisateur n'est pas connecté.
-         */
-        if(session.getAttribute(IS_ADMIN).equals("true"))
+
+        if(session != null)
         {
-            /* Affichage de la page restreinte */
-            chain.doFilter(request, response);
-            
-            
+
+            if(session.getAttribute(IS_ADMIN).equals("true"))
+            {
+                /* Affichage de la page restreinte */
+                chain.doFilter(request, response);
+
+            }
+            else
+            {
+
+                /* Redirection vers la page publique */
+                response.sendRedirect(request.getContextPath() + PUBLIC_ACCES);
+            }
         }
         else
         {
-            
-            /* Redirection vers la page publique */
-            response.sendRedirect(request.getContextPath() + PUBLIC_ACCES);
+            response.sendRedirect(request.getContextPath()+ PUBLIC_ACCES);
         }
     }
 
