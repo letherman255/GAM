@@ -2,7 +2,6 @@ package fr.mcnanotech.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,16 +45,15 @@ public class UserManager extends HttpServlet
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        
+
         UserManagerForm umf = new UserManagerForm(userDao);
         User user = umf.deleteUser(request);
-        
-        
+
         DbContent content = umf.ListUsers(request);
         ArrayList<String[]> tableContent = content.getTableContent();
 
-        request.setAttribute( ATT_FORM, umf );
-        request.setAttribute( ATT_USER, user );
+        request.setAttribute(ATT_FORM, umf);
+        request.setAttribute(ATT_USER, user);
         request.setAttribute(ARRAY, tableContent);
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }

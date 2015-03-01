@@ -38,6 +38,10 @@ public class SystemInfo
     private int c4time = 4;
     private int c5time = 5;
     private int c6time = 6;
+    
+    private int systemUsage = 0;
+    private int dailyCredit = 0;
+    private int nextSystem = 0;
 
     public String getC1aUser()
     {
@@ -337,6 +341,36 @@ public class SystemInfo
     public void setC6time(int c6time)
     {
         this.c6time = c6time;
+    }
+
+    public int getSystemUsage()
+    {
+        return systemUsage;
+    }
+
+    public void setSystemUsage(int systemUsage)
+    {
+        this.systemUsage = systemUsage;
+    }
+
+    public int getDailyCredit()
+    {
+        return dailyCredit;
+    }
+
+    public void setDailyCredit(int dailyCredit)
+    {
+        this.dailyCredit = dailyCredit;
+    }
+
+    public int getNextSystem()
+    {
+        return nextSystem;
+    }
+
+    public void setNextSystem(int nextSystem)
+    {
+        this.nextSystem = nextSystem;
     }
 
 }

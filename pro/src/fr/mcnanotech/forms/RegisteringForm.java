@@ -12,7 +12,6 @@ import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.dao.UserDao;
-import fr.mcnanotech.dao.UserDaoImpl;
 
 public final class RegisteringForm
 {

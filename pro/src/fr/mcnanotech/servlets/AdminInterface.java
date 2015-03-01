@@ -20,7 +20,6 @@ public class AdminInterface extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         SystemInfo si = SystemThread.getInfo();
-        System.out.println(si.getC1time());
         request.setAttribute("si", si);
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }

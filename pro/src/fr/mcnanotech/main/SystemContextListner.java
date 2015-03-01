@@ -22,9 +22,7 @@ public class SystemContextListner implements ServletContextListener
         servletContext.setAttribute(ATT_DAO_FACTORY, this.daoFactory);
         
         SystemThread thread = new SystemThread();
-        System.out.println("lancement du thread !");
         thread.start();
-        System.out.println("Thread lance");
 
     }
 

@@ -2,8 +2,10 @@ package fr.mcnanotech.configloader;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -25,7 +27,7 @@ public class SettingsLoader
         // First try loading from the current directory
         try
         {
-            File f = new File("system.properties");
+            File f = new File(PROPERTY_FILE);
             is = new FileInputStream(f);
         }
         catch(Exception e)
@@ -43,24 +45,35 @@ public class SettingsLoader
 
             // Try loading properties from the file (if found)
             props.load(is);
-        }
-        catch(Exception e)
-        {}
-        sp.setDailyCredit(new Integer(props.getProperty(CREDIT, "1500")));
-        sp.setAdmin1(new String(props.getProperty(ADMIN1, "admin")));
-        sp.setAdmin2(new String(props.getProperty(ADMIN2, "matthias")));
-        try
-        {
             is.close();
         }
-        catch(IOException e)
+        catch(Exception e)
+        {
+
+        }
+
+        sp.setDailyCredit(new Integer(props.getProperty(CREDIT, "2300")));
+        sp.setAdmin1(new String(props.getProperty(ADMIN1, "admin")));
+        sp.setAdmin2(new String(props.getProperty(ADMIN2, "matthias")));
+
+        return sp;
+    }
+
+    public void saveParamChanges(SystemParam sp)
+    {
+        try
+        {
+            Properties props = new Properties();
+            props.setProperty(CREDIT, Integer.toString(sp.getDailyCredit()));
+            props.setProperty(ADMIN2, sp.getAdmin2());
+            props.setProperty(ADMIN1, sp.getAdmin1());
+            File f = new File(PROPERTY_FILE);
+            OutputStream out = new FileOutputStream(f);
+            props.store(out, "This is an optional header comment string");
+        }
+        catch(Exception e)
         {
             e.printStackTrace();
         }
-        return sp;
-
-        // serverAddr = props.getProperty("ServerAddress", "192.168.0.1");
-        // serverPort = new Integer(props.getProperty("ServerPort", "8080"));
-        // threadCnt = new Integer(props.getProperty("ThreadCount", "5"));
     }
 }

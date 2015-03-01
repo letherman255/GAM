@@ -10,7 +10,12 @@ public class SystemThread extends Thread
 
     public void run()
     {
-
+        SystemParam sp = new SystemParam();
+        SettingsLoader sl = new SettingsLoader();    
+        sp = sl.loadParams(sp);   //fill system param bean with the config
+        sl.saveParamChanges(sp);  // save the file with the read config. If the file dosent exists, create one with the default variables.
+        
+        si.setDailyCredit(sp.getDailyCredit());
         int i = 0;
 
         while(true)
@@ -18,9 +23,6 @@ public class SystemThread extends Thread
             i++;
             si.setC1time(i);
             si.setC1aUser("matthias");
-            SystemParam sp = new SystemParam();
-            SettingsLoader sl = new SettingsLoader();
-            sp = sl.loadParams(sp);
             // System.out.println("le temp quotidien lue est "+sp.getDailyCredit()+" Le Compte administrateur 1 est: "+sp.getAdmin1()+" Le compte administrateur 2 est: "+sp.getAdmin2());
 
             try

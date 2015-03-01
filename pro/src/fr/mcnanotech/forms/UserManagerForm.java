@@ -3,7 +3,6 @@ package fr.mcnanotech.forms;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;

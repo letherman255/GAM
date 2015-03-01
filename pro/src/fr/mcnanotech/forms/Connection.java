@@ -103,7 +103,6 @@ public final class Connection
             {
                 throw new FormValidationException("Nom D'utilisateur inconut.");
             }
-            System.out.println("username: "+ username);
         }
         else
         {

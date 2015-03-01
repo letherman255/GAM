@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -16,8 +16,8 @@
 			<li><a href="/pro/administration/admininterface">Interface
 					Admin</a></li>
 			<li><a href="/pro/administration/inscription">Inscription</a></li>
-			<li><a href="/pro/administration/usermanager">Gestionutilisateurs</a></li>
-			<li><a href="#">configuration système</a></li>
+			<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
+			<li><a href="/pro/administration/systemconfig">configuration système</a></li>
 			<li><a href="#">Aide</a></li>
 			<li><a href="/pro/deconnexion">Déconnexion</a></li>
 		</ul>
@@ -26,9 +26,9 @@
 		<div id="infsys">
 			<h1>Info Système</h1>
 			<ul>
-				<li>Utilisation des consoles: null/16</li>
-				<li>Temps quotidien: null</li>
-				<li>Prochaine console disponible dans: null</li>
+				<li>Utilisation des consoles: ${ si.systemUsage }/16</li>
+				<li>Temps quotidien: ${ si.dailyCredit }</li>
+				<li>Prochaine console disponible dans: ${ si.nextSystem }</li>
 			</ul>
 		</div>
 		<article> <br>
