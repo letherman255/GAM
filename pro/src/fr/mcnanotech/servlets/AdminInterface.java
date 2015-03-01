@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.mcnanotech.beans.SystemInfo;
+import fr.mcnanotech.main.SystemThread;
+
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/administration/admininterface")
 public class AdminInterface extends HttpServlet
@@ -16,11 +19,9 @@ public class AdminInterface extends HttpServlet
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        SystemInfo si = SystemThread.getInfo();
+        System.out.println(si.getC1time());
+        request.setAttribute("si", si);
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-
     }
 }
