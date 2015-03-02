@@ -74,6 +74,7 @@ public class Connexion extends HttpServlet
             {
                 session.setAttribute("isAdmin", "false");
             }
+            session.setAttribute("username", user.getUsername());
         }
         else
         {

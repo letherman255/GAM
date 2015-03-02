@@ -3,22 +3,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link type="text/css" rel="stylesheet"href="<c:url value="../inc/style.css"/>" />
+<link type="text/css" rel="stylesheet"
+	href="<c:url value="../inc/style.css"/>" />
 <title>Gestion des utilisateurs</title>
 </head>
 <body>
 	<div class="bloc_page">
-		<header> <img src="../inc/banner_admin.jpg" alt="banner.jpg" />
+		<header>
+			<img src="../inc/banner_admin.jpg" alt="banner.jpg" />
 		</header>
 		<nav>
-		<ul>
-			<li><a href="/pro/administration/admininterface">Interface Admin</a></li>
-			<li><a href="/pro/administration/inscription">Inscription</a></li>
-			<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
-			<li><a href="/pro/administration/systemconfig">configuration système</a></li>
-			<li><a href="#">Aide</a></li>
-			<li><a href="/pro/deconnexion">Déconnexion</a></li>
-		</ul>
+			<ul>
+				<li><a href="/pro/administration/admininterface">Interface
+						Admin</a></li>
+				<li><a href="/pro/administration/inscription">Inscription</a></li>
+				<li><a href="/pro/administration/usermanager">Gestion
+						utilisateurs</a></li>
+				<li><a href="/pro/administration/systemconfig">configuration
+						système</a></li>
+				<li><a href="#">Aide</a></li>
+				<li><a href="/pro/deconnexion">Déconnexion</a></li>
+			</ul>
 		</nav>
 		<hr>
 		<form method="post" action="usermanager">
@@ -26,8 +31,7 @@
 				<legend>Outils</legend>
 				<label for="mdlid">Supprimer l'utilisateur</label> <input
 					type="text" id="mdlid" name="mdlid" size="20" maxlength="60">
-				<span class="erreur">${form.errors['mdlid']}</span><br> <br>
-				<input type="submit" value="Supprimer" class="sansLabel" /><br>
+				<input type="submit" value="Supprimer" /> <span class="erreur">${form.errors['mdlid']}</span><br>
 
 			</fieldset>
 		</form>

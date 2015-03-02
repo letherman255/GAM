@@ -1,6 +1,9 @@
 package fr.mcnanotech.servlets;
 
 import java.io.IOException;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,35 +18,62 @@ import fr.mcnanotech.forms.RegisteringForm;
 
 @SuppressWarnings("serial")
 @WebServlet("/administration/inscription")
-public class Inscription extends HttpServlet {
+public class Inscription extends HttpServlet
+{
     public static final String CONF_DAO_FACTORY = "daofactory";
-    public static final String ATT_USER         = "utilisateur";
-    public static final String ATT_FORM         = "form";
-    public static final String VIEW              = "/WEB-INF/administration/inscription.jsp";
+    public static final String ATT_USER = "utilisateur";
+    public static final String ATT_FORM = "form";
+    public static final String VIEW = "/WEB-INF/administration/inscription.jsp";
 
-    private UserDao     userDao;
+    private UserDao userDao;
 
-    public void init() throws ServletException {
+    public void init() throws ServletException
+    {
         /* Récupération d'une instance de notre DAO Utilisateur */
-        this.userDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getDaoUser();
+        this.userDao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getDaoUser();
     }
 
-    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         /* Affichage de la page d'inscription */
-        this.getServletContext().getRequestDispatcher( VIEW ).forward( request, response );
+        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 
-    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         /* Préparation de l'objet formulaire */
-        RegisteringForm form = new RegisteringForm( userDao );
+        RegisteringForm form = new RegisteringForm(userDao);
+        Enumeration<?> e = getServletContext().getAttributeNames();
+        while(e.hasMoreElements())
+        {
+            String name = (String)e.nextElement();
+
+            // Get the value of the attribute
+            Object value = getServletContext().getAttribute(name);
+
+            if(value instanceof Map)
+            {
+                for(Map.Entry<?, ?> entry : ((Map<?, ?>)value).entrySet())
+                {
+                    System.out.println(entry.getKey() + "=" + entry.getValue());
+                }
+            }
+            else if(value instanceof List)
+            {
+                for(Object element : (List)value)
+                {
+                    System.out.println(element);
+                }
+            }
+        }
 
         /* Traitement de la requête et récupération du bean en résultant */
-        User user = form.registerUser( request );
+        User user = form.registerUser(request);
 
         /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( ATT_FORM, form );
-        request.setAttribute( ATT_USER, user );
+        request.setAttribute(ATT_FORM, form);
+        request.setAttribute(ATT_USER, user);
 
-        this.getServletContext().getRequestDispatcher( VIEW ).forward( request, response );
+        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }

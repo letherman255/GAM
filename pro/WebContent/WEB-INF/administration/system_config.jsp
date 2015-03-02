@@ -31,8 +31,8 @@
 				<legend>Configuration Système</legend>
 				<label for="dailyCredit">Crédit quotidien (min)</label> <input
 					type="number" id="dailyCredit" name="dailyCredit" size="20"
-					maxlength="60"> <span class="erreur">${form.errors['dailyCredit']}</span><br>
-				<br> <input type="submit" value="valider" class="sansLabel" /><br>
+					maxlength="60"> <input type="submit" value="valider" />
+				<span class="erreur">${form.errors['dailyCredit']}</span>
 			</fieldset>
 		</form>
 		<br>
