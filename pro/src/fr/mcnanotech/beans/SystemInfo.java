@@ -2,35 +2,35 @@ package fr.mcnanotech.beans;
 
 public class SystemInfo
 {
-    private String c1aUser = "c1aUser";
-    private String c1bUser = "c1bUser";
-    private String c1cUser = "c1aUser";
-    private String c1dUser = "c1dUser";
+    private String c1aUser;
+    private String c1bUser;
+    private String c1cUser;
+    private String c1dUser;
 
-    private String c2aUser = "c2aUser";
-    private String c2bUser = "c2bUser";
-    private String c2cUser = "c2cUser";
-    private String c2dUser = "c2dUser";
+    private String c2aUser;
+    private String c2bUser;
+    private String c2cUser;
+    private String c2dUser;
 
-    private String c3aUser = "c3aUser";
-    private String c3bUser = "c3bUser";
-    private String c3cUser = "c3cUser";
-    private String c3dUser = "c3dUser";
+    private String c3aUser;
+    private String c3bUser;
+    private String c3cUser;
+    private String c3dUser;
 
-    private String c4aUser = "c4aUser";
-    private String c4bUser = "c4bUser";
-    private String c4cUser = "c4cUser";
-    private String c4dUser = "c4dUser";
+    private String c4aUser;
+    private String c4bUser;
+    private String c4cUser;
+    private String c4dUser;
 
-    private String c5aUser = "c5aUser";
-    private String c5bUser = "c5bUser";
-    private String c5cUser = "c5cUser";
-    private String c5dUser = "c5dUser";
+    private String c5aUser;
+    private String c5bUser;
+    private String c5cUser;
+    private String c5dUser;
 
-    private String c6aUser = "c6aUser";
-    private String c6bUser = "c6bUser";
-    private String c6cUser = "c6cUser";
-    private String c6dUser = "c6dUser";
+    private String c6aUser;
+    private String c6bUser;
+    private String c6cUser;
+    private String c6dUser;
 
     private int c1time = 1;
     private int c2time = 2;
@@ -38,7 +38,7 @@ public class SystemInfo
     private int c4time = 4;
     private int c5time = 5;
     private int c6time = 6;
-    
+
     private int systemUsage = 0;
     private int dailyCredit = 0;
     private int nextSystem = 0;

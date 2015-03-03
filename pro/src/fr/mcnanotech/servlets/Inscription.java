@@ -1,9 +1,6 @@
 package fr.mcnanotech.servlets;
 
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,30 +40,6 @@ public class Inscription extends HttpServlet
     {
         /* Préparation de l'objet formulaire */
         RegisteringForm form = new RegisteringForm(userDao);
-        Enumeration<?> e = getServletContext().getAttributeNames();
-        while(e.hasMoreElements())
-        {
-            String name = (String)e.nextElement();
-
-            // Get the value of the attribute
-            Object value = getServletContext().getAttribute(name);
-
-            if(value instanceof Map)
-            {
-                for(Map.Entry<?, ?> entry : ((Map<?, ?>)value).entrySet())
-                {
-                    System.out.println(entry.getKey() + "=" + entry.getValue());
-                }
-            }
-            else if(value instanceof List)
-            {
-                for(Object element : (List)value)
-                {
-                    System.out.println(element);
-                }
-            }
-        }
-
         /* Traitement de la requête et récupération du bean en résultant */
         User user = form.registerUser(request);
 

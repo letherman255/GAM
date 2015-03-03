@@ -50,8 +50,8 @@
 						<option value="sys2">Xbox 2</option>
 						<option value="sys3">Xbox 3</option>
 						<option value="sys4">Xbox 4</option>
-						<option value="sys4">Xbox 5</option>
-						<option value="sys4">Xbox 6</option>
+						<option value="sys5">Xbox 5</option>
+						<option value="sys6">Xbox 6</option>
 					</select> <select id="peripheral" name="peripheral">
 						<option value="sysa">Manette 1</option>
 						<option value="sysb">Manette 2</option>

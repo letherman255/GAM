@@ -24,10 +24,7 @@ public class SystemThread extends Thread
 
         while(true)
         {
-            if(si.getC1aUser(.equals(obj)))
-            {
-                
-            }
+
         }
 
     }
