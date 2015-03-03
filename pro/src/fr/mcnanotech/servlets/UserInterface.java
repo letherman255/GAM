@@ -25,6 +25,7 @@ public class UserInterface extends HttpServlet
     private static final String ATT_FORM = "userinterface";
     private static final String ATT_SYSTEMUSER = "systemuser";
     private static final String INF_SYSTEMUSER = "systemuserinf";
+    private static final String ATT_IN_GAME = "isingame";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
@@ -38,8 +39,11 @@ public class UserInterface extends HttpServlet
     {
         UserInterfaceForm userinterfaceform = new UserInterfaceForm();
         SystemUser systemuser = userinterfaceform.play(request);
-        SystemUser systemuserinf = SystemThread.getUserInfo(request.getSession().getAttribute("username").toString());
+        HttpSession session = request.getSession();
+        SystemUser systemuserinf = SystemThread.getUserInfo(session.getAttribute("username").toString());
+        session.setAttribute(ATT_IN_GAME, "true");
 
+       
         request.setAttribute(ATT_FORM, userinterfaceform);
         request.setAttribute(ATT_SYSTEMUSER, systemuser);
         request.setAttribute(INF_SYSTEMUSER, systemuserinf);

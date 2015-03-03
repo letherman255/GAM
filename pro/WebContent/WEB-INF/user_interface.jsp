@@ -40,6 +40,7 @@
 				</tr>
 			</table>
 			<br>
+			<c:if test="${sessionScope.isingame eq 'false' }">
 			<fieldset>
 				<legend>Jouer</legend>
 				<form method="post" action="userinterface">
@@ -61,13 +62,17 @@
 				</form>
 			</fieldset>
 			<br>
+			</c:if>
+			<c:if test="${sessionScope.isingame eq 'true' }">
 			<fieldset>
 				<legend>Jouer</legend>
 
 			
-				<button onclick="window.location.href='userinterface'" class="bcenter">Arreter de jouer</button>
+				<button onclick="window.location.href='stop'" class="bcenter">Arreter de jouer</button>
 
 			</fieldset>
+			<br>
+			</c:if>
 		</div>
 		<br>
 </body>

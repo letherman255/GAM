@@ -27,6 +27,7 @@ public class Connexion extends HttpServlet
     public static final String VIEW_DEF = "/WEB-INF/connexion.jsp";
     public static final String VIEW_ADMIN = "/pro/administration/admininterface";
     public static final String VIEW_USER = "/pro/userinterface";
+    private static final String ATT_IN_GAME = "isingame";
 
     private UserDao userDao;
 
@@ -75,6 +76,7 @@ public class Connexion extends HttpServlet
                 session.setAttribute("isAdmin", "false");
             }
             session.setAttribute("username", user.getUsername());
+            session.setAttribute(ATT_IN_GAME, "false");
         }
         else
         {

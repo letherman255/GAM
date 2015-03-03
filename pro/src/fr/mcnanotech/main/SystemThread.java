@@ -20,24 +20,14 @@ public class SystemThread extends Thread
         settingsloader.saveParamChanges(systemparam);  // save the file with the read config. If the file dosent exists, create one with the default variables.
         
         si.setDailyCredit(systemparam.getDailyCredit());
-        int i = 0;
+        
 
         while(true)
         {
-            i++;
-            si.setC1time(i);
-            si.setC1aUser("matthias");
-            // System.out.println("le temp quotidien lue est "+sp.getDailyCredit()+" Le Compte administrateur 1 est: "+sp.getAdmin1()+" Le compte administrateur 2 est: "+sp.getAdmin2());
-
-            try
+            if(si.getC1aUser(.equals(obj)))
             {
-                sleep(5000);
+                
             }
-            catch(InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-
         }
 
     }
@@ -45,6 +35,11 @@ public class SystemThread extends Thread
     public static SystemInfo getInfo()
     {
         return si;
+    }
+    
+    public static void setInfo(SystemInfo systeminfo)
+    {
+        si = systeminfo;
     }
     
     public static SystemUser getUserInfo(String username)
