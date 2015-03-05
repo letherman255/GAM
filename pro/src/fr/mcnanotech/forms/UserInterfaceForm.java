@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import fr.mcnanotech.beans.SystemInfo;
 import fr.mcnanotech.beans.SystemUser;
+import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.main.SystemThread;
 
 /**
@@ -22,8 +23,15 @@ public class UserInterfaceForm
     private static final String SYSTEM = "system";
     private static final String PERIHERAL = "peripheral";
     private static final String ATT_IN_GAME = "isingame";
+    private static final String USERNAME = "username";
+    private UserDao userDao;
     private String result;
     private Map<String, String> errors = new HashMap<String, String>();
+
+    public UserInterfaceForm(UserDao userdao)
+    {
+        this.userDao = userdao;
+    }
 
     public String getResult()
     {
@@ -35,7 +43,16 @@ public class UserInterfaceForm
         return errors;
     }
 
-    public SystemUser play(HttpServletRequest request)
+    /**
+     * Verifys the system (available, enough credit, not null) and sets SystemUser if no exception is found.
+     * An exception will cause the SystemUser to be deleted and the FormValidation Exception will be stored
+     * in the Errors map.
+     * 
+     * @param request
+     * @param userdao
+     * @return systemUser
+     */
+    public SystemUser play(HttpServletRequest request, UserDao userdao)
     {
         HttpSession session = request.getSession();
         SystemInfo si = SystemThread.getInfo();
@@ -46,7 +63,7 @@ public class UserInterfaceForm
         SystemUser systemuser = new SystemUser();
         try
         {
-            verifySystem(system, peripheral, si, session);
+            verifySystem(system, peripheral, si, session, userdao);
         }
         catch(FormValidationException e)
         {
@@ -57,7 +74,7 @@ public class UserInterfaceForm
             systemuser.setSystem(system);
             systemuser.setPeripheral(peripheral);
 
-            setSystemController(si, system, peripheral, request.getSession().getAttribute("username").toString(), session);
+            setSystemController(si, system, peripheral, request.getSession().getAttribute(USERNAME).toString(), session);
             SystemThread.setInfo(si);
             session.setAttribute(ATT_IN_GAME, "true");
         }
@@ -68,15 +85,43 @@ public class UserInterfaceForm
         return systemuser;
     }
 
-    /**Will test ifthe system is busy, if the system is not null and if the session is already using a system. If 
+    public SystemUser getinfo(HttpServletRequest request, UserDao userDao)
+    {
+
+        HttpSession session = request.getSession();
+        SystemInfo si = SystemThread.getInfo();
+        String username = session.getAttribute(USERNAME).toString();
+        String system = getFieldValue(request, SYSTEM);
+        String peripheral = getFieldValue(request, PERIHERAL);
+        int credit = userDao.find(session.getAttribute(USERNAME).toString(), USERNAME).getCredit();
+        int creditPercentage = 0;
+        int maxcredit = si.getDailyCredit();
+        SystemUser systemuser = new SystemUser();
+
+        creditPercentage = constrainp(100 * credit / maxcredit);
+
+        systemuser.setUsername(username);
+        systemuser.setSystem(system);
+        systemuser.setPeripheral(peripheral);
+        systemuser.setCreditLeft(credit);
+        systemuser.setCreditPercentage(creditPercentage);
+
+        return systemuser;
+    }
+
+    /**
+     * Will test ifthe system is busy, if the system is not null and if the session is already using a system. If
      * false, will send out custom exceptions.
+     * 
      * @param system
      * @param peripheral
-     * @param si : SystemInfo
-     * @param session : HttpSession
+     * @param si
+     *            : SystemInfo
+     * @param session
+     *            : HttpSession
      * @throws FormValidationException
      */
-    private void verifySystem(String system, String peripheral, SystemInfo si, HttpSession session) throws FormValidationException
+    private void verifySystem(String system, String peripheral, SystemInfo si, HttpSession session, UserDao userDao) throws FormValidationException
     {
         if(system != null)
         {
@@ -92,6 +137,10 @@ public class UserInterfaceForm
         if(session.getAttribute(ATT_IN_GAME).equals("true"))
         {
             throw new FormValidationException("Ce compte est déja en jeu.");
+        }
+        if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 5)
+        {
+            throw new FormValidationException("Vous n'avez pas assez de crédit pour commencer à jouer !");
         }
 
     }
@@ -572,5 +621,24 @@ public class UserInterfaceForm
             }
         }
         return null;
+    }
+
+    /**
+     * constrain a value between 0-100
+     * 
+     * @param percentage
+     * @return
+     */
+    private int constrainp(int percentage)
+    {
+        if(percentage < 0)
+        {
+            percentage = 0;
+        }
+        else if(percentage > 100)
+        {
+            percentage = 100;
+        }
+        return percentage;
     }
 }

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.mcnanotech.beans.SystemUser;
+import fr.mcnanotech.dao.DAOFactory;
+import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.FormValidationException;
 import fr.mcnanotech.forms.UserInterfaceForm;
 import fr.mcnanotech.main.SystemThread;
@@ -23,11 +25,21 @@ public class UserInterface extends HttpServlet
     private static final String ATT_SYSTEMUSER = "systemuser";
     private static final String INF_SYSTEMUSER = "systemuserinf";
     private static final String ATT_IN_GAME = "isingame";
+    public static final String CONF_DAO_FACTORY = "daofactory";
+
+    private UserDao userDao;
+
+    public void init() throws ServletException
+    {
+        /* Récupération d'une instance de notre DAO Utilisateur */
+        this.userDao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getDaoUser();
+    }
+
+    UserInterfaceForm userinterfaceform = new UserInterfaceForm(userDao);
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-        HttpSession session = request.getSession();
-        SystemUser systemuserinf = SystemThread.getUserInfo(request.getSession().getAttribute("username").toString());
+        SystemUser systemuserinf = userinterfaceform.getinfo(request, userDao);
         request.setAttribute(INF_SYSTEMUSER, systemuserinf);
 
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
@@ -35,10 +47,10 @@ public class UserInterface extends HttpServlet
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        UserInterfaceForm userinterfaceform = new UserInterfaceForm();
-        SystemUser systemuser = userinterfaceform.play(request);
-        HttpSession session = request.getSession();
-        SystemUser systemuserinf = SystemThread.getUserInfo(session.getAttribute("username").toString());
+
+        SystemUser systemuser = userinterfaceform.play(request, userDao);
+
+        SystemUser systemuserinf = userinterfaceform.getinfo(request, userDao);
 
         request.setAttribute(ATT_FORM, userinterfaceform);
         request.setAttribute(ATT_SYSTEMUSER, systemuser);

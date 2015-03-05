@@ -8,6 +8,17 @@ public class User
     private String mdlid;
     private String name;
     private String Surname;
+    private int credit;
+
+    public int getCredit()
+    {
+        return credit;
+    }
+
+    public void setCredit(int credit)
+    {
+        this.credit = credit;
+    }
 
     public Long getId()
     {

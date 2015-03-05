@@ -42,6 +42,7 @@
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th>Nom d'utilisateur</th>
+				<th>Crédit (min)</th>
 			</tr>
 			<c:forEach var="i" items="${array}">
 				<tr>

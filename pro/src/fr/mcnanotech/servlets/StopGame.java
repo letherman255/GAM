@@ -18,16 +18,12 @@ import fr.mcnanotech.main.SystemThread;
 @WebServlet(urlPatterns = "/stop")
 public class StopGame extends HttpServlet
 {
-    private static final String VIEW = "/WEB-INF/user_interface.jsp";
-    private static final String INF_SYSTEMUSER = "systemuserinf";
+    private static final String VIEW = "/pro/userinterface";
     private static final String ATT_IN_GAME = "isingame";
     private static final String SYSTEM = "system";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-        System.out.println("je suis executé");
-        SystemUser systemuserinf = SystemThread.getUserInfo(request.getSession().getAttribute("username").toString());
-        request.setAttribute(INF_SYSTEMUSER, systemuserinf);
         HttpSession session = request.getSession();
         
         if(session.getAttribute(ATT_IN_GAME).equals("true"))
@@ -44,7 +40,7 @@ public class StopGame extends HttpServlet
 
         
 
-        this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        response.sendRedirect(VIEW);
     }
 
     private void killUser(String system, SystemInfo si)

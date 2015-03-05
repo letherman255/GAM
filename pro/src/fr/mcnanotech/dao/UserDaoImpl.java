@@ -24,16 +24,16 @@ public class UserDaoImpl implements UserDao
     public User find(String search, String msql) throws DAOException
     {
 
-        return findP(msql, search);
+        return findP(search, msql);
     }
 
-    private User findP(String msql, String search) throws DAOException
+    private User findP(String search, String msql) throws DAOException
     {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         User user = null;
-        String sql = "SELECT id, username, password, mdlid, name, surname FROM users WHERE " + msql + " = ?";
+        String sql = "SELECT id, username, password, mdlid, name, surname, credit FROM users WHERE " + msql + " = ?";
         try
         {
             /* RÃ©cupÃ©ration d'une connexion depuis la Factory */
@@ -71,7 +71,7 @@ public class UserDaoImpl implements UserDao
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sql2 = "SELECT username, mdlid, name, surname FROM users;";
+        String sql2 = "SELECT username, mdlid, name, surname, credit FROM users;";
         try
         {
             /* RÃ©cupÃ©ration d'une connexion depuis la Factory */
@@ -89,7 +89,8 @@ public class UserDaoImpl implements UserDao
                 String mdlid = resultSet.getInt("mdlid") + "";
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
-                String[] temp = {(String)mdlid, name, surname, username,};
+                String credit = resultSet.getInt("credit")+"";
+                String[] temp = {(String)mdlid, name, surname, username,credit};
                 dtableContent.add(temp);
             }
         }
@@ -135,7 +136,7 @@ public class UserDaoImpl implements UserDao
         }
     }
 
-    private static final String SQL_INSERT = "INSERT INTO users (username, password, mdlid, name, surname) VALUES (?, ?, ?, ?,?)";
+    private static final String SQL_INSERT = "INSERT INTO users (username, password, mdlid, name, surname, credit) VALUES (?, ?, ?, ?,?,?)";
 
     /* Implémentation de la méthode définie dans l'interface UtilisateurDao */
     @Override
@@ -149,7 +150,7 @@ public class UserDaoImpl implements UserDao
         {
             /* Récupération d'une connexion depuis la Factory */
             connexion = daoFactory.getConnection();
-            preparedStatement = initializePreparedRequest(connexion, SQL_INSERT, true, user.getUsername(), user.getPassword(), user.getMdlid(), user.getName(), user.getSurname());
+            preparedStatement = initializePreparedRequest(connexion, SQL_INSERT, true, user.getUsername(), user.getPassword(), user.getMdlid(), user.getName(), user.getSurname(), user.getCredit());
             int status = preparedStatement.executeUpdate();
             /* Analyse du statut retourné par la requête d'insertion */
             if(status == 0)
@@ -192,6 +193,7 @@ public class UserDaoImpl implements UserDao
         user.setMdlid(resultSet.getString("mdlid"));
         user.setName(resultSet.getString("name"));
         user.setSurname(resultSet.getString("surname"));
+        user.setCredit(resultSet.getInt("credit"));
         return user;
     }
 

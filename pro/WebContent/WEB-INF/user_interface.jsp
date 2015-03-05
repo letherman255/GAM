@@ -35,43 +35,46 @@
 						</div>
 					</td>
 					<td>${ systemuserinf.creditLeft }</td>
-					<td>${ systemuserinf.peripheral }</td>
+					<c:if test="${sessionScope.isingame eq 'true' }"><td>${ systemuserinf.system } + ${ systemuserinf.peripheral }</td></c:if>
+					<c:if test="${sessionScope.isingame eq 'false' }"><td>Aucun</td></c:if>
 					<td>${ systemuserinf.username }</td>
 				</tr>
 			</table>
 			<br>
 			<c:if test="${sessionScope.isingame eq 'false' }">
-			<fieldset>
-				<legend>Jouer</legend>
-				<form method="post" action="userinterface">
+				<fieldset>
+					<legend>Jouer</legend>
+					<form method="post" action="userinterface">
 
-					<label for="system">Console et Manette</label> <select id="system" name="system">
-						<option value="sys1">Xbox 1</option>
-						<option value="sys2">Xbox 2</option>
-						<option value="sys3">Xbox 3</option>
-						<option value="sys4">Xbox 4</option>
-						<option value="sys5">Xbox 5</option>
-						<option value="sys6">Xbox 6</option>
-					</select> <select id="peripheral" name="peripheral">
-						<option value="sysa">Manette 1</option>
-						<option value="sysb">Manette 2</option>
-						<option value="sysc">Manette 3</option>
-						<option value="sysd">Manette 4</option>
-					</select> <input type="submit" value="Jouer" /><span class="erreur">${form.errors['system']}</span><br>
+						<label for="system">Console et Manette</label> <select id="system"
+							name="system">
+							<option value="sys1">Xbox 1</option>
+							<option value="sys2">Xbox 2</option>
+							<option value="sys3">Xbox 3</option>
+							<option value="sys4">Xbox 4</option>
+							<option value="sys5">Xbox 5</option>
+							<option value="sys6">Xbox 6</option>
+						</select> <select id="peripheral" name="peripheral">
+							<option value="sysa">Manette 1</option>
+							<option value="sysb">Manette 2</option>
+							<option value="sysc">Manette 3</option>
+							<option value="sysd">Manette 4</option>
+						</select> <input type="submit" value="Jouer" /><span class="erreur">${form.errors['system']}</span><br>
 
-				</form>
-			</fieldset>
-			<br>
+					</form>
+				</fieldset>
+				<br>
 			</c:if>
 			<c:if test="${sessionScope.isingame eq 'true' }">
-			<fieldset>
-				<legend>Jouer</legend>
+				<fieldset>
+					<legend>Jouer</legend>
 
-			
-				<button onclick="window.location.href='stop'" class="bcenter">Arreter de jouer</button>
 
-			</fieldset>
-			<br>
+					<button onclick="window.location.href='stop'" class="bcenter">Arreter
+						de jouer</button>
+
+				</fieldset>
+				<br>
 			</c:if>
 		</div>
 		<br>
