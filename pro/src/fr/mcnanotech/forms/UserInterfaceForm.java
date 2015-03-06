@@ -6,9 +6,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import fr.mcnanotech.beans.SystemInfo;
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.dao.UserDao;
+import fr.mcnanotech.main.SystemStatus;
 import fr.mcnanotech.main.SystemThread;
 
 /**
@@ -55,15 +55,14 @@ public class UserInterfaceForm
     public SystemUser play(HttpServletRequest request, UserDao userdao)
     {
         HttpSession session = request.getSession();
-        SystemInfo si = SystemThread.getInfo();
+        SystemStatus st = SystemThread.getInfo();
 
-        String system = getFieldValue(request, SYSTEM);
-        String peripheral = getFieldValue(request, PERIHERAL);
+        String system = toSystem(getFieldValue(request, SYSTEM), getFieldValue(request, PERIHERAL));
 
         SystemUser systemuser = new SystemUser();
         try
         {
-            verifySystem(system, peripheral, si, session, userdao);
+            verifySystem(system, st, session, userdao);
         }
         catch(FormValidationException e)
         {
@@ -71,12 +70,11 @@ public class UserInterfaceForm
         }
         if(errors.isEmpty())
         {
-            systemuser.setSystem(system);
-            systemuser.setPeripheral(peripheral);
 
-            setSystemController(si, system, peripheral, request.getSession().getAttribute(USERNAME).toString(), session);
-            SystemThread.setInfo(si);
+            st.setUser(session.getAttribute(USERNAME).toString(), system);
+            SystemThread.setInfo(st);
             session.setAttribute(ATT_IN_GAME, "true");
+
         }
         else
         {
@@ -89,25 +87,23 @@ public class UserInterfaceForm
     {
 
         HttpSession session = request.getSession();
-        SystemInfo si = SystemThread.getInfo();
+        SystemStatus st = SystemThread.getInfo();
         String username = session.getAttribute(USERNAME).toString();
-        String system = getFieldValue(request, SYSTEM);
-        String peripheral = getFieldValue(request, PERIHERAL);
         int credit = userDao.find(session.getAttribute(USERNAME).toString(), USERNAME).getCredit();
         int creditPercentage = 0;
-        int maxcredit = si.getDailyCredit();
+        int maxcredit = st.getDailyCredit();
         SystemUser systemuser = new SystemUser();
 
         creditPercentage = constrainp(100 * credit / maxcredit);
 
+        systemuser.setSystem(toSystem(getFieldValue(request, SYSTEM), getFieldValue(request, PERIHERAL)));
         systemuser.setUsername(username);
-        systemuser.setSystem(system);
-        systemuser.setPeripheral(peripheral);
         systemuser.setCreditLeft(credit);
         systemuser.setCreditPercentage(creditPercentage);
 
         return systemuser;
     }
+
 
     /**
      * Will test ifthe system is busy, if the system is not null and if the session is already using a system. If
@@ -121,13 +117,14 @@ public class UserInterfaceForm
      *            : HttpSession
      * @throws FormValidationException
      */
-    private void verifySystem(String system, String peripheral, SystemInfo si, HttpSession session, UserDao userDao) throws FormValidationException
+    private void verifySystem(String system, SystemStatus st, HttpSession session, UserDao userDao) throws FormValidationException
     {
         if(system != null)
         {
-            if(isBusy(si, system, peripheral))
+
+            if(st.whoIsUsing(system) != null)
             {
-                throw new FormValidationException("Cette xbox est déja occupée.");
+                throw new FormValidationException("Cette xbox est déja occupée par " + st.whoIsUsing(system) + ".");
             }
         }
         else
@@ -170,453 +167,137 @@ public class UserInterfaceForm
         }
     }
 
-    private void setSystemController(SystemInfo si, String system, String peripheral, String username, HttpSession session)
-    {
-        if(system.equals("sys1"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC1aUser(username);
-                session.setAttribute(SYSTEM, "c1aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC1bUser(username);
-                session.setAttribute(SYSTEM, "c1bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC1cUser(username);
-                session.setAttribute(SYSTEM, "c1aUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC1dUser(username);
-                session.setAttribute(SYSTEM, "c1dUser");
-            }
-        }
-        if(system.equals("sys2"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC2aUser(username);
-                session.setAttribute(SYSTEM, "c2aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC2bUser(username);
-                session.setAttribute(SYSTEM, "c2bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC2cUser(username);
-                session.setAttribute(SYSTEM, "c2cUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC2dUser(username);
-                session.setAttribute(SYSTEM, "c2dUser");
-            }
-        }
-        if(system.equals("sys3"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC3aUser(username);
-                session.setAttribute(SYSTEM, "c3aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC3bUser(username);
-                session.setAttribute(SYSTEM, "c3bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC3cUser(username);
-                session.setAttribute(SYSTEM, "c3cUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC3dUser(username);
-                session.setAttribute(SYSTEM, "c3dUser");
-            }
-        }
-        if(system.equals("sys4"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC4aUser(username);
-                session.setAttribute(SYSTEM, "c4aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC4bUser(username);
-                session.setAttribute(SYSTEM, "c4bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC4cUser(username);
-                session.setAttribute(SYSTEM, "c4cUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC4dUser(username);
-                session.setAttribute(SYSTEM, "c4dUser");
-            }
-        }
-        if(system.equals("sys5"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC5aUser(username);
-                session.setAttribute(SYSTEM, "c5aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC5bUser(username);
-                session.setAttribute(SYSTEM, "c5bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC5cUser(username);
-                session.setAttribute(SYSTEM, "c5cUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC5dUser(username);
-                session.setAttribute(SYSTEM, "c5dUser");
-            }
-        }
-        if(system.equals("sys6"))
-        {
-
-            if(peripheral.equals("sysa"))
-            {
-                si.setC6aUser(username);
-                session.setAttribute(SYSTEM, "c6aUser");
-            }
-            if(peripheral.equals("sysb"))
-            {
-                si.setC6bUser(username);
-                session.setAttribute(SYSTEM, "c6bUser");
-            }
-            if(peripheral.equals("sysc"))
-            {
-                si.setC6cUser(username);
-                session.setAttribute(SYSTEM, "c6cUser");
-            }
-            if(peripheral.equals("sysd"))
-            {
-                si.setC6dUser(username);
-                session.setAttribute(SYSTEM, "c6dUser");
-            }
-        }
-
-    }
-
     /**
-     * Returns true if the given system is in use.
+     * Returns the system string based on the given system and peripheral.
      * 
-     * @param si
-     *            :Object to look for.
      * @param system
-     *            :System to look on.
+     *            String
      * @param peripheral
-     *            :Peripheral to look on.
-     * @return : True or false
+     *            String
+     * @return System String
      */
-    private Boolean isBusy(SystemInfo si, String system, String peripheral)
+    private String toSystem(String system, String peripheral)
     {
-        if(system.equals("sys1"))
+        if(system != null)
         {
+            if(system.equals("sys1"))
+            {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC1aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "1a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "1b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC1bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "1c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
+                    return "1d";
                 }
             }
-            if(peripheral.equals("sysc"))
+            if(system.equals("sys2"))
             {
-                if(si.getC1cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC1dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        if(system.equals("sys2"))
-        {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC2aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "2a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "2b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC2bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "2c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
+                    return "2d";
                 }
             }
-            if(peripheral.equals("sysc"))
+            if(system.equals("sys3"))
             {
-                if(si.getC2cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC2dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        if(system.equals("sys3"))
-        {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC3aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "3a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "3b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC3bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "3c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
+                    return "3d";
                 }
             }
-            if(peripheral.equals("sysc"))
+            if(system.equals("sys4"))
             {
-                if(si.getC3cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC3dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        if(system.equals("sys4"))
-        {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC4aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "4a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "4b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC4bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "4c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
+                    return "4d";
                 }
             }
-            if(peripheral.equals("sysc"))
+            if(system.equals("sys5"))
             {
-                if(si.getC4cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC4dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        if(system.equals("sys5"))
-        {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC5aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "5a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "5b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC5bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "5c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
+                    return "5d";
                 }
             }
-            if(peripheral.equals("sysc"))
+            if(system.equals("sys6"))
             {
-                if(si.getC5cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC5dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        if(system.equals("sys6"))
-        {
 
-            if(peripheral.equals("sysa"))
-            {
-                if(si.getC6aUser() != null)
+                if(peripheral.equals("sysa"))
                 {
-                    return true;
+                    return "6a";
                 }
-                else
+                if(peripheral.equals("sysb"))
                 {
-                    return false;
+                    return "6b";
                 }
-            }
-            if(peripheral.equals("sysb"))
-            {
-                if(si.getC6bUser() != null)
+                if(peripheral.equals("sysc"))
                 {
-                    return true;
+                    return "6c";
                 }
-                else
+                if(peripheral.equals("sysd"))
                 {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysc"))
-            {
-                if(si.getC6cUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            if(peripheral.equals("sysd"))
-            {
-                if(si.getC6dUser() != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    return "6d";
                 }
             }
         }

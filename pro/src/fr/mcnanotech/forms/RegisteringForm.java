@@ -45,9 +45,9 @@ public final class RegisteringForm
 
     public User registerUser(HttpServletRequest request)
     {
-        String username = getFieldValue(request, FIELD_USERNAME);
-        String password = getFieldValue(request, FIELD_PASSWORD);
-        String cpassword = getFieldValue(request, FIELD_CPASSWORD);
+        String username = getFieldValue(request, FIELD_USERNAME).toLowerCase();
+        String password = getFieldValue(request, FIELD_PASSWORD).toLowerCase();
+        String cpassword = getFieldValue(request, FIELD_CPASSWORD).toLowerCase();
         String mdlid = getFieldValue(request, FIELD_MDLID);
         String name = getFieldValue(request, FIELD_NAME);
         String surname = getFieldValue(request, FIELD_SURNAME);

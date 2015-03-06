@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.mcnanotech.beans.SystemInfo;
+import fr.mcnanotech.main.SystemStatus;
 import fr.mcnanotech.main.SystemThread;
 
 @SuppressWarnings("serial")
@@ -19,8 +19,8 @@ public class AdminInterface extends HttpServlet
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        SystemInfo si = SystemThread.getInfo();
-        request.setAttribute("si", si);
+        SystemStatus st = SystemThread.getInfo();
+        request.setAttribute("st", st);
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }
 }

@@ -52,18 +52,18 @@ public final class Connection
         {
             setError(FIELD_USERNAME, e.getMessage());
         }
-        user.setUsername(username);
+        user.setUsername(username.toLowerCase());
 
         /* Validation du champ mot de passe. */
         try
         {
-            verifyAcces(username, password);
+            verifyAcces(username, password.toLowerCase());
         }
         catch(Exception e)
         {
             setError(FIELD_PASSWORD, e.getMessage());
         }
-        user.setPassword(password);
+        user.setPassword(password.toLowerCase());
 
         /* Initialisation du résultat global de la validation. */
         if(errors.isEmpty())

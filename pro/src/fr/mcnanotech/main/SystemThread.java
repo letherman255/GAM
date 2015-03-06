@@ -1,15 +1,13 @@
 package fr.mcnanotech.main;
 
 import java.util.Random;
-
-import fr.mcnanotech.beans.SystemInfo;
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.configloader.SettingsLoader;
 
 public class SystemThread extends Thread
 {
-    static SystemInfo si = new SystemInfo();
+    static SystemStatus st = new SystemStatus();
 
     public void run()
     {
@@ -19,7 +17,8 @@ public class SystemThread extends Thread
         systemparam = settingsloader.loadParams(systemparam);   //fill system param bean with the config
         settingsloader.saveParamChanges(systemparam);  // save the file with the read config. If the file dosent exists, create one with the default variables.
         
-        si.setDailyCredit(systemparam.getDailyCredit());
+        st.setDailyCredit(systemparam.getDailyCredit());
+ 
         
 
         while(true)
@@ -29,14 +28,16 @@ public class SystemThread extends Thread
 
     }
 
-    public static SystemInfo getInfo()
+
+   
+    public static SystemStatus getInfo()
     {
-        return si;
+        return st;
     }
     
-    public static void setInfo(SystemInfo systeminfo)
+    public static void setInfo(SystemStatus systemstatus)
     {
-        si = systeminfo;
+        st = systemstatus;
     }
     
     public static SystemUser getUserInfo(String username)

@@ -15,6 +15,8 @@ import fr.mcnanotech.configloader.SettingsLoader;
 import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
 import fr.mcnanotech.forms.Connection;
+import fr.mcnanotech.main.SystemStatus;
+import fr.mcnanotech.main.SystemThread;
 
 @SuppressWarnings("serial")
 @WebServlet("/connexion")
@@ -28,6 +30,7 @@ public class Connexion extends HttpServlet
     public static final String VIEW_ADMIN = "/pro/administration/admininterface";
     public static final String VIEW_USER = "/pro/userinterface";
     private static final String ATT_IN_GAME = "isingame";
+    private static final String USERNAME = "username";
 
     private UserDao userDao;
 
@@ -40,11 +43,13 @@ public class Connexion extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         /* Affichage de la page de connexion */
+
         this.getServletContext().getRequestDispatcher(VIEW_DEF).forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        SystemStatus st = SystemThread.getInfo();
         /* Pr�paration de l'objet formulaire */
         Connection form = new Connection(userDao);
 
@@ -76,7 +81,17 @@ public class Connexion extends HttpServlet
                 session.setAttribute("isAdmin", "false");
             }
             session.setAttribute("username", user.getUsername());
-            session.setAttribute(ATT_IN_GAME, "false");
+
+            if(st.isAlreadyInGame(session.getAttribute(USERNAME).toString()))
+            {
+                session.setAttribute(ATT_IN_GAME, "true");
+
+            }
+            else
+            {
+                session.setAttribute(ATT_IN_GAME, "false");
+
+            }
         }
         else
         {

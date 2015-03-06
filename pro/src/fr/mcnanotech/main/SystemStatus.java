@@ -1,0 +1,1106 @@
+package fr.mcnanotech.main;
+
+public class SystemStatus
+{
+    private String c1aUser;
+    private String c1bUser;
+    private String c1cUser;
+    private String c1dUser;
+
+    private String c2aUser;
+    private String c2bUser;
+    private String c2cUser;
+    private String c2dUser;
+
+    private String c3aUser;
+    private String c3bUser;
+    private String c3cUser;
+    private String c3dUser;
+
+    private String c4aUser;
+    private String c4bUser;
+    private String c4cUser;
+    private String c4dUser;
+
+    private String c5aUser;
+    private String c5bUser;
+    private String c5cUser;
+    private String c5dUser;
+
+    private String c6aUser;
+    private String c6bUser;
+    private String c6cUser;
+    private String c6dUser;
+
+    private int c1time = 1;
+    private int c2time = 2;
+    private int c3time = 3;
+    private int c4time = 4;
+    private int c5time = 5;
+    private int c6time = 6;
+
+    private int systemUsage = 0;
+    private int dailyCredit = 0;
+    private int nextSystem = 0;
+
+    /**
+     * Set the given system's user.
+     * 
+     * @param String
+     *            username
+     * @param String
+     *            system ex 1a; 1b; 1b; 1c; 1d; 2a ...
+     */
+    public void setUser(String username, String system)
+    {
+        if(system.equals("1a"))
+        {
+            c1aUser = username;
+        }
+        if(system.equals("1b"))
+        {
+            c1bUser = username;
+        }
+        if(system.equals("1c"))
+        {
+            c1cUser = username;
+        }
+        if(system.equals("1d"))
+        {
+            c1dUser = username;
+        }
+
+        // ----------------------------------------
+        if(system.equals("2a"))
+        {
+            c2aUser = username;
+        }
+        if(system.equals("2b"))
+        {
+            c2bUser = username;
+        }
+        if(system.equals("2c"))
+        {
+            c2cUser = username;
+        }
+        if(system.equals("2d"))
+        {
+            c2dUser = username;
+        }
+
+        // ----------------------------------------
+        if(system.equals("3a"))
+        {
+            c3aUser = username;
+        }
+        if(system.equals("3b"))
+        {
+            c3bUser = username;
+        }
+        if(system.equals("3c"))
+        {
+            c3cUser = username;
+        }
+        if(system.equals("3d"))
+        {
+            c3dUser = username;
+        }
+
+        // ----------------------------------------
+        if(system.equals("4a"))
+        {
+            c4aUser = username;
+        }
+        if(system.equals("4b"))
+        {
+            c4bUser = username;
+        }
+        if(system.equals("4c"))
+        {
+            c4cUser = username;
+        }
+        if(system.equals("4d"))
+        {
+            c4dUser = username;
+        }
+
+        // ----------------------------------------
+        if(system.equals("5a"))
+        {
+            c5aUser = username;
+        }
+        if(system.equals("5b"))
+        {
+            c5bUser = username;
+        }
+        if(system.equals("5c"))
+        {
+            c5cUser = username;
+        }
+        if(system.equals("5d"))
+        {
+            c5dUser = username;
+        }
+
+        // ----------------------------------------
+
+        if(system.equals("6a"))
+        {
+            c6aUser = username;
+        }
+        if(system.equals("6b"))
+        {
+            c6bUser = username;
+        }
+        if(system.equals("6c"))
+        {
+            c6cUser = username;
+        }
+        if(system.equals("6d"))
+        {
+            c6dUser = username;
+        }
+
+    }
+
+    /**
+     * Sets the user of the given system to null.
+     * 
+     * @param system
+     *            String ex 1a; 1b; 1b; 1c; 1d; 2a ...
+     */
+    public void killUserBySystem(String system)
+    {
+        if(system.equals("1a"))
+        {
+            c1aUser = null;
+        }
+        if(system.equals("1b"))
+        {
+            c1bUser = null;
+        }
+        if(system.equals("1c"))
+        {
+            c1cUser = null;
+        }
+        if(system.equals("1d"))
+        {
+            c1dUser = null;
+        }
+
+        // ----------------------------------------
+        if(system.equals("2a"))
+        {
+            c2aUser = null;
+        }
+        if(system.equals("2b"))
+        {
+            c2bUser = null;
+        }
+        if(system.equals("2c"))
+        {
+            c2cUser = null;
+        }
+        if(system.equals("2d"))
+        {
+            c2dUser = null;
+        }
+
+        // ----------------------------------------
+        if(system.equals("3a"))
+        {
+            c3aUser = null;
+        }
+        if(system.equals("3b"))
+        {
+            c3bUser = null;
+        }
+        if(system.equals("3c"))
+        {
+            c3cUser = null;
+        }
+        if(system.equals("3d"))
+        {
+            c3dUser = null;
+        }
+
+        // ----------------------------------------
+        if(system.equals("4a"))
+        {
+            c4aUser = null;
+        }
+        if(system.equals("4b"))
+        {
+            c4bUser = null;
+        }
+        if(system.equals("4c"))
+        {
+            c4cUser = null;
+        }
+        if(system.equals("4d"))
+        {
+            c4dUser = null;
+        }
+
+        // ----------------------------------------
+        if(system.equals("5a"))
+        {
+            c5aUser = null;
+        }
+        if(system.equals("5b"))
+        {
+            c5bUser = null;
+        }
+        if(system.equals("5c"))
+        {
+            c5cUser = null;
+        }
+        if(system.equals("5d"))
+        {
+            c5dUser = null;
+        }
+
+        // ----------------------------------------
+
+        if(system.equals("6a"))
+        {
+            c6aUser = null;
+        }
+        if(system.equals("6b"))
+        {
+            c6bUser = null;
+        }
+        if(system.equals("6c"))
+        {
+            c6cUser = null;
+        }
+        if(system.equals("6d"))
+        {
+            c6dUser = null;
+        }
+
+    }
+
+    /**
+     * Set the systems with this user to null.
+     * 
+     * @param String
+     *            username
+     */
+    public void killUserByUsername(String username)
+    {
+        if(c1aUser != null)
+        {
+            if(c1aUser.equals(username))
+            {
+                c1aUser = null;
+            }
+        }
+        if(c1bUser != null)
+        {
+            if(c1bUser.equals(username))
+            {
+                c1bUser = null;
+            }
+        }
+        if(c1cUser != null)
+        {
+            if(c1cUser.equals(username))
+            {
+                c1cUser = null;
+            }
+        }
+        if(c1dUser != null)
+        {
+            if(c1dUser.equals(username))
+            {
+                c1dUser = null;
+            }
+        }
+
+        // --------------------------------
+        if(c2aUser != null)
+        {
+            if(c2aUser.equals(username))
+            {
+                c2aUser = null;
+            }
+        }
+        if(c2bUser != null)
+        {
+            if(c2bUser.equals(username))
+            {
+                c2bUser = null;
+            }
+        }
+        if(c2cUser != null)
+        {
+            if(c2cUser.equals(username))
+            {
+                c2cUser = null;
+            }
+        }
+        if(c2dUser != null)
+        {
+            if(c2dUser.equals(username))
+            {
+                c2dUser = null;
+            }
+        }
+        // --------------------------------
+        if(c3aUser != null)
+        {
+            if(c3aUser.equals(username))
+            {
+                c3aUser = null;
+            }
+        }
+        if(c3bUser != null)
+        {
+            if(c3bUser.equals(username))
+            {
+                c3bUser = null;
+            }
+        }
+        if(c3cUser != null)
+        {
+            if(c3cUser.equals(username))
+            {
+                c3cUser = null;
+            }
+        }
+        if(c3dUser != null)
+        {
+            if(c3dUser.equals(username))
+            {
+                c3dUser = null;
+            }
+        }
+        // --------------------------------
+        if(c4aUser != null)
+        {
+            if(c4aUser.equals(username))
+            {
+                c4aUser = null;
+            }
+        }
+        if(c4bUser != null)
+        {
+            if(c4bUser.equals(username))
+            {
+                c4bUser = null;
+            }
+        }
+        if(c4cUser != null)
+        {
+            if(c4cUser.equals(username))
+            {
+                c4cUser = null;
+            }
+        }
+        if(c4dUser != null)
+        {
+            if(c4dUser.equals(username))
+            {
+                c4dUser = null;
+            }
+        }
+        // --------------------------------
+        if(c5aUser != null)
+        {
+            if(c5aUser.equals(username))
+            {
+                c5aUser = null;
+            }
+        }
+        if(c5bUser != null)
+        {
+            if(c5bUser.equals(username))
+            {
+                c5bUser = null;
+            }
+        }
+        if(c5cUser != null)
+        {
+            if(c5cUser.equals(username))
+            {
+                c5cUser = null;
+            }
+        }
+        if(c5dUser != null)
+        {
+            if(c5dUser.equals(username))
+            {
+                c5dUser = null;
+            }
+        }
+        // --------------------------------
+        if(c6aUser != null)
+        {
+            if(c6aUser.equals(username))
+            {
+                c6aUser = null;
+            }
+        }
+        if(c6bUser != null)
+        {
+            if(c6bUser.equals(username))
+            {
+                c6bUser = null;
+            }
+        }
+        if(c6cUser != null)
+        {
+            if(c6cUser.equals(username))
+            {
+                c6cUser = null;
+            }
+        }
+        if(c6dUser != null)
+        {
+            if(c6dUser.equals(username))
+            {
+                c6dUser = null;
+            }
+        }
+
+    }
+
+    /**
+     * Returns the user of a given system.
+     * 
+     * @param system
+     *            String ex 1a; 1b; 1b; 1c; 1d; 2a ...
+     * @return String
+     */
+    public String whoIsUsing(String system)
+    {
+        if(system.equals("1a"))
+        {
+            return c1aUser;
+        }
+        if(system.equals("1b"))
+        {
+            return c1bUser;
+        }
+        if(system.equals("1c"))
+        {
+            return c1cUser;
+        }
+        if(system.equals("1d"))
+        {
+            return c1dUser;
+        }
+
+        // ----------------------------------------
+        if(system.equals("2a"))
+        {
+            return c2aUser;
+        }
+        if(system.equals("2b"))
+        {
+            return c2bUser;
+        }
+        if(system.equals("2c"))
+        {
+            return c2cUser;
+        }
+        if(system.equals("2d"))
+        {
+            return c2dUser;
+        }
+
+        // ----------------------------------------
+        if(system.equals("3a"))
+        {
+            return c3aUser;
+        }
+        if(system.equals("3b"))
+        {
+            return c3bUser;
+        }
+        if(system.equals("3c"))
+        {
+            return c3cUser;
+        }
+        if(system.equals("3d"))
+        {
+            return c3dUser;
+        }
+
+        // ----------------------------------------
+        if(system.equals("4a"))
+        {
+            return c4aUser;
+        }
+        if(system.equals("4b"))
+        {
+            return c4bUser;
+        }
+        if(system.equals("4c"))
+        {
+            return c4cUser;
+        }
+        if(system.equals("4d"))
+        {
+            return c4dUser;
+        }
+
+        // ----------------------------------------
+        if(system.equals("5a"))
+        {
+            return c5aUser;
+        }
+        if(system.equals("5b"))
+        {
+            return c5bUser;
+        }
+        if(system.equals("5c"))
+        {
+            return c5cUser;
+        }
+        if(system.equals("5d"))
+        {
+            return c5dUser;
+        }
+
+        // ----------------------------------------
+
+        if(system.equals("6a"))
+        {
+            return c6aUser;
+        }
+        if(system.equals("6b"))
+        {
+            return c6bUser;
+        }
+        if(system.equals("6c"))
+        {
+            return c6cUser;
+        }
+        if(system.equals("6d"))
+        {
+            return c6dUser;
+        }
+
+        return null;
+    }
+
+    /**
+     * Returns true if a given user is already in game.
+     * 
+     * @param String
+     *            username
+     * @return Boolean
+     */
+    public boolean isAlreadyInGame(String username)
+    {
+        if(c1aUser != null)
+        {
+            if(c1aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c1bUser != null)
+        {
+            if(c1bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c1cUser != null)
+        {
+            if(c1cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c1dUser != null)
+        {
+            if(c1dUser.equals(username))
+            {
+                return true;
+            }
+        }
+
+        // -------------------------
+        if(c2aUser != null)
+        {
+            if(c2aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c2bUser != null)
+        {
+            if(c2bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c2cUser != null)
+        {
+            if(c2cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c2dUser != null)
+        {
+            if(c2dUser.equals(username))
+            {
+                return true;
+            }
+        }
+        // -------------------------
+        if(c3aUser != null)
+        {
+            if(c3aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c3bUser != null)
+        {
+            if(c3bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c3cUser != null)
+        {
+            if(c3cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c3dUser != null)
+        {
+            if(c3dUser.equals(username))
+            {
+                return true;
+            }
+        }
+        // -------------------------
+        if(c4aUser != null)
+        {
+            if(c4aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c4bUser != null)
+        {
+            if(c4bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c4cUser != null)
+        {
+            if(c4cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c4dUser != null)
+        {
+            if(c4dUser.equals(username))
+            {
+                return true;
+            }
+        }
+        // -------------------------
+        if(c5aUser != null)
+        {
+            if(c5aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c5bUser != null)
+        {
+            if(c5bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c5cUser != null)
+        {
+            if(c5cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c5dUser != null)
+        {
+            if(c5dUser.equals(username))
+            {
+                return true;
+            }
+        }
+        // -------------------------
+        if(c6aUser != null)
+        {
+            if(c6aUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c6bUser != null)
+        {
+            if(c6bUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c6cUser != null)
+        {
+            if(c6cUser.equals(username))
+            {
+                return true;
+            }
+        }
+        if(c6dUser != null)
+        {
+            if(c6dUser.equals(username))
+            {
+                return true;
+            }
+        }
+        // -------------------------
+        return false;
+    }
+
+    public String getC1aUser()
+    {
+        return c1aUser;
+    }
+
+    public void setC1aUser(String c1aUser)
+    {
+        this.c1aUser = c1aUser;
+    }
+
+    public String getC1bUser()
+    {
+        return c1bUser;
+    }
+
+    public void setC1bUser(String c1bUser)
+    {
+        this.c1bUser = c1bUser;
+    }
+
+    public String getC1cUser()
+    {
+        return c1cUser;
+    }
+
+    public void setC1cUser(String c1cUser)
+    {
+        this.c1cUser = c1cUser;
+    }
+
+    public String getC1dUser()
+    {
+        return c1dUser;
+    }
+
+    public void setC1dUser(String c1dUser)
+    {
+        this.c1dUser = c1dUser;
+    }
+
+    public String getC2aUser()
+    {
+        return c2aUser;
+    }
+
+    public void setC2aUser(String c2aUser)
+    {
+        this.c2aUser = c2aUser;
+    }
+
+    public String getC2bUser()
+    {
+        return c2bUser;
+    }
+
+    public void setC2bUser(String c2bUser)
+    {
+        this.c2bUser = c2bUser;
+    }
+
+    public String getC2cUser()
+    {
+        return c2cUser;
+    }
+
+    public void setC2cUser(String c2cUser)
+    {
+        this.c2cUser = c2cUser;
+    }
+
+    public String getC2dUser()
+    {
+        return c2dUser;
+    }
+
+    public void setC2dUser(String c2dUser)
+    {
+        this.c2dUser = c2dUser;
+    }
+
+    public String getC3aUser()
+    {
+        return c3aUser;
+    }
+
+    public void setC3aUser(String c3aUser)
+    {
+        this.c3aUser = c3aUser;
+    }
+
+    public String getC3bUser()
+    {
+        return c3bUser;
+    }
+
+    public void setC3bUser(String c3bUser)
+    {
+        this.c3bUser = c3bUser;
+    }
+
+    public String getC3cUser()
+    {
+        return c3cUser;
+    }
+
+    public void setC3cUser(String c3cUser)
+    {
+        this.c3cUser = c3cUser;
+    }
+
+    public String getC3dUser()
+    {
+        return c3dUser;
+    }
+
+    public void setC3dUser(String c3dUser)
+    {
+        this.c3dUser = c3dUser;
+    }
+
+    public String getC4aUser()
+    {
+        return c4aUser;
+    }
+
+    public void setC4aUser(String c4aUser)
+    {
+        this.c4aUser = c4aUser;
+    }
+
+    public String getC4bUser()
+    {
+        return c4bUser;
+    }
+
+    public void setC4bUser(String c4bUser)
+    {
+        this.c4bUser = c4bUser;
+    }
+
+    public String getC4cUser()
+    {
+        return c4cUser;
+    }
+
+    public void setC4cUser(String c4cUser)
+    {
+        this.c4cUser = c4cUser;
+    }
+
+    public String getC4dUser()
+    {
+        return c4dUser;
+    }
+
+    public void setC4dUser(String c4dUser)
+    {
+        this.c4dUser = c4dUser;
+    }
+
+    public String getC5aUser()
+    {
+        return c5aUser;
+    }
+
+    public void setC5aUser(String c5aUser)
+    {
+        this.c5aUser = c5aUser;
+    }
+
+    public String getC5bUser()
+    {
+        return c5bUser;
+    }
+
+    public void setC5bUser(String c5bUser)
+    {
+        this.c5bUser = c5bUser;
+    }
+
+    public String getC5cUser()
+    {
+        return c5cUser;
+    }
+
+    public void setC5cUser(String c5cUser)
+    {
+        this.c5cUser = c5cUser;
+    }
+
+    public String getC5dUser()
+    {
+        return c5dUser;
+    }
+
+    public void setC5dUser(String c5dUser)
+    {
+        this.c5dUser = c5dUser;
+    }
+
+    public String getC6aUser()
+    {
+        return c6aUser;
+    }
+
+    public void setC6aUser(String c6aUser)
+    {
+        this.c6aUser = c6aUser;
+    }
+
+    public String getC6bUser()
+    {
+        return c6bUser;
+    }
+
+    public void setC6bUser(String c6bUser)
+    {
+        this.c6bUser = c6bUser;
+    }
+
+    public String getC6cUser()
+    {
+        return c6cUser;
+    }
+
+    public void setC6cUser(String c6cUser)
+    {
+        this.c6cUser = c6cUser;
+    }
+
+    public String getC6dUser()
+    {
+        return c6dUser;
+    }
+
+    public void setC6dUser(String c6dUser)
+    {
+        this.c6dUser = c6dUser;
+    }
+
+    public int getC1time()
+    {
+        return c1time;
+    }
+
+    public void setC1time(int c1time)
+    {
+        this.c1time = c1time;
+    }
+
+    public int getC2time()
+    {
+        return c2time;
+    }
+
+    public void setC2time(int c2time)
+    {
+        this.c2time = c2time;
+    }
+
+    public int getC3time()
+    {
+        return c3time;
+    }
+
+    public void setC3time(int c3time)
+    {
+        this.c3time = c3time;
+    }
+
+    public int getC4time()
+    {
+        return c4time;
+    }
+
+    public void setC4time(int c4time)
+    {
+        this.c4time = c4time;
+    }
+
+    public int getC5time()
+    {
+        return c5time;
+    }
+
+    public void setC5time(int c5time)
+    {
+        this.c5time = c5time;
+    }
+
+    public int getC6time()
+    {
+        return c6time;
+    }
+
+    public void setC6time(int c6time)
+    {
+        this.c6time = c6time;
+    }
+
+    public int getSystemUsage()
+    {
+        return systemUsage;
+    }
+
+    public void setSystemUsage(int systemUsage)
+    {
+        this.systemUsage = systemUsage;
+    }
+
+    public int getDailyCredit()
+    {
+        return dailyCredit;
+    }
+
+    public void setDailyCredit(int dailyCredit)
+    {
+        this.dailyCredit = dailyCredit;
+    }
+
+    public int getNextSystem()
+    {
+        return nextSystem;
+    }
+
+    public void setNextSystem(int nextSystem)
+    {
+        this.nextSystem = nextSystem;
+    }
+
+}
