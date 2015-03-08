@@ -55,7 +55,7 @@ public class UserInterface extends HttpServlet
         request.setAttribute(ATT_FORM, userinterfaceform);
         request.setAttribute(ATT_SYSTEMUSER, systemuser);
         request.setAttribute(INF_SYSTEMUSER, systemuserinf);
-
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
+        userinterfaceform.getErrors().clear();
     }
 }

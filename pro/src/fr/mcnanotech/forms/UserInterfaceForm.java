@@ -60,6 +60,11 @@ public class UserInterfaceForm
         String system = toSystem(getFieldValue(request, SYSTEM), getFieldValue(request, PERIHERAL));
 
         SystemUser systemuser = new SystemUser();
+
+        for(Map.Entry<String, String> entry : errors.entrySet())
+        {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
         try
         {
             verifySystem(system, st, session, userdao);
@@ -104,7 +109,6 @@ public class UserInterfaceForm
         return systemuser;
     }
 
-
     /**
      * Will test ifthe system is busy, if the system is not null and if the session is already using a system. If
      * false, will send out custom exceptions.
@@ -124,6 +128,7 @@ public class UserInterfaceForm
 
             if(st.whoIsUsing(system) != null)
             {
+                System.out.println("le systeme choisit est " + system);
                 throw new FormValidationException("Cette xbox est déja occupée par " + st.whoIsUsing(system) + ".");
             }
         }
@@ -137,6 +142,7 @@ public class UserInterfaceForm
         }
         if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 5)
         {
+            System.out.println("crédit = " + userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit());
             throw new FormValidationException("Vous n'avez pas assez de crédit pour commencer à jouer !");
         }
 

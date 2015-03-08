@@ -102,7 +102,7 @@
 
 
 					<button onclick="window.location.href='stop'" class="bcenter">Arreter
-						de jouer</button>
+						de jouer</button><br><span class="erreur">${form.errors['system']}</span>
 
 				</fieldset>
 				<br>
