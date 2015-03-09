@@ -46,8 +46,20 @@ public final class RegisteringForm
     public User registerUser(HttpServletRequest request)
     {
         String username = getFieldValue(request, FIELD_USERNAME).toLowerCase();
+        if (username != null)
+        {
+        	username = username.toLowerCase();
+        }
         String password = getFieldValue(request, FIELD_PASSWORD).toLowerCase();
+        if(password != null)
+        {
+        	password = password.toLowerCase();
+        }
         String cpassword = getFieldValue(request, FIELD_CPASSWORD).toLowerCase();
+        if(cpassword != null)
+        {
+        	cpassword = cpassword.toLowerCase();
+        }
         String mdlid = getFieldValue(request, FIELD_MDLID);
         String name = getFieldValue(request, FIELD_NAME);
         String surname = getFieldValue(request, FIELD_SURNAME);
@@ -65,16 +77,16 @@ public final class RegisteringForm
             if(errors.isEmpty())
             {
                 userDao.create(user);
-                result = "Succès de l'inscription.";
+                result = "Succï¿½s de l'inscription.";
             }
             else
             {
-                result = "Échec de l'inscription.";
+                result = "ï¿½chec de l'inscription.";
             }
         }
         catch(DAOException e)
         {
-            result = "Échec de l'inscription : une erreur imprévue est survenue, merci de réessayer dans quelques instants.";
+            result = "ï¿½chec de l'inscription : une erreur imprï¿½vue est survenue, merci de rï¿½essayer dans quelques instants.";
             e.printStackTrace();
         }
         return user;
@@ -107,11 +119,11 @@ public final class RegisteringForm
         }
 
         /*
-         * Utilisation de la bibliothèque Jasypt pour chiffrer le mot de passe
+         * Utilisation de la bibliothï¿½que Jasypt pour chiffrer le mot de passe
          * efficacement.
-         * L'algorithme SHA-256 est ici utilisé, avec par défaut un salage
-         * aléatoire et un grand nombre d'itérations de la fonction de hashage.
-         * La String retournée est de longueur 56 et contient le hash en Base64.
+         * L'algorithme SHA-256 est ici utilisï¿½, avec par dï¿½faut un salage
+         * alï¿½atoire et un grand nombre d'itï¿½rations de la fonction de hashage.
+         * La String retournï¿½e est de longueur 56 et contient le hash en Base64.
          */
         ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
         passwordEncryptor.setAlgorithm(ALGO_CHIFFREMENT);
@@ -169,11 +181,11 @@ public final class RegisteringForm
         {
             if(username.length() < 3 || username.length() > 20)
             {
-                throw new FormValidationException("Vôtre nom d'utilisateur doit contenir entre 3 et 20 caractères.");
+                throw new FormValidationException("Vï¿½tre nom d'utilisateur doit contenir entre 3 et 20 caractï¿½res.");
             }
             else if(userDao.find(username, "username") != null)
             {
-                throw new FormValidationException("Ce nom d'utilisateur est déjà utilisé, merci d'en choisir un autre.");
+                throw new FormValidationException("Ce nom d'utilisateur est dï¿½jï¿½ utilisï¿½, merci d'en choisir un autre.");
             }
         }
         else
@@ -188,11 +200,11 @@ public final class RegisteringForm
         {
             if(!password.equals(cpassword))
             {
-                throw new FormValidationException("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+                throw new FormValidationException("Les mots de passe entrï¿½s sont diffï¿½rents, merci de les saisir ï¿½ nouveau.");
             }
             else if(password.length() < 5)
             {
-                throw new FormValidationException("Les mots de passe doivent contenir au moins 5 caractères.");
+                throw new FormValidationException("Les mots de passe doivent contenir au moins 5 caractï¿½res.");
             }
         }
         else
@@ -207,11 +219,11 @@ public final class RegisteringForm
         {
             if(!isNumeric(mdlid))
             {
-                throw new FormValidationException("L'identifiant MDL doit être un nombre.");
+                throw new FormValidationException("L'identifiant MDL doit ï¿½tre un nombre.");
             }
             else if(userDao.find(mdlid, "mdlid") != null)
             {
-                throw new FormValidationException("Cet identitifiant MDL est déjà prit.");
+                throw new FormValidationException("Cet identitifiant MDL est dï¿½jï¿½ prit.");
             }
         }
         else
@@ -220,7 +232,7 @@ public final class RegisteringForm
         }
         if(mdlid.length() > 5)
         {
-            throw new FormValidationException("L'identifiant MDL doit être comprit entre 0 et 99999");
+            throw new FormValidationException("L'identifiant MDL doit ï¿½tre comprit entre 0 et 99999");
         }
     }
 
@@ -230,7 +242,7 @@ public final class RegisteringForm
         {
             if(name.length() < 3 || name.length() > 20)
             {
-                throw new FormValidationException("Vôtre nom doit contenir entre 3 et 20 caractères.");
+                throw new FormValidationException("Vï¿½tre nom doit contenir entre 3 et 20 caractï¿½res.");
             }
         }
         else
@@ -245,12 +257,12 @@ public final class RegisteringForm
         {
             if(surname.length() < 3 || surname.length() > 20)
             {
-                throw new FormValidationException("Vôtre prénom doit contenir entre 3 et 20 caractères.");
+                throw new FormValidationException("Vï¿½tre prï¿½nom doit contenir entre 3 et 20 caractï¿½res.");
             }
         }
         else
         {
-            throw new FormValidationException("Merci de saisir un prénom.");
+            throw new FormValidationException("Merci de saisir un prï¿½nom.");
         }
     }
 
@@ -263,7 +275,7 @@ public final class RegisteringForm
     }
 
     /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+     * Ajoute un message correspondant au champ spï¿½cifiï¿½ ï¿½ la map des erreurs.
      */
     private void setError(String field, String message)
     {
@@ -271,7 +283,7 @@ public final class RegisteringForm
     }
 
     /*
-     * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
+     * Mï¿½thode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
     private static String getFieldValue(HttpServletRequest request, String nomChamp)

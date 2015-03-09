@@ -41,7 +41,7 @@ public class RestrictionFilter implements Filter
 
         /**
          * Si l'objet utilisateur n'existe pas dans la session en cours, alors
-         * l'utilisateur n'est pas connecté.
+         * l'utilisateur n'est pas connectï¿½.
          */
         if(session.getAttribute(ATT_SESSION_USER) == null)
         {

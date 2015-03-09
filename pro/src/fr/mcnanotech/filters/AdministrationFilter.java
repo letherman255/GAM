@@ -33,7 +33,7 @@ public class AdministrationFilter implements Filter
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)res;
 
-        /* Récupération de la session depuis la requête */
+        /* Rï¿½cupï¿½ration de la session depuis la requï¿½te */
         
         HttpSession session = request.getSession(false);
 
