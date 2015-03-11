@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
 
+import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.User;
+import fr.mcnanotech.configloader.SettingsLoader;
 import fr.mcnanotech.dao.DAOException;
 import fr.mcnanotech.dao.UserDao;
 
@@ -45,6 +47,10 @@ public final class RegisteringForm
 
     public User registerUser(HttpServletRequest request)
     {
+        SystemParam systemparam = new SystemParam();
+        SettingsLoader settingsloader = new SettingsLoader();
+        systemparam = settingsloader.loadParams(systemparam);
+        
         String username = getFieldValue(request, FIELD_USERNAME).toLowerCase();
         if (username != null)
         {
@@ -76,6 +82,7 @@ public final class RegisteringForm
 
             if(errors.isEmpty())
             {
+                user.setCredit(systemparam.getDailyCredit());
                 userDao.create(user);
                 result = "Succ�s de l'inscription.";
             }
