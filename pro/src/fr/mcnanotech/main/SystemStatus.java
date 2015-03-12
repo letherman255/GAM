@@ -32,6 +32,36 @@ public class SystemStatus
     private String c6cUser;
     private String c6dUser;
 
+    private boolean c1a;
+    private boolean c1b;
+    private boolean c1c;
+    private boolean c1d;
+
+    private boolean c2a;
+    private boolean c2b;
+    private boolean c2c;
+    private boolean c2d;
+
+    private boolean c3a;
+    private boolean c3b;
+    private boolean c3c;
+    private boolean c3d;
+
+    private boolean c4a;
+    private boolean c4b;
+    private boolean c4c;
+    private boolean c4d;
+
+    private boolean c5a;
+    private boolean c5b;
+    private boolean c5c;
+    private boolean c5d;
+
+    private boolean c6a;
+    private boolean c6b;
+    private boolean c6c;
+    private boolean c6d;
+
     private int c1time = 1;
     private int c2time = 2;
     private int c3time = 3;
@@ -1101,6 +1131,246 @@ public class SystemStatus
     public void setNextSystem(int nextSystem)
     {
         this.nextSystem = nextSystem;
+    }
+
+    public boolean isC1a()
+    {
+        return c1a;
+    }
+
+    public void setC1a(boolean c1a)
+    {
+        this.c1a = c1a;
+    }
+
+    public boolean isC1b()
+    {
+        return c1b;
+    }
+
+    public void setC1b(boolean c1b)
+    {
+        this.c1b = c1b;
+    }
+
+    public boolean isC1c()
+    {
+        return c1c;
+    }
+
+    public void setC1c(boolean c1c)
+    {
+        this.c1c = c1c;
+    }
+
+    public boolean isC1d()
+    {
+        return c1d;
+    }
+
+    public void setC1d(boolean c1d)
+    {
+        this.c1d = c1d;
+    }
+
+    public boolean isC2a()
+    {
+        return c2a;
+    }
+
+    public void setC2a(boolean c2a)
+    {
+        this.c2a = c2a;
+    }
+
+    public boolean isC2b()
+    {
+        return c2b;
+    }
+
+    public void setC2b(boolean c2b)
+    {
+        this.c2b = c2b;
+    }
+
+    public boolean isC2c()
+    {
+        return c2c;
+    }
+
+    public void setC2c(boolean c2c)
+    {
+        this.c2c = c2c;
+    }
+
+    public boolean isC2d()
+    {
+        return c2d;
+    }
+
+    public void setC2d(boolean c2d)
+    {
+        this.c2d = c2d;
+    }
+
+    public boolean isC3a()
+    {
+        return c3a;
+    }
+
+    public void setC3a(boolean c3a)
+    {
+        this.c3a = c3a;
+    }
+
+    public boolean isC3b()
+    {
+        return c3b;
+    }
+
+    public void setC3b(boolean c3b)
+    {
+        this.c3b = c3b;
+    }
+
+    public boolean isC3c()
+    {
+        return c3c;
+    }
+
+    public void setC3c(boolean c3c)
+    {
+        this.c3c = c3c;
+    }
+
+    public boolean isC3d()
+    {
+        return c3d;
+    }
+
+    public void setC3d(boolean c3d)
+    {
+        this.c3d = c3d;
+    }
+
+    public boolean isC4a()
+    {
+        return c4a;
+    }
+
+    public void setC4a(boolean c4a)
+    {
+        this.c4a = c4a;
+    }
+
+    public boolean isC4b()
+    {
+        return c4b;
+    }
+
+    public void setC4b(boolean c4b)
+    {
+        this.c4b = c4b;
+    }
+
+    public boolean isC4c()
+    {
+        return c4c;
+    }
+
+    public void setC4c(boolean c4c)
+    {
+        this.c4c = c4c;
+    }
+
+    public boolean isC4d()
+    {
+        return c4d;
+    }
+
+    public void setC4d(boolean c4d)
+    {
+        this.c4d = c4d;
+    }
+
+    public boolean isC5a()
+    {
+        return c5a;
+    }
+
+    public void setC5a(boolean c5a)
+    {
+        this.c5a = c5a;
+    }
+
+    public boolean isC5b()
+    {
+        return c5b;
+    }
+
+    public void setC5b(boolean c5b)
+    {
+        this.c5b = c5b;
+    }
+
+    public boolean isC5c()
+    {
+        return c5c;
+    }
+
+    public void setC5c(boolean c5c)
+    {
+        this.c5c = c5c;
+    }
+
+    public boolean isC5d()
+    {
+        return c5d;
+    }
+
+    public void setC5d(boolean c5d)
+    {
+        this.c5d = c5d;
+    }
+
+    public boolean isC6a()
+    {
+        return c6a;
+    }
+
+    public void setC6a(boolean c6a)
+    {
+        this.c6a = c6a;
+    }
+
+    public boolean isC6b()
+    {
+        return c6b;
+    }
+
+    public void setC6b(boolean c6b)
+    {
+        this.c6b = c6b;
+    }
+
+    public boolean isC6c()
+    {
+        return c6c;
+    }
+
+    public void setC6c(boolean c6c)
+    {
+        this.c6c = c6c;
+    }
+
+    public boolean isC6d()
+    {
+        return c6d;
+    }
+
+    public void setC6d(boolean c6d)
+    {
+        this.c6d = c6d;
     }
 
 }

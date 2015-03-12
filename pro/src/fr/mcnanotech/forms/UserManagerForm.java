@@ -11,6 +11,7 @@ import fr.mcnanotech.beans.DbContent;
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.configloader.SettingsLoader;
+import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
 
 public class UserManagerForm
@@ -33,12 +34,17 @@ public class UserManagerForm
 
     public User deleteUser(HttpServletRequest request)
     {
+        SystemParam systemparam = new SystemParam();
+        SettingsLoader settingsloader = new SettingsLoader();
+
+        systemparam = settingsloader.loadParams(systemparam);
+
         String mdlid = getFieldValue(request, FIELD_MDLID);
         User user = new User();
         try
         {
             verifyMDLID(mdlid);
-            verifyAdmin(mdlid, userDao);
+            verifyAdmin(mdlid, systemparam);
         }
         catch(FormValidationException e)
         {
@@ -111,16 +117,16 @@ public class UserManagerForm
         }
     }
 
-    
-    private void verifyAdmin(String mdlid, UserDao userdao) throws FormValidationException
+    private void verifyAdmin(String mdlid, SystemParam systemparam) throws FormValidationException
     {
         if(mdlid != null)
         {
-            if (!userDao.find("mdlid", mdlid).getUsername().equals(anObject);)
+
+            if(userDao.find(mdlid, "mdlid").getUsername().equals(systemparam.getAdmin1()) || userDao.find(mdlid, "mdlid").getUsername().equals(systemparam.getAdmin2()))
             {
-                //TODO finit test si admin
+                throw new FormValidationException("Il est impossible de supprimer un compte administrateur.");
             }
-           
+
         }
 
     }

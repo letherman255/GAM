@@ -50,21 +50,21 @@ public final class RegisteringForm
         SystemParam systemparam = new SystemParam();
         SettingsLoader settingsloader = new SettingsLoader();
         systemparam = settingsloader.loadParams(systemparam);
-        
+
         String username = getFieldValue(request, FIELD_USERNAME);
-        if (username != null)
+        if(username != null)
         {
-        	username = username.toLowerCase();
+            username = username.toLowerCase();
         }
         String password = getFieldValue(request, FIELD_PASSWORD);
         if(password != null)
         {
-        	password = password.toLowerCase();
+            password = password.toLowerCase();
         }
         String cpassword = getFieldValue(request, FIELD_CPASSWORD);
         if(cpassword != null)
         {
-        	cpassword = cpassword.toLowerCase();
+            cpassword = cpassword.toLowerCase();
         }
         String mdlid = getFieldValue(request, FIELD_MDLID);
         String name = getFieldValue(request, FIELD_NAME);
