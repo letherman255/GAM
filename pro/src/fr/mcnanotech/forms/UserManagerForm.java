@@ -8,7 +8,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import fr.mcnanotech.beans.DbContent;
+import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.User;
+import fr.mcnanotech.configloader.SettingsLoader;
 import fr.mcnanotech.dao.UserDao;
 
 public class UserManagerForm
@@ -36,6 +38,7 @@ public class UserManagerForm
         try
         {
             verifyMDLID(mdlid);
+            verifyAdmin(mdlid, userDao);
         }
         catch(FormValidationException e)
         {
@@ -56,7 +59,7 @@ public class UserManagerForm
     }
 
     /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+     * Ajoute un message correspondant au champ spï¿½cifiï¿½ ï¿½ la map des erreurs.
      */
     private void setErrors(String field, String message)
     {
@@ -69,7 +72,7 @@ public class UserManagerForm
     }
 
     /*
-     * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
+     * Mï¿½thode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
     private static String getFieldValue(HttpServletRequest request, String nomChamp)
@@ -91,7 +94,7 @@ public class UserManagerForm
         {
             if(!isNumeric(mdlid))
             {
-                throw new FormValidationException("L'identifiant MDL doit être un nombre.");
+                throw new FormValidationException("L'identifiant MDL doit ï¿½tre un nombre.");
             }
             else if(userDao.find(mdlid, "mdlid") == null)
             {
@@ -104,8 +107,22 @@ public class UserManagerForm
         }
         if(mdlid.length() > 5)
         {
-            throw new FormValidationException("L'identifiant MDL doit être comprit entre 0 et 99999");
+            throw new FormValidationException("L'identifiant MDL doit ï¿½tre comprit entre 0 et 99999");
         }
+    }
+
+    
+    private void verifyAdmin(String mdlid, UserDao userdao) throws FormValidationException
+    {
+        if(mdlid != null)
+        {
+            if (!userDao.find("mdlid", mdlid).getUsername().equals(anObject);)
+            {
+                //TODO finit test si admin
+            }
+           
+        }
+
     }
 
     public static boolean isNumeric(String str)
