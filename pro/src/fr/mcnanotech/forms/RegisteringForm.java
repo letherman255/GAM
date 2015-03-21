@@ -82,6 +82,7 @@ public final class RegisteringForm
 
             if(errors.isEmpty())
             {
+                user.setMdlid(Integer.toString(Math.abs(Integer.parseInt(user.getMdlid()))));
                 user.setCredit(systemparam.getDailyCredit());
                 userDao.create(user);
                 result = "Succ�s de l'inscription.";

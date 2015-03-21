@@ -7,14 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
-import fr.mcnanotech.forms.FormValidationException;
 import fr.mcnanotech.forms.UserInterfaceForm;
-import fr.mcnanotech.main.SystemThread;
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/userinterface")
@@ -24,7 +21,6 @@ public class UserInterface extends HttpServlet
     private static final String ATT_FORM = "form";
     private static final String ATT_SYSTEMUSER = "systemuser";
     private static final String INF_SYSTEMUSER = "systemuserinf";
-    private static final String ATT_IN_GAME = "isingame";
     public static final String CONF_DAO_FACTORY = "daofactory";
 
     private UserDao userDao;

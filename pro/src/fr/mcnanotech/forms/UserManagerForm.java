@@ -11,7 +11,6 @@ import fr.mcnanotech.beans.DbContent;
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.User;
 import fr.mcnanotech.configloader.SettingsLoader;
-import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
 
 public class UserManagerForm

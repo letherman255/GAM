@@ -1,7 +1,5 @@
 package fr.mcnanotech.main;
 
-import java.util.Random;
-
 import org.joda.time.DateTime;
 
 import fr.mcnanotech.beans.SystemParam;
@@ -29,6 +27,7 @@ public class SystemThread extends Thread
 
         while(true)
         {
+            updateInfo(st);
             try
             {
                 sleep(1000);
@@ -70,31 +69,26 @@ public class SystemThread extends Thread
     public static SystemUser getUserInfo(String username)
     {
         SystemUser systemuser = new SystemUser();
-
-        Random r = new Random();
-        int Low = 10;
-        int High = 100;
-        int R = r.nextInt(High - Low) + Low;
-
         systemuser.setUsername(username);
-        systemuser.setCreditPercentage(R);
 
         return systemuser;
     }
-    
+
     private void updateInfo(SystemStatus st)
     {
-        //------------------------------
-        if(st.getC1aUser()!= null)
+        // ------------------------------
+        if(st.getC1aUser() != null && !st.isC1a())
         {
+            System.out.println("console 1a actiée");
             st.setC1a(true);
         }
-        else
+        else if(st.getC1aUser() == null && st.isC1a())
         {
+            System.out.println("console 1a désactivée");
             st.setC1a(false);
         }
-        
-        if(st.getC1bUser()!= null)
+
+        if(st.getC1bUser() != null)
         {
             st.setC1b(true);
         }
@@ -102,8 +96,8 @@ public class SystemThread extends Thread
         {
             st.setC1b(false);
         }
-        
-        if(st.getC1cUser()!= null)
+
+        if(st.getC1cUser() != null)
         {
             st.setC1c(true);
         }
@@ -111,8 +105,8 @@ public class SystemThread extends Thread
         {
             st.setC1c(false);
         }
-        
-        if(st.getC1dUser()!= null)
+
+        if(st.getC1dUser() != null)
         {
             st.setC1d(true);
         }
@@ -120,8 +114,8 @@ public class SystemThread extends Thread
         {
             st.setC1d(false);
         }
-        //-----------------------------
-        if(st.getC2aUser()!= null)
+        // -----------------------------
+        if(st.getC2aUser() != null)
         {
             st.setC2a(true);
         }
@@ -129,8 +123,8 @@ public class SystemThread extends Thread
         {
             st.setC2a(false);
         }
-        
-        if(st.getC2bUser()!= null)
+
+        if(st.getC2bUser() != null)
         {
             st.setC2b(true);
         }
@@ -138,8 +132,8 @@ public class SystemThread extends Thread
         {
             st.setC2b(false);
         }
-        
-        if(st.getC2cUser()!= null)
+
+        if(st.getC2cUser() != null)
         {
             st.setC2c(true);
         }
@@ -147,8 +141,8 @@ public class SystemThread extends Thread
         {
             st.setC2c(false);
         }
-        
-        if(st.getC2dUser()!= null)
+
+        if(st.getC2dUser() != null)
         {
             st.setC2d(true);
         }
@@ -156,8 +150,8 @@ public class SystemThread extends Thread
         {
             st.setC2d(false);
         }
-        //-----------------------------
-        if(st.getC3aUser()!= null)
+        // -----------------------------
+        if(st.getC3aUser() != null)
         {
             st.setC3a(true);
         }
@@ -165,8 +159,8 @@ public class SystemThread extends Thread
         {
             st.setC3a(false);
         }
-        
-        if(st.getC3bUser()!= null)
+
+        if(st.getC3bUser() != null)
         {
             st.setC3b(true);
         }
@@ -174,8 +168,8 @@ public class SystemThread extends Thread
         {
             st.setC3b(false);
         }
-        
-        if(st.getC3cUser()!= null)
+
+        if(st.getC3cUser() != null)
         {
             st.setC3c(true);
         }
@@ -183,8 +177,8 @@ public class SystemThread extends Thread
         {
             st.setC3c(false);
         }
-        
-        if(st.getC3dUser()!= null)
+
+        if(st.getC3dUser() != null)
         {
             st.setC3d(true);
         }
@@ -192,8 +186,8 @@ public class SystemThread extends Thread
         {
             st.setC3d(false);
         }
-        //-----------------------------
-        if(st.getC4aUser()!= null)
+        // -----------------------------
+        if(st.getC4aUser() != null)
         {
             st.setC4a(true);
         }
@@ -201,8 +195,8 @@ public class SystemThread extends Thread
         {
             st.setC4a(false);
         }
-        
-        if(st.getC4bUser()!= null)
+
+        if(st.getC4bUser() != null)
         {
             st.setC4b(true);
         }
@@ -210,8 +204,8 @@ public class SystemThread extends Thread
         {
             st.setC4b(false);
         }
-        
-        if(st.getC4cUser()!= null)
+
+        if(st.getC4cUser() != null)
         {
             st.setC4c(true);
         }
@@ -219,8 +213,8 @@ public class SystemThread extends Thread
         {
             st.setC4c(false);
         }
-        
-        if(st.getC4dUser()!= null)
+
+        if(st.getC4dUser() != null)
         {
             st.setC4d(true);
         }
@@ -228,8 +222,8 @@ public class SystemThread extends Thread
         {
             st.setC4d(false);
         }
-        //-----------------------------
-        if(st.getC5aUser()!= null)
+        // -----------------------------
+        if(st.getC5aUser() != null)
         {
             st.setC5a(true);
         }
@@ -237,8 +231,8 @@ public class SystemThread extends Thread
         {
             st.setC5a(false);
         }
-        
-        if(st.getC5bUser()!= null)
+
+        if(st.getC5bUser() != null)
         {
             st.setC5b(true);
         }
@@ -246,8 +240,8 @@ public class SystemThread extends Thread
         {
             st.setC5b(false);
         }
-        
-        if(st.getC5cUser()!= null)
+
+        if(st.getC5cUser() != null)
         {
             st.setC5c(true);
         }
@@ -255,8 +249,8 @@ public class SystemThread extends Thread
         {
             st.setC5c(false);
         }
-        
-        if(st.getC5dUser()!= null)
+
+        if(st.getC5dUser() != null)
         {
             st.setC5d(true);
         }
@@ -264,8 +258,8 @@ public class SystemThread extends Thread
         {
             st.setC5d(false);
         }
-        //-----------------------------
-        if(st.getC6aUser()!= null)
+        // -----------------------------
+        if(st.getC6aUser() != null)
         {
             st.setC6a(true);
         }
@@ -273,8 +267,8 @@ public class SystemThread extends Thread
         {
             st.setC6a(false);
         }
-        
-        if(st.getC6bUser()!= null)
+
+        if(st.getC6bUser() != null)
         {
             st.setC6b(true);
         }
@@ -282,8 +276,8 @@ public class SystemThread extends Thread
         {
             st.setC6b(false);
         }
-        
-        if(st.getC6cUser()!= null)
+
+        if(st.getC6cUser() != null)
         {
             st.setC6c(true);
         }
@@ -291,8 +285,8 @@ public class SystemThread extends Thread
         {
             st.setC6c(false);
         }
-        
-        if(st.getC6dUser()!= null)
+
+        if(st.getC6dUser() != null)
         {
             st.setC6d(true);
         }
@@ -300,7 +294,7 @@ public class SystemThread extends Thread
         {
             st.setC6d(false);
         }
-        //-----------------------------
-        
+        // -----------------------------
+
     }
 }

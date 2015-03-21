@@ -83,14 +83,15 @@ public final class SystemConfigForm
             {
                 throw new FormValidationException("Le crédit cotidien doit être un nombre.");
             }
+            if(Integer.parseInt(credit) <5 || Integer.parseInt(credit) >120)
+            {
+                throw new FormValidationException("Le crédit cotidien doit être comprit entre 5 et 120");
+                
+            }
         }
         else
         {
             throw new FormValidationException("Merci de saisir un crédit cotidien.");
-        }
-        if(credit.length() > 5)
-        {
-            throw new FormValidationException("Le crédit cotidien doit être comprit entre 0 et 99999");
         }
     }
 

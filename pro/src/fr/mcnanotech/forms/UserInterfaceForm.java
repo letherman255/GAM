@@ -24,6 +24,7 @@ public class UserInterfaceForm
     private static final String PERIHERAL = "peripheral";
     private static final String ATT_IN_GAME = "isingame";
     private static final String USERNAME = "username";
+    @SuppressWarnings("unused")
     private UserDao userDao;
     private String result;
     private Map<String, String> errors = new HashMap<String, String>();
