@@ -32,6 +32,36 @@ public class SystemStatus
     private String c6cUser;
     private String c6dUser;
 
+    private int c1aTime;
+    private int c1bTime;
+    private int c1cTime;
+    private int c1dTime;
+
+    private int c2aTime;
+    private int c2bTime;
+    private int c2cTime;
+    private int c2dTime;
+
+    private int c3aTime;
+    private int c3bTime;
+    private int c3cTime;
+    private int c3dTime;
+
+    private int c4aTime;
+    private int c4bTime;
+    private int c4cTime;
+    private int c4dTime;
+
+    private int c5aTime;
+    private int c5bTime;
+    private int c5cTime;
+    private int c5dTime;
+
+    private int c6aTime;
+    private int c6bTime;
+    private int c6cTime;
+    private int c6dTime;
+
     private boolean c1a;
     private boolean c1b;
     private boolean c1c;
@@ -68,6 +98,13 @@ public class SystemStatus
     private int c4time = 4;
     private int c5time = 5;
     private int c6time = 6;
+    
+    private int c1usage;
+    private int c2usage;
+    private int c3usage;
+    private int c4usage;
+    private int c5usage;
+    private int c6usage;
 
     private int systemUsage = 0;
     private int dailyCredit = 0;
@@ -1372,5 +1409,307 @@ public class SystemStatus
     {
         this.c6d = c6d;
     }
+
+    public int getC1aTime()
+    {
+        return c1aTime;
+    }
+
+    public void setC1aTime(int c1aTime)
+    {
+        this.c1aTime = c1aTime;
+    }
+
+    public int getC1bTime()
+    {
+        return c1bTime;
+    }
+
+    public void setC1bTime(int c1bTime)
+    {
+        this.c1bTime = c1bTime;
+    }
+
+    public int getC1cTime()
+    {
+        return c1cTime;
+    }
+
+    public void setC1cTime(int c1cTime)
+    {
+        this.c1cTime = c1cTime;
+    }
+
+    public int getC1dTime()
+    {
+        return c1dTime;
+    }
+
+    public void setC1dTime(int c1dTime)
+    {
+        this.c1dTime = c1dTime;
+    }
+
+    public int getC2aTime()
+    {
+        return c2aTime;
+    }
+
+    public void setC2aTime(int c2aTime)
+    {
+        this.c2aTime = c2aTime;
+    }
+
+    public int getC2bTime()
+    {
+        return c2bTime;
+    }
+
+    public void setC2bTime(int c2bTime)
+    {
+        this.c2bTime = c2bTime;
+    }
+
+    public int getC2cTime()
+    {
+        return c2cTime;
+    }
+
+    public void setC2cTime(int c2cTime)
+    {
+        this.c2cTime = c2cTime;
+    }
+
+    public int getC2dTime()
+    {
+        return c2dTime;
+    }
+
+    public void setC2dTime(int c2dTime)
+    {
+        this.c2dTime = c2dTime;
+    }
+
+    public int getC3aTime()
+    {
+        return c3aTime;
+    }
+
+    public void setC3aTime(int c3aTime)
+    {
+        this.c3aTime = c3aTime;
+    }
+
+    public int getC3bTime()
+    {
+        return c3bTime;
+    }
+
+    public void setC3bTime(int c3bTime)
+    {
+        this.c3bTime = c3bTime;
+    }
+
+    public int getC3cTime()
+    {
+        return c3cTime;
+    }
+
+    public void setC3cTime(int c3cTime)
+    {
+        this.c3cTime = c3cTime;
+    }
+
+    public int getC3dTime()
+    {
+        return c3dTime;
+    }
+
+    public void setC3dTime(int c3dTime)
+    {
+        this.c3dTime = c3dTime;
+    }
+
+    public int getC4aTime()
+    {
+        return c4aTime;
+    }
+
+    public void setC4aTime(int c4aTime)
+    {
+        this.c4aTime = c4aTime;
+    }
+
+    public int getC4bTime()
+    {
+        return c4bTime;
+    }
+
+    public void setC4bTime(int c4bTime)
+    {
+        this.c4bTime = c4bTime;
+    }
+
+    public int getC4cTime()
+    {
+        return c4cTime;
+    }
+
+    public void setC4cTime(int c4cTime)
+    {
+        this.c4cTime = c4cTime;
+    }
+
+    public int getC4dTime()
+    {
+        return c4dTime;
+    }
+
+    public void setC4dTime(int c4dTime)
+    {
+        this.c4dTime = c4dTime;
+    }
+
+    public int getC5aTime()
+    {
+        return c5aTime;
+    }
+
+    public void setC5aTime(int c5aTime)
+    {
+        this.c5aTime = c5aTime;
+    }
+
+    public int getC5bTime()
+    {
+        return c5bTime;
+    }
+
+    public void setC5bTime(int c5bTime)
+    {
+        this.c5bTime = c5bTime;
+    }
+
+    public int getC5cTime()
+    {
+        return c5cTime;
+    }
+
+    public void setC5cTime(int c5cTime)
+    {
+        this.c5cTime = c5cTime;
+    }
+
+    public int getC5dTime()
+    {
+        return c5dTime;
+    }
+
+    public void setC5dTime(int c5dTime)
+    {
+        this.c5dTime = c5dTime;
+    }
+
+    public int getC6aTime()
+    {
+        return c6aTime;
+    }
+
+    public void setC6aTime(int c6aTime)
+    {
+        this.c6aTime = c6aTime;
+    }
+
+    public int getC6bTime()
+    {
+        return c6bTime;
+    }
+
+    public void setC6bTime(int c6bTime)
+    {
+        this.c6bTime = c6bTime;
+    }
+
+    public int getC6cTime()
+    {
+        return c6cTime;
+    }
+
+    public void setC6cTime(int c6cTime)
+    {
+        this.c6cTime = c6cTime;
+    }
+
+    public int getC6dTime()
+    {
+        return c6dTime;
+    }
+
+    public void setC6dTime(int c6dTime)
+    {
+        this.c6dTime = c6dTime;
+    }
+
+    public int getC1usage()
+    {
+        return c1usage;
+    }
+
+    public void setC1usage(int c1usage)
+    {
+        this.c1usage = c1usage;
+    }
+
+    public int getC2usage()
+    {
+        return c2usage;
+    }
+
+    public void setC2usage(int c2usage)
+    {
+        this.c2usage = c2usage;
+    }
+
+    public int getC3usage()
+    {
+        return c3usage;
+    }
+
+    public void setC3usage(int c3usage)
+    {
+        this.c3usage = c3usage;
+    }
+
+    public int getC4usage()
+    {
+        return c4usage;
+    }
+
+    public void setC4usage(int c4usage)
+    {
+        this.c4usage = c4usage;
+    }
+
+    public int getC5usage()
+    {
+        return c5usage;
+    }
+
+    public void setC5usage(int c5usage)
+    {
+        this.c5usage = c5usage;
+    }
+
+    public int getC6usage()
+    {
+        return c6usage;
+    }
+
+    public void setC6usage(int c6usage)
+    {
+        this.c6usage = c6usage;
+    }
+    
+    
 
 }

@@ -143,7 +143,6 @@ public class UserInterfaceForm
         }
         if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 5)
         {
-            System.out.println("crédit = " + userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit());
             throw new FormValidationException("Vous n'avez pas assez de crédit pour commencer à jouer !");
         }
 

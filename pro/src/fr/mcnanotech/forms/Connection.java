@@ -121,7 +121,6 @@ public final class Connection
     {
         if(password != null)
         {
-            System.out.println(userDao.find(username, "username").getPassword());
             if(password.length() < 5)
             {
                 throw new FormValidationException("Le mot de passe doit contenir au moins 5 caract�res.");
