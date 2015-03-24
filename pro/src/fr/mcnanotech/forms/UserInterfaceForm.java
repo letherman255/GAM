@@ -24,6 +24,7 @@ public class UserInterfaceForm
     private static final String PERIHERAL = "peripheral";
     private static final String ATT_IN_GAME = "isingame";
     private static final String USERNAME = "username";
+    @SuppressWarnings("unused")
     private UserDao userDao;
     private String result;
     private Map<String, String> errors = new HashMap<String, String>();
@@ -142,7 +143,6 @@ public class UserInterfaceForm
         }
         if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 5)
         {
-            System.out.println("crédit = " + userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit());
             throw new FormValidationException("Vous n'avez pas assez de crédit pour commencer à jouer !");
         }
 

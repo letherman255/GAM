@@ -1,7 +1,5 @@
 package fr.mcnanotech.main;
 
-import java.util.Random;
-
 import org.joda.time.DateTime;
 
 import fr.mcnanotech.beans.SystemParam;
@@ -13,6 +11,11 @@ import fr.mcnanotech.dao.UserDao;
 public class SystemThread extends Thread
 {
 
+    /**
+     * This is the division factor to determine the system time intervals in milliseconds
+     * for example 1000 is a sec. 60 000 is a minute, 3 600 000 is an hour
+     */
+    private static final long TIME_BASE = 1000;
     static SystemStatus st = new SystemStatus();
     private UserDao userDao;
 
@@ -26,19 +29,21 @@ public class SystemThread extends Thread
         settingsloader.saveParamChanges(systemparam);
         this.userDao = DAOFactory.getInstance().getDaoUser();
         st.setDailyCredit(systemparam.getDailyCredit());
+        long t = (System.currentTimeMillis() / TIME_BASE);
+        long tp = t + 1;
 
         while(true)
         {
-            try
-            {
-                sleep(1000);
+            t = (System.currentTimeMillis() / TIME_BASE);
+
+            if(t >= tp)
+            { 
+                SystemClock.tick(st, userDao);
+                tp = t + 1;
             }
-            catch(InterruptedException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+
             updateCredit(systemparam, userDao, settingsloader);
+            updateInfo(st);
         }
 
     }
@@ -70,237 +75,82 @@ public class SystemThread extends Thread
     public static SystemUser getUserInfo(String username)
     {
         SystemUser systemuser = new SystemUser();
-
-        Random r = new Random();
-        int Low = 10;
-        int High = 100;
-        int R = r.nextInt(High - Low) + Low;
-
         systemuser.setUsername(username);
-        systemuser.setCreditPercentage(R);
 
         return systemuser;
     }
-    
+
     private void updateInfo(SystemStatus st)
     {
-        //------------------------------
-        if(st.getC1aUser()!= null)
+ 
+        if(st.getC1aUser() != null && !st.isC1a())
         {
+            System.out.println("console 1a actiée");
             st.setC1a(true);
+            st.setC1aTime(userDao.find(st.getC1aUser(), "username").getCredit());
+            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()+1);
         }
-        else
+        else if(st.getC1aUser() == null && st.isC1a())
         {
+            System.out.println("console 1a désactivée");
             st.setC1a(false);
+            st.setC1time(st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()-1);
         }
         
-        if(st.getC1bUser()!= null)
+
+        if(st.getC1bUser() != null && !st.isC1b())
         {
+            System.out.println("console 1b actiée");
             st.setC1b(true);
+            st.setC1bTime(userDao.find(st.getC1bUser(), "username").getCredit());
+            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()+1);
         }
-        else
+        else if(st.getC1bUser() == null && st.isC1b())
         {
+            System.out.println("console 1b désactivée");
             st.setC1b(false);
+            st.setC1time(st.getC1aTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()-1);
         }
         
-        if(st.getC1cUser()!= null)
+
+        if(st.getC1cUser() != null && !st.isC1c())
         {
+            System.out.println("console 1c actiée");
             st.setC1c(true);
+            st.setC1cTime(userDao.find(st.getC1cUser(), "username").getCredit());
+            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()+1);
         }
-        else
+        else if(st.getC1cUser() == null && st.isC1c())
         {
+            System.out.println("console 1c désactivée");
             st.setC1c(false);
+            st.setC1time(st.getC1bTime() + st.getC1aTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()-1);
         }
         
-        if(st.getC1dUser()!= null)
+        if(st.getC1dUser() != null && !st.isC1d())
         {
+            System.out.println("console 1d actiée");
             st.setC1d(true);
+            st.setC1dTime(userDao.find(st.getC1dUser(), "username").getCredit());
+            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
+            st.setC1usage(st.getC1usage()+1);
         }
-        else
+        else if(st.getC1dUser() == null && st.isC1d())
         {
+            System.out.println("console 1d désactivée");
             st.setC1d(false);
+            st.setC1time(st.getC1bTime() + st.getC1cTime() + st.getC1aTime());
+            st.setC1usage(st.getC1usage()-1);
         }
-        //-----------------------------
-        if(st.getC2aUser()!= null)
-        {
-            st.setC2a(true);
-        }
-        else
-        {
-            st.setC2a(false);
-        }
+
+
         
-        if(st.getC2bUser()!= null)
-        {
-            st.setC2b(true);
-        }
-        else
-        {
-            st.setC2b(false);
-        }
-        
-        if(st.getC2cUser()!= null)
-        {
-            st.setC2c(true);
-        }
-        else
-        {
-            st.setC2c(false);
-        }
-        
-        if(st.getC2dUser()!= null)
-        {
-            st.setC2d(true);
-        }
-        else
-        {
-            st.setC2d(false);
-        }
-        //-----------------------------
-        if(st.getC3aUser()!= null)
-        {
-            st.setC3a(true);
-        }
-        else
-        {
-            st.setC3a(false);
-        }
-        
-        if(st.getC3bUser()!= null)
-        {
-            st.setC3b(true);
-        }
-        else
-        {
-            st.setC3b(false);
-        }
-        
-        if(st.getC3cUser()!= null)
-        {
-            st.setC3c(true);
-        }
-        else
-        {
-            st.setC3c(false);
-        }
-        
-        if(st.getC3dUser()!= null)
-        {
-            st.setC3d(true);
-        }
-        else
-        {
-            st.setC3d(false);
-        }
-        //-----------------------------
-        if(st.getC4aUser()!= null)
-        {
-            st.setC4a(true);
-        }
-        else
-        {
-            st.setC4a(false);
-        }
-        
-        if(st.getC4bUser()!= null)
-        {
-            st.setC4b(true);
-        }
-        else
-        {
-            st.setC4b(false);
-        }
-        
-        if(st.getC4cUser()!= null)
-        {
-            st.setC4c(true);
-        }
-        else
-        {
-            st.setC4c(false);
-        }
-        
-        if(st.getC4dUser()!= null)
-        {
-            st.setC4d(true);
-        }
-        else
-        {
-            st.setC4d(false);
-        }
-        //-----------------------------
-        if(st.getC5aUser()!= null)
-        {
-            st.setC5a(true);
-        }
-        else
-        {
-            st.setC5a(false);
-        }
-        
-        if(st.getC5bUser()!= null)
-        {
-            st.setC5b(true);
-        }
-        else
-        {
-            st.setC5b(false);
-        }
-        
-        if(st.getC5cUser()!= null)
-        {
-            st.setC5c(true);
-        }
-        else
-        {
-            st.setC5c(false);
-        }
-        
-        if(st.getC5dUser()!= null)
-        {
-            st.setC5d(true);
-        }
-        else
-        {
-            st.setC5d(false);
-        }
-        //-----------------------------
-        if(st.getC6aUser()!= null)
-        {
-            st.setC6a(true);
-        }
-        else
-        {
-            st.setC6a(false);
-        }
-        
-        if(st.getC6bUser()!= null)
-        {
-            st.setC6b(true);
-        }
-        else
-        {
-            st.setC6b(false);
-        }
-        
-        if(st.getC6cUser()!= null)
-        {
-            st.setC6c(true);
-        }
-        else
-        {
-            st.setC6c(false);
-        }
-        
-        if(st.getC6dUser()!= null)
-        {
-            st.setC6d(true);
-        }
-        else
-        {
-            st.setC6d(false);
-        }
-        //-----------------------------
-        
+
     }
 }
