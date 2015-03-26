@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.dao.UserDao;
+import fr.mcnanotech.main.Player;
 import fr.mcnanotech.main.SystemStatus;
 import fr.mcnanotech.main.SystemThread;
 
@@ -58,7 +59,8 @@ public class UserInterfaceForm
         HttpSession session = request.getSession();
         SystemStatus st = SystemThread.getInfo();
 
-        String system = toSystem(getFieldValue(request, SYSTEM), getFieldValue(request, PERIHERAL));
+        int consoleId = toConsoleId(getFieldValue(request, SYSTEM));
+        Player player = new Player(session.getAttribute(USERNAME).toString(), userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit());
 
         SystemUser systemuser = new SystemUser();
 
@@ -68,7 +70,7 @@ public class UserInterfaceForm
         }
         try
         {
-            verifySystem(system, st, session, userdao);
+            verifySystem(consoleId, st, session, userdao);
         }
         catch(FormValidationException e)
         {
@@ -76,8 +78,8 @@ public class UserInterfaceForm
         }
         if(errors.isEmpty())
         {
-
-            st.setUser(session.getAttribute(USERNAME).toString(), system);
+System.out.println(consoleId+" joueur "+ player.getUserName());
+            st.addUserTo(consoleId, player);
             SystemThread.setInfo(st);
             session.setAttribute(ATT_IN_GAME, "true");
 
@@ -122,15 +124,13 @@ public class UserInterfaceForm
      *            : HttpSession
      * @throws FormValidationException
      */
-    private void verifySystem(String system, SystemStatus st, HttpSession session, UserDao userDao) throws FormValidationException
+    private void verifySystem(int consoleId, SystemStatus st, HttpSession session, UserDao userDao) throws FormValidationException
     {
-        if(system != null)
+        if(consoleId != -1)
         {
-
-            if(st.whoIsUsing(system) != null)
+            if(st.isFull(consoleId))
             {
-                System.out.println("le systeme choisit est " + system);
-                throw new FormValidationException("Cette xbox est déja occupée par " + st.whoIsUsing(system) + ".");
+                throw new FormValidationException("Cette xbox est déja pleine.");
             }
         }
         else
@@ -173,141 +173,14 @@ public class UserInterfaceForm
         }
     }
 
-    /**
-     * Returns the system string based on the given system and peripheral.
-     * 
-     * @param system
-     *            String
-     * @param peripheral
-     *            String
-     * @return System String
-     */
-    private String toSystem(String system, String peripheral)
+    private int toConsoleId(String system)
     {
         if(system != null)
         {
-            if(system.equals("sys1"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "1a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "1b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "1c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "1d";
-                }
-            }
-            if(system.equals("sys2"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "2a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "2b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "2c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "2d";
-                }
-            }
-            if(system.equals("sys3"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "3a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "3b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "3c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "3d";
-                }
-            }
-            if(system.equals("sys4"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "4a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "4b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "4c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "4d";
-                }
-            }
-            if(system.equals("sys5"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "5a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "5b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "5c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "5d";
-                }
-            }
-            if(system.equals("sys6"))
-            {
-
-                if(peripheral.equals("sysa"))
-                {
-                    return "6a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "6b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "6c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "6d";
-                }
-            }
+            String str = system.replace("sys", "");
+            return Integer.valueOf(str) - 1;
         }
-        return null;
+        return -1;
     }
 
     /**
@@ -327,5 +200,136 @@ public class UserInterfaceForm
             percentage = 100;
         }
         return percentage;
+    }
+
+    /**
+     * Returns the system string based on the given system and peripheral.
+     * 
+     * @param system
+     *            String
+     * @param peripheral
+     *            String
+     * @return System String
+     */
+    private String toSystem(String system, String peripheral)
+    {
+        if(system != null)
+        {
+            if(system.equals("sys1"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "1a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "1b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "1c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "1d";
+                }
+            }
+            if(system.equals("sys2"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "2a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "2b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "2c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "2d";
+                }
+            }
+            if(system.equals("sys3"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "3a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "3b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "3c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "3d";
+                }
+            }
+            if(system.equals("sys4"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "4a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "4b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "4c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "4d";
+                }
+            }
+            if(system.equals("sys5"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "5a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "5b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "5c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "5d";
+                }
+            }
+            if(system.equals("sys6"))
+            {
+                if(peripheral.equals("sysa"))
+                {
+                    return "6a";
+                }
+                if(peripheral.equals("sysb"))
+                {
+                    return "6b";
+                }
+                if(peripheral.equals("sysc"))
+                {
+                    return "6c";
+                }
+                if(peripheral.equals("sysd"))
+                {
+                    return "6d";
+                }
+            }
+        }
+        return null;
     }
 }

@@ -4,7 +4,7 @@ import fr.mcnanotech.dao.UserDao;
 
 public class SystemClock
 {
-    public static int time;
+    public static int timer;
 
     /**
      * This method should be called every interval of time to time the system.
@@ -14,66 +14,37 @@ public class SystemClock
      */
     public static void tick(SystemStatus st, UserDao userDao)
     {
-        time++;
-        if(st.getC1usage() != 0)
+        System.out.println("je suis en train de tourner !");
+        timer++;
+        for(int consoleId = 0; consoleId < 6; consoleId++)
         {
-
-            if(time % st.getC1usage() == 0)
+            System.out.println(consoleId + "  " + timer + "   " + st.getTotalPlayerBy(consoleId));
+            if(st.getTotalPlayerBy(consoleId) > 0 && timer % st.getTotalPlayerBy(consoleId) == 0)
             {
-
-                if(st.getC1time() > 1)
+                System.out.println(consoleId + st.getTotalPlayerBy(consoleId));
+                GamingMachine machine = st.getMachine(consoleId);
+                if(machine.getTime() > 1)
                 {
-                    if(st.getC1aUser() != null)
+                    int newTime = 0;
+                    for(int controlerId = 0; controlerId < st.getTotalPlayerBy(consoleId); controlerId++)
                     {
-                        st.setC1aTime(st.getC1aTime() - 1);
+                        Player player = machine.getPlayers(controlerId);
+                        player.setTime(player.getTime() - 1);
+                        newTime += player.getTime();
+                        if(player.getTime() >= 0)
+                        {
+                            userDao.setUserCredit(player.getUserName(), player.getTime());
+                        }
                     }
-                    if(st.getC1bUser() != null)
-                    {
-                        st.setC1bTime(st.getC1bTime() - 1);
-                    }
-                    if(st.getC1cUser() != null)
-                    {
-                        st.setC1cTime(st.getC1cTime() - 1);
-                    }
-                    if(st.getC1dUser() != null)
-                    {
-                        st.setC1dTime(st.getC1dTime() - 1);
-                    }
-
-                    st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-
-                    if(st.getC1aUser() != null && st.getC1aTime() >= 0)
-                    {
-
-                        userDao.setUserCredit(st.getC1aUser(), st.getC1aTime());
-                    }
-                    if(st.getC1bUser() != null && st.getC1bTime() >= 0)
-                    {
-
-                        userDao.setUserCredit(st.getC1bUser(), st.getC1bTime());
-                    }
-                    if(st.getC1cUser() != null && st.getC1cTime() >= 0)
-                    {
-
-                        userDao.setUserCredit(st.getC1cUser(), st.getC1cTime());
-                    }
-                    if(st.getC1dUser() != null && st.getC1dTime() >= 0)
-                    {
-
-                        userDao.setUserCredit(st.getC1dUser(), st.getC1dTime());
-                    }
-
+                    machine.setTime(newTime);
                 }
                 else
                 {
-                    st.setC1aUser(null);
-                    st.setC1bUser(null);
-                    st.setC1cUser(null);
-                    st.setC1dUser(null);
-                    st.setC1usage(0);
-                    st.setC1time(0);
+                    System.out.println("console " +  String.valueOf(consoleId + 1) + " désactivée");
+                    machine.kickAll();
+                    machine.setTime(0);
+                    // éteindre
                 }
-
             }
         }
     }

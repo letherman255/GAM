@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.mcnanotech.main.GamingMachine;
 import fr.mcnanotech.main.SystemStatus;
 import fr.mcnanotech.main.SystemThread;
 
@@ -20,6 +21,11 @@ public class AdminInterface extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         SystemStatus st = SystemThread.getInfo();
+        for(int i = 0; i < 6; i++)
+        {
+            GamingMachine m = st.getMachine(i);
+            request.setAttribute("c" + String.valueOf(i + 1), m);
+        }
         request.setAttribute("st", st);
         this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
     }

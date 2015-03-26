@@ -22,6 +22,7 @@ public class UserInterface extends HttpServlet
     private static final String ATT_SYSTEMUSER = "systemuser";
     private static final String INF_SYSTEMUSER = "systemuserinf";
     public static final String CONF_DAO_FACTORY = "daofactory";
+    UserInterfaceForm userinterfaceform;
 
     private UserDao userDao;
 
@@ -29,9 +30,8 @@ public class UserInterface extends HttpServlet
     {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.userDao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getDaoUser();
+        userinterfaceform = new UserInterfaceForm(userDao);
     }
-
-    UserInterfaceForm userinterfaceform = new UserInterfaceForm(userDao);
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {

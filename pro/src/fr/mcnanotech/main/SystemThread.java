@@ -37,7 +37,7 @@ public class SystemThread extends Thread
             t = (System.currentTimeMillis() / TIME_BASE);
 
             if(t >= tp)
-            { 
+            {
                 SystemClock.tick(st, userDao);
                 tp = t + 1;
             }
@@ -82,75 +82,14 @@ public class SystemThread extends Thread
 
     private void updateInfo(SystemStatus st)
     {
- 
-        if(st.getC1aUser() != null && !st.isC1a())
+        for(int consoleId = 0; consoleId < 6; consoleId++)
         {
-            System.out.println("console 1a actiée");
-            st.setC1a(true);
-            st.setC1aTime(userDao.find(st.getC1aUser(), "username").getCredit());
-            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()+1);
+            GamingMachine machine = st.getMachine(consoleId);
+            if(machine.getLastPlayersCount() != machine.getTotalPlayers())
+            {
+                // nombre de joueur a changé
+                machine.setLastPlayersCount(machine.getTotalPlayers());
+            }
         }
-        else if(st.getC1aUser() == null && st.isC1a())
-        {
-            System.out.println("console 1a désactivée");
-            st.setC1a(false);
-            st.setC1time(st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()-1);
-        }
-        
-
-        if(st.getC1bUser() != null && !st.isC1b())
-        {
-            System.out.println("console 1b actiée");
-            st.setC1b(true);
-            st.setC1bTime(userDao.find(st.getC1bUser(), "username").getCredit());
-            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()+1);
-        }
-        else if(st.getC1bUser() == null && st.isC1b())
-        {
-            System.out.println("console 1b désactivée");
-            st.setC1b(false);
-            st.setC1time(st.getC1aTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()-1);
-        }
-        
-
-        if(st.getC1cUser() != null && !st.isC1c())
-        {
-            System.out.println("console 1c actiée");
-            st.setC1c(true);
-            st.setC1cTime(userDao.find(st.getC1cUser(), "username").getCredit());
-            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()+1);
-        }
-        else if(st.getC1cUser() == null && st.isC1c())
-        {
-            System.out.println("console 1c désactivée");
-            st.setC1c(false);
-            st.setC1time(st.getC1bTime() + st.getC1aTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()-1);
-        }
-        
-        if(st.getC1dUser() != null && !st.isC1d())
-        {
-            System.out.println("console 1d actiée");
-            st.setC1d(true);
-            st.setC1dTime(userDao.find(st.getC1dUser(), "username").getCredit());
-            st.setC1time(st.getC1aTime() + st.getC1bTime() + st.getC1cTime() + st.getC1dTime());
-            st.setC1usage(st.getC1usage()+1);
-        }
-        else if(st.getC1dUser() == null && st.isC1d())
-        {
-            System.out.println("console 1d désactivée");
-            st.setC1d(false);
-            st.setC1time(st.getC1bTime() + st.getC1cTime() + st.getC1aTime());
-            st.setC1usage(st.getC1usage()-1);
-        }
-
-
-        
-
     }
 }

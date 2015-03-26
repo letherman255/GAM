@@ -9,18 +9,21 @@
 </head>
 <body>
 	<div class="bloc_page">
-		<header> <img src="../inc/banner_admin.jpg" alt="banner.jpg" />
+		<header>
+			<img src="../inc/banner_admin.jpg" alt="banner.jpg" />
 		</header>
 		<nav>
-		<ul>
-			<li><a href="/pro/administration/admininterface">Interface
-					Admin</a></li>
-			<li><a href="/pro/administration/inscription">Inscription</a></li>
-			<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
-			<li><a href="/pro/administration/systemconfig">configuration système</a></li>
-			<li><a href="#">Aide</a></li>
-			<li><a href="/pro/deconnexion">Déconnexion</a></li>
-		</ul>
+			<ul>
+				<li><a href="/pro/administration/admininterface">Interface
+						Admin</a></li>
+				<li><a href="/pro/administration/inscription">Inscription</a></li>
+				<li><a href="/pro/administration/usermanager">Gestion
+						utilisateurs</a></li>
+				<li><a href="/pro/administration/systemconfig">configuration
+						système</a></li>
+				<li><a href="#">Aide</a></li>
+				<li><a href="/pro/deconnexion">Déconnexion</a></li>
+			</ul>
 		</nav>
 		<hr>
 		<div id="infsys">
@@ -31,197 +34,152 @@
 				<li>Prochaine console disponible dans: ${ st.nextSystem }</li>
 			</ul>
 		</div>
-		<article> <br>
+		<article>
+			<br>
 
 		</article>
 
 		<section id="cx">
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 1</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c1time }</li>
-				</ul>
+				<h2>Console 1</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c1.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+						<c:forEach begin="1" end="4" varStatus="i">
+							<tr>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c1.getTotalPlayers() > i.index -1}">
+							${c1.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
+							</tr>
+						</c:forEach>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c1aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c1bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c1cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c1dUser }</td>
-				</tr>
-			</table>
-		</div>
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 2</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c2time }</li>
-				</ul>
+				<h2>Console 2</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c2.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+					<c:if test="${c2.getTotalPlayers()} > 0">
+						<c:forEach begin="0" end="${c2.getTotalPlayers()}" varStatus="i">
+							<tr>
+								<td>${i}</td>
+								<td>${c2.getPlayers(i.index).getUserName()}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c2aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c2bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c2cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c2dUser }</td>
-				</tr>
-			</table>
-		</div>
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 3</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c3time }</li>
-				</ul>
+				<h2>Console 3</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c3.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+					<c:if test="${c3.getTotalPlayers()} > 0">
+						<c:forEach begin="0" end="${c3.getTotalPlayers()}" varStatus="i">
+							<tr>
+								<td>${i}</td>
+								<td>${c3.getPlayers(i.index).getUserName()}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c3aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c3bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c3cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c3dUser }</td>
-				</tr>
-			</table>
-		</div>
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 4</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c4time }</li>
-				</ul>
+				<h2>Console 4</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c4.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+					<c:if test="${c4.getTotalPlayers()} > 0">
+						<c:forEach begin="0" end="${c4.getTotalPlayers()}" varStatus="i">
+							<tr>
+								<td>${i}</td>
+								<td>${c4.getPlayers(i.index).getUserName()}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c4aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c4bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c4cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c4dUser }</td>
-				</tr>
-			</table>
-		</div>
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 5</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c5time }</li>
-				</ul>
+				<h2>Console 5</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c5.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+					<c:if test="${c5.getTotalPlayers()} > 0">
+						<c:forEach begin="0" end="${c5.getTotalPlayers()}" varStatus="i">
+							<tr>
+								<td>${i}</td>
+								<td>${c5.getPlayers(i.index).getUserName()}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c5aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c5bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c5cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c5dUser }</td>
-				</tr>
-			</table>
-		</div>
-		<div class="c">
+			<div class="c">
 
-			<h2>Console 6</h2>
-			<div class="seb">
-				<ul>
-					<li class="a">Temps restant: ${ st.c6time }</li>
-				</ul>
+				<h2>Console 6</h2>
+				<div class="seb">
+					<ul>
+						<li class="a">Temps restant: ${ c6.time }</li>
+					</ul>
+				</div>
+				<table>
+					<tr>
+						<th>Eq</th>
+						<th>Nom</th>
+					</tr>
+					<c:if test="${c6.getTotalPlayers()} > 0">
+						<c:forEach begin="0" end="${c6.getTotalPlayers()}" varStatus="i">
+							<tr>
+								<td>${i}</td>
+								<td>${c6.getPlayers(i.index).getUserName()}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
 			</div>
-			<table>
-				<tr>
-					<th>Eq</th>
-					<th>Nom</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>${ st.c6aUser }</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>${ st.c6bUser }</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>${ st.c6cUser }</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>${ st.c6dUser }</td>
-				</tr>
-			</table>
-		</div>
 		</section>
 
 
