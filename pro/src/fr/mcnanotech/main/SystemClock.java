@@ -14,14 +14,11 @@ public class SystemClock
      */
     public static void tick(SystemStatus st, UserDao userDao)
     {
-        System.out.println("je suis en train de tourner !");
         timer++;
         for(int consoleId = 0; consoleId < 6; consoleId++)
         {
-            System.out.println(consoleId + "  " + timer + "   " + st.getTotalPlayerBy(consoleId));
             if(st.getTotalPlayerBy(consoleId) > 0 && timer % st.getTotalPlayerBy(consoleId) == 0)
             {
-                System.out.println(consoleId + st.getTotalPlayerBy(consoleId));
                 GamingMachine machine = st.getMachine(consoleId);
                 if(machine.getTime() > 1)
                 {

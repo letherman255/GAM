@@ -16,7 +16,8 @@
 				<li><a href="/pro/administration/admininterface">Interface Admin</a></li>
 				<li><a href="/pro/administration/inscription">Inscription</a></li>
 				<li><a href="/pro/administration/usermanager">Gestion utilisateurs</a></li>
-				<li><a href="/pro/administration/systemconfig">configuration système</a></li>
+				<li><a href="/pro/administration/systemconfig">Controle
+						système</a></li>
 				<li><a href="#">Aide</a></li>
 				<li><a href="/pro/deconnexion">Déconnexion</a></li>
 			</ul>

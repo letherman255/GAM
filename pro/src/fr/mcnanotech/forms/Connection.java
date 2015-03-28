@@ -1,5 +1,6 @@
 package fr.mcnanotech.forms;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,10 +42,9 @@ public final class Connection
         /* R�cup�ration des champs du formulaire */
         String username = getFieldValue(request, FIELD_USERNAME);
         String password = getFieldValue(request, FIELD_PASSWORD);
- 
 
         User user = new User();
- 
+
         try
         {
             verifyUsername(username);
@@ -81,7 +81,7 @@ public final class Connection
         {
             resultat = "�chec de la connexion.";
         }
-
+        
         return user;
     }
 

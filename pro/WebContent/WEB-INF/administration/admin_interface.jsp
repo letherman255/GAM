@@ -19,7 +19,7 @@
 				<li><a href="/pro/administration/inscription">Inscription</a></li>
 				<li><a href="/pro/administration/usermanager">Gestion
 						utilisateurs</a></li>
-				<li><a href="/pro/administration/systemconfig">configuration
+				<li><a href="/pro/administration/systemconfig">Controle
 						système</a></li>
 				<li><a href="#">Aide</a></li>
 				<li><a href="/pro/deconnexion">Déconnexion</a></li>
@@ -78,14 +78,16 @@
 						<th>Eq</th>
 						<th>Nom</th>
 					</tr>
-					<c:if test="${c2.getTotalPlayers()} > 0">
-						<c:forEach begin="0" end="${c2.getTotalPlayers()}" varStatus="i">
+					<c:forEach begin="1" end="4" varStatus="i">
 							<tr>
-								<td>${i}</td>
-								<td>${c2.getPlayers(i.index).getUserName()}</td>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c2.getTotalPlayers() > i.index -1}">
+							${c2.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
 							</tr>
 						</c:forEach>
-					</c:if>
 				</table>
 			</div>
 			<div class="c">
@@ -101,14 +103,16 @@
 						<th>Eq</th>
 						<th>Nom</th>
 					</tr>
-					<c:if test="${c3.getTotalPlayers()} > 0">
-						<c:forEach begin="0" end="${c3.getTotalPlayers()}" varStatus="i">
+					<c:forEach begin="1" end="4" varStatus="i">
 							<tr>
-								<td>${i}</td>
-								<td>${c3.getPlayers(i.index).getUserName()}</td>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c3.getTotalPlayers() > i.index -1}">
+							${c3.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
 							</tr>
 						</c:forEach>
-					</c:if>
 				</table>
 			</div>
 			<div class="c">
@@ -124,14 +128,16 @@
 						<th>Eq</th>
 						<th>Nom</th>
 					</tr>
-					<c:if test="${c4.getTotalPlayers()} > 0">
-						<c:forEach begin="0" end="${c4.getTotalPlayers()}" varStatus="i">
+					<c:forEach begin="1" end="4" varStatus="i">
 							<tr>
-								<td>${i}</td>
-								<td>${c4.getPlayers(i.index).getUserName()}</td>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c4.getTotalPlayers() > i.index -1}">
+							${c4.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
 							</tr>
 						</c:forEach>
-					</c:if>
 				</table>
 			</div>
 			<div class="c">
@@ -147,14 +153,16 @@
 						<th>Eq</th>
 						<th>Nom</th>
 					</tr>
-					<c:if test="${c5.getTotalPlayers()} > 0">
-						<c:forEach begin="0" end="${c5.getTotalPlayers()}" varStatus="i">
+					<c:forEach begin="1" end="4" varStatus="i">
 							<tr>
-								<td>${i}</td>
-								<td>${c5.getPlayers(i.index).getUserName()}</td>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c5.getTotalPlayers() > i.index -1}">
+							${c5.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
 							</tr>
 						</c:forEach>
-					</c:if>
 				</table>
 			</div>
 			<div class="c">
@@ -170,14 +178,16 @@
 						<th>Eq</th>
 						<th>Nom</th>
 					</tr>
-					<c:if test="${c6.getTotalPlayers()} > 0">
-						<c:forEach begin="0" end="${c6.getTotalPlayers()}" varStatus="i">
+					<c:forEach begin="1" end="4" varStatus="i">
 							<tr>
-								<td>${i}</td>
-								<td>${c6.getPlayers(i.index).getUserName()}</td>
+							<td>${i.index}</td>
+							<td>
+							<c:if test="${c6.getTotalPlayers() > i.index -1}">
+							${c6.getPlayers(i.index -1).getUserName()}
+							</c:if>
+							</td>
 							</tr>
 						</c:forEach>
-					</c:if>
 				</table>
 			</div>
 		</section>

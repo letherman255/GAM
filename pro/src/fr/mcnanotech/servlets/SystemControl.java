@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.mcnanotech.beans.SystemParam;
-import fr.mcnanotech.forms.SystemConfigForm;
+import fr.mcnanotech.forms.SystemControlForm;
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/administration/systemconfig")
-public class SystemConfig extends HttpServlet
+public class SystemControl extends HttpServlet
 {
     private static final String VIEW = "/WEB-INF/administration/system_config.jsp";
     private static final String ATT_FORM = "form";
@@ -26,7 +26,7 @@ public class SystemConfig extends HttpServlet
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        SystemConfigForm sc = new SystemConfigForm();
+        SystemControlForm sc = new SystemControlForm();
         SystemParam sp = sc.saveParam(request);
 
         request.setAttribute(ATT_FORM, sc);

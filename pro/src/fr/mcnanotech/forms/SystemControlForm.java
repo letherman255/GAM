@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.configloader.SettingsLoader;
 
-public final class SystemConfigForm
+public final class SystemControlForm
 {
     private static final String FIELD_CREDIT = "dailyCredit";
     private Map<String, String> errors = new HashMap<String, String>();

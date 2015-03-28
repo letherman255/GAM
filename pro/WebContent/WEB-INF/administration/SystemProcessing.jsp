@@ -26,21 +26,20 @@
 			</ul>
 		</nav>
 		<hr>
-		<form method="post" action="systemconfig">
-			<fieldset>
-				<legend>Configuration Système</legend>
-				<label for="dailyCredit">Crédit quotidien (min)</label> <input
-					type="number" id="dailyCredit" name="dailyCredit" size="20"
-					maxlength="60"> <input type="submit" value="valider" />
-				<span class="erreur">${form.errors['dailyCredit']}</span>
-				</fieldset>
-				</form>
-				<br><button onclick="window.location.href='/pro/administration/shutdown'" class="bdcenter">Arreter
-						le système</button><br><br>
-						<button onclick="window.location.href='/pro/administration/restart'" class="bdcenter">Redémarer le système</button><br>
-			
-		
-		<br>
+		<div class="processing">
+			<c:choose>
+				<c:when test="${!empty messages['errors']}">
+					<span class="erreur"> Une erreur imprévue est survenue: <br>${messages['errors']}
+					</span>
+				</c:when>
+				<c:when test="${empty messages['errors']}">
+					<c:choose>
+						<c:when test="${messages.type == 'shutdown'}">Le système va s'arreter.<br></c:when>
+						<c:when test="${messages.type == 'restart'}">Le système va redémarer.<br></c:when>
+					</c:choose>
+				</c:when>
+			</c:choose>
+		</div>
 	</div>
 
 </body>

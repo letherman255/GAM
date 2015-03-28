@@ -38,7 +38,7 @@ public class AdministrationFilter implements Filter
         HttpSession session = request.getSession(false);
 
 
-        if(session != null)
+        if(session.getAttribute(IS_ADMIN) != null)
         {
 
             if(session.getAttribute(IS_ADMIN).equals("true"))
