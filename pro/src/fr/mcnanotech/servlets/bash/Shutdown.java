@@ -26,7 +26,7 @@ public class Shutdown extends HttpServlet
         try
         {
             System.out.println("arret du raspberry pi");
-             runtime.exec(new String[] {"cmd", "/c", "start", "C:\\Users\\Matthias\\Desktop\\ddd.mp3"});
+             runtime.exec(new String[] {"poweroff"});
              messages.put(FIELD_TYPE, "shutdown");
         }
         catch(IOException e)

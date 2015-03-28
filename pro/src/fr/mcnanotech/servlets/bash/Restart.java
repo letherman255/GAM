@@ -26,7 +26,7 @@ public class Restart extends HttpServlet
         try
         {
             System.out.println("Redémarrage du raspberry pi");
-             runtime.exec(new String[] {"cmd", "/c", "start", "C:\\Users\\Matthias\\Desktop\\ss.mp3"});
+             runtime.exec(new String[] {"reboot"});
              messages.put(FIELD_TYPE, "restart");
         }
         catch(IOException e)
