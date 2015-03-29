@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -71,10 +71,16 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="160" y2="0" width="0" layer="20"/>
-<wire x1="160" y1="0" x2="160" y2="100" width="0" layer="20"/>
-<wire x1="160" y1="100" x2="0" y2="100" width="0" layer="20"/>
-<wire x1="0" y1="100" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="13.97" x2="162.54" y2="13.97" width="0" layer="20"/>
+<wire x1="162.54" y1="13.97" x2="162.54" y2="91.11" width="0" layer="20"/>
+<wire x1="162.54" y1="91.11" x2="0" y2="91.11" width="0" layer="20"/>
+<wire x1="0" y1="91.11" x2="0" y2="13.97" width="0" layer="20"/>
+<hole x="2.54" y="88.9" drill="3.2"/>
+<hole x="2.54" y="16.51" drill="3.2"/>
+<hole x="160.02" y="16.51" drill="3.2"/>
+<hole x="160.02" y="88.9" drill="3.2"/>
+<hole x="77.47" y="16.51" drill="3.2"/>
+<hole x="77.47" y="88.9" drill="3.2"/>
 </plain>
 <libraries>
 <library name="con-lstb">
