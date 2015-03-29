@@ -56,6 +56,11 @@ public class SystemStatus
     {
         return this.gamingMachine[consoleId].getTotalPlayers();
     }
+    
+    public int getCreditedPlayers(int consoleId)
+    {
+        return this.gamingMachine[consoleId].getCreditedPlayers();
+    }
 
     /**
      * Sets the user of the given system to null.
@@ -114,6 +119,19 @@ public class SystemStatus
         if(consoleId != -1 && index < this.gamingMachine[consoleId].getTotalPlayers())
         {
             return this.gamingMachine[consoleId].getPlayers(index);
+        }
+        return null;
+    }
+    
+    
+    public GamingMachine findWereIsThePlayer(String name)
+    {
+        for(GamingMachine machine : gamingMachine)
+        {
+            if(machine.isOnThisMachine(name))
+            {
+                return machine;
+            }
         }
         return null;
     }

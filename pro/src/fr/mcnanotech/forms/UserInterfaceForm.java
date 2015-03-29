@@ -104,7 +104,7 @@ System.out.println(consoleId+" joueur "+ player.getUserName());
 
         creditPercentage = constrainp(100 * credit / maxcredit);
 
-        systemuser.setSystem(toSystem(getFieldValue(request, SYSTEM), getFieldValue(request, PERIHERAL)));
+        systemuser.setSystem(getFieldValue(request, SYSTEM));
         systemuser.setUsername(username);
         systemuser.setCreditLeft(credit);
         systemuser.setCreditPercentage(creditPercentage);
@@ -141,7 +141,7 @@ System.out.println(consoleId+" joueur "+ player.getUserName());
         {
             throw new FormValidationException("Ce compte est déja en jeu.");
         }
-        if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 5)
+        if(userDao.find(session.getAttribute(USERNAME).toString(), "username").getCredit() < 1)
         {
             throw new FormValidationException("Vous n'avez pas assez de crédit pour commencer à jouer !");
         }
@@ -200,136 +200,5 @@ System.out.println(consoleId+" joueur "+ player.getUserName());
             percentage = 100;
         }
         return percentage;
-    }
-
-    /**
-     * Returns the system string based on the given system and peripheral.
-     * 
-     * @param system
-     *            String
-     * @param peripheral
-     *            String
-     * @return System String
-     */
-    private String toSystem(String system, String peripheral)
-    {
-        if(system != null)
-        {
-            if(system.equals("sys1"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "1a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "1b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "1c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "1d";
-                }
-            }
-            if(system.equals("sys2"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "2a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "2b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "2c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "2d";
-                }
-            }
-            if(system.equals("sys3"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "3a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "3b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "3c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "3d";
-                }
-            }
-            if(system.equals("sys4"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "4a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "4b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "4c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "4d";
-                }
-            }
-            if(system.equals("sys5"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "5a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "5b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "5c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "5d";
-                }
-            }
-            if(system.equals("sys6"))
-            {
-                if(peripheral.equals("sysa"))
-                {
-                    return "6a";
-                }
-                if(peripheral.equals("sysb"))
-                {
-                    return "6b";
-                }
-                if(peripheral.equals("sysc"))
-                {
-                    return "6c";
-                }
-                if(peripheral.equals("sysd"))
-                {
-                    return "6d";
-                }
-            }
-        }
-        return null;
     }
 }

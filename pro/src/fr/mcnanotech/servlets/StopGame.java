@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.mcnanotech.main.GamingMachine;
 import fr.mcnanotech.main.SystemStatus;
 import fr.mcnanotech.main.SystemThread;
 
@@ -23,9 +24,17 @@ public class StopGame extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
         HttpSession session = request.getSession();
-
+        String username = session.getAttribute(USERNAME).toString();
         SystemStatus st = SystemThread.getInfo();
-        st.killUserByUsername(session.getAttribute(USERNAME).toString());
+        GamingMachine machine = st.findWereIsThePlayer(username);
+        st.killUserByUsername(username);
+        if(machine != null)
+        {
+            if(machine.getTotalPlayers() == 0)
+            {
+                machine.setTime(0);
+            }
+        }
         SystemThread.setInfo(st);
 
         session.setAttribute(ATT_IN_GAME, "false");

@@ -17,32 +17,55 @@ public class SystemClock
         timer++;
         for(int consoleId = 0; consoleId < 6; consoleId++)
         {
-            if(st.getTotalPlayerBy(consoleId) > 0 && timer % st.getTotalPlayerBy(consoleId) == 0)
+            GamingMachine machine = st.getMachine(consoleId);
+
+            if(st.getCreditedPlayers(consoleId) > 0)
             {
-                GamingMachine machine = st.getMachine(consoleId);
-                if(machine.getTime() > 1)
+                if(st.getTotalPlayerBy(consoleId) > 0 && (timer % st.getCreditedPlayers(consoleId)) == 0)
                 {
-                    int newTime = 0;
-                    for(int controlerId = 0; controlerId < st.getTotalPlayerBy(consoleId); controlerId++)
+                    if(machine.getTime() > 0)
                     {
-                        Player player = machine.getPlayers(controlerId);
-                        player.setTime(player.getTime() - 1);
-                        newTime += player.getTime();
-                        if(player.getTime() >= 0)
+                        int newTime = 0;
+                        for(int controlerId = 0; controlerId < st.getTotalPlayerBy(consoleId); controlerId++)
                         {
-                            userDao.setUserCredit(player.getUserName(), player.getTime());
+                            Player player = machine.getPlayers(controlerId);
+                            if(player.getTime() > 0)
+                            {
+                                player.setTime(player.getTime() - 1);
+                            }
+                            newTime += player.getTime();
+                            System.out.println(controlerId +" " + player.getTime() + " " + newTime);
+                            if(player.getTime() >= 0)
+                            {
+                                userDao.setUserCredit(player.getUserName(), player.getTime());
+                            }
+                        }
+                        machine.setTime(newTime);
+                        if(newTime<=0)
+                        {
+                            kick(machine);
                         }
                     }
-                    machine.setTime(newTime);
-                }
-                else
-                {
-                    System.out.println("console " +  String.valueOf(consoleId + 1) + " désactivée");
-                    machine.kickAll();
-                    machine.setTime(0);
-                    // éteindre
+                    else
+                    {
+                        kick(machine);
+                    }
+                    System.out.println("joeuur avec crédit " + st.getCreditedPlayers(consoleId) + "temps machine :" + machine.getTime());
                 }
             }
+            else if(st.getTotalPlayerBy(consoleId) > 0)
+            {
+                System.out.println("cacahuete 2");
+                kick(machine);
+            }
         }
+    }
+    
+    private static void kick(GamingMachine machine)
+    {
+        System.out.println("console " + String.valueOf(machine.getId() + 1) + " désactivée");
+        machine.kickAll();
+        machine.setTime(0);
+        System.out.println("Temps de la machine" + machine.getTime());
     }
 }

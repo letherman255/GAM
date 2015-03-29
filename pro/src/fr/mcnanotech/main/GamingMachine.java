@@ -9,9 +9,11 @@ public class GamingMachine
     private int maxPlayers;
     private int lastPlayersCount;
     private int time;
+    private int id;
 
     public GamingMachine(int id, int maxPlayers)
     {
+        this.id = id;
         this.maxPlayers = maxPlayers;
     }
 
@@ -109,5 +111,23 @@ public class GamingMachine
     public void setLastPlayersCount(int lastPlayersCount)
     {
         this.lastPlayersCount = lastPlayersCount;
+    }
+
+    public int getCreditedPlayers()
+    {
+        int i = 0;
+        for(Player player : this.players)
+        {
+            if(player.getTime() > 0)
+            {
+                i++;
+            }
+        }
+        return i;
+    }
+    
+    public int getId()
+    {
+        return this.id;
     }
 }
