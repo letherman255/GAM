@@ -8,7 +8,7 @@ int M4 = 5; //Manette 4
 
 void setup(){
   Serial.begin(9600); //Pour le debug
-  Wire.begin(0x10); //Adresse à changer pour chaque Arduino
+  Wire.begin(0x30); //Adresse à changer pour chaque Arduino
   pinMode(M1, OUTPUT);
   pinMode(M2, OUTPUT);
   pinMode(M3, OUTPUT);
@@ -17,7 +17,7 @@ void setup(){
 }
 
 void loop(){
-  i2c = Serial.parseInt();
+  i2c = Wire.read();
   if (i2c <= 0){
     //Ne fais rien du tout !
   }else{
