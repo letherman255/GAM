@@ -19,6 +19,8 @@ public class SettingsLoader
     private static final String ADMIN1 = "admin1";
     private static final String ADMIN2 = "admin2";
     private static final String DATE = "date";
+    private static final String RASPBERRY = "raspberry";
+    
 
     @SuppressWarnings("resource")
     public SystemParam loadParams(SystemParam sp)
@@ -60,6 +62,7 @@ public class SettingsLoader
         sp.setDate(new String(props.getProperty(DATE, today.toString("dd-MMM-yyyy"))));
         sp.setAdmin1(new String(props.getProperty(ADMIN1, "admin")));
         sp.setAdmin2(new String(props.getProperty(ADMIN2, "matthias")));
+        sp.setRaspberry(new String(props.getProperty(RASPBERRY, "false")));
 
         return sp;
     }
@@ -73,6 +76,7 @@ public class SettingsLoader
             props.setProperty(DATE, sp.getDate());
             props.setProperty(ADMIN2, sp.getAdmin2());
             props.setProperty(ADMIN1, sp.getAdmin1());
+            props.setProperty(RASPBERRY, sp.getRaspberry());
             File f = new File(PROPERTY_FILE);
             OutputStream out = new FileOutputStream(f);
             props.store(out, "Fichier de configuration système");

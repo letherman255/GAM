@@ -1,5 +1,7 @@
 package fr.mcnanotech.main;
 
+import java.io.IOException;
+
 import org.joda.time.DateTime;
 
 import fr.mcnanotech.beans.SystemParam;
@@ -7,6 +9,7 @@ import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.configloader.SettingsLoader;
 import fr.mcnanotech.dao.DAOFactory;
 import fr.mcnanotech.dao.UserDao;
+import fr.mcnanotech.gpio.I2CTransfer;
 
 public class SystemThread extends Thread
 {
@@ -22,11 +25,22 @@ public class SystemThread extends Thread
     public void run()
     {
 
+        
         SystemParam systemparam = new SystemParam();
         SettingsLoader settingsloader = new SettingsLoader();
 
         systemparam = settingsloader.loadParams(systemparam);
         settingsloader.saveParamChanges(systemparam);
+        
+        try
+        {
+            I2CTransfer.initI2C(systemparam.getRaspberry());
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        
         this.userDao = DAOFactory.getInstance().getDaoUser();
         st.setDailyCredit(systemparam.getDailyCredit());
         long t = (System.currentTimeMillis() / TIME_BASE);

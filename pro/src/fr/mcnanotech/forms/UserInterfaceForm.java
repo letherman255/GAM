@@ -22,10 +22,8 @@ import fr.mcnanotech.main.SystemThread;
 public class UserInterfaceForm
 {
     private static final String SYSTEM = "system";
-    private static final String PERIHERAL = "peripheral";
     private static final String ATT_IN_GAME = "isingame";
     private static final String USERNAME = "username";
-    @SuppressWarnings("unused")
     private UserDao userDao;
     private String result;
     private Map<String, String> errors = new HashMap<String, String>();
@@ -78,7 +76,7 @@ public class UserInterfaceForm
         }
         if(errors.isEmpty())
         {
-System.out.println(consoleId+" joueur "+ player.getUserName());
+            System.out.println(consoleId + " joueur " + player.getUserName());
             st.addUserTo(consoleId, player);
             SystemThread.setInfo(st);
             session.setAttribute(ATT_IN_GAME, "true");

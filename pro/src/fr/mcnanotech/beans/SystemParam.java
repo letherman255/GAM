@@ -5,6 +5,7 @@ public class SystemParam {
 	private String date;
 	private String admin1;
 	private String admin2;
+	private String raspberry;
 
 	public int getDailyCredit() {
 		return dailyCredit;
@@ -37,5 +38,15 @@ public class SystemParam {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+    public String getRaspberry()
+    {
+        return raspberry;
+    }
+
+    public void setRaspberry(String raspberry)
+    {
+        this.raspberry = raspberry;
+    }
 
 }

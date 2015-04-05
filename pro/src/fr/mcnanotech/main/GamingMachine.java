@@ -1,7 +1,10 @@
 package fr.mcnanotech.main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.mcnanotech.gpio.I2CTransfer;
 
 public class GamingMachine
 {
@@ -20,6 +23,17 @@ public class GamingMachine
     public void kickAll()
     {
         this.players.clear();
+        for(int i = 0; i < 4; i++)
+        {
+            try
+            {
+                I2CTransfer.setState(this.id, i, false);
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 
     public Player getPlayers(int index)
@@ -38,6 +52,14 @@ public class GamingMachine
         {
             this.players.add(player);
             this.updateTime();
+            try
+            {
+                I2CTransfer.setState(this.id, this.players.indexOf(player), true);
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
             return true;
         }
         return false;
@@ -57,6 +79,15 @@ public class GamingMachine
     {
         if(index < this.players.size())
         {
+
+            try
+            {
+                I2CTransfer.setState(this.id, index, false);
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
             this.players.remove(index);
             return true;
         }
@@ -69,6 +100,15 @@ public class GamingMachine
         {
             if(player.getUserName().equals(name))
             {
+
+                try
+                {
+                    I2CTransfer.setState(this.id, this.players.indexOf(player), false);
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
                 this.players.remove(player);
                 return true;
             }
@@ -125,7 +165,7 @@ public class GamingMachine
         }
         return i;
     }
-    
+
     public int getId()
     {
         return this.id;
