@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PaletteState>
 <entry>
-<entry active="true"/>
+<entry active="false"/>
 <entry>
 <entry active="false"/>
 <entry active="false"/>
@@ -9,18 +9,13 @@
 </entry>
 <entry active="false"/>
 </entry>
-<entry expansion="true" extent="119" maximum="119" minimum="0" pinned="false" value="0">
-<entry active="false"/>
+<entry expansion="true" extent="95" maximum="95" minimum="0" pinned="false" value="0">
 <entry active="false"/>
 <entry active="false"/>
 <entry active="false"/>
 <entry active="false"/>
 </entry>
-<entry expansion="true" extent="257" maximum="257" minimum="0" pinned="false" value="0">
-<entry active="false"/>
-<entry active="false"/>
-<entry active="false"/>
-<entry active="false"/>
+<entry expansion="true" extent="165" maximum="165" minimum="0" pinned="false" value="0">
 <entry active="false"/>
 <entry active="false"/>
 <entry active="false"/>
@@ -29,12 +24,8 @@
 <entry active="false"/>
 <entry active="false"/>
 </entry>
-<entry expansion="true" extent="134" maximum="134" minimum="0" pinned="false" value="0">
-<entry>
+<entry expansion="true" extent="441" maximum="441" minimum="0" pinned="false" value="0">
 <entry active="false"/>
-<entry active="false"/>
-<entry active="false"/>
-</entry>
 <entry active="false"/>
 <entry active="false"/>
 <entry active="false"/>

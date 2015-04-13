@@ -83,7 +83,7 @@
           <message xmi:type="uml:Message" xmi:id="_dfpSoHDSEeSvY-8P7kxBvA" name="Réponse utilisateur" receiveEvent="_dforkHDSEeSvY-8P7kxBvA" sendEvent="_dfoEgHDSEeSvY-8P7kxBvA"/>
           <message xmi:type="uml:Message" xmi:id="_kkvtEXDSEeSvY-8P7kxBvA" name="Ordre de déblocage" messageSort="asynchCall" receiveEvent="_kkvGAHDSEeSvY-8P7kxBvA" sendEvent="_kkue8HDSEeSvY-8P7kxBvA"/>
           <message xmi:type="uml:Message" xmi:id="_p8M58HDSEeSvY-8P7kxBvA" name="Déblocage" receiveEvent="_p8MS4HDSEeSvY-8P7kxBvA" sendEvent="_p8Lr0HDSEeSvY-8P7kxBvA"/>
-          <message xmi:type="uml:Message" xmi:id="_0uOSEXDSEeSvY-8P7kxBvA" name="Confiermation de déblocage" messageSort="reply" receiveEvent="_0uNrAHDSEeSvY-8P7kxBvA" sendEvent="_0uMc4HDSEeSvY-8P7kxBvA"/>
+          <message xmi:type="uml:Message" xmi:id="_0uOSEXDSEeSvY-8P7kxBvA" name="Confirmation de déblocage" messageSort="reply" receiveEvent="_0uNrAHDSEeSvY-8P7kxBvA" sendEvent="_0uMc4HDSEeSvY-8P7kxBvA"/>
           <message xmi:type="uml:Message" xmi:id="_9hL8gnDSEeSvY-8P7kxBvA" name="Démarrage du décompte" messageSort="reply" receiveEvent="_9hL8gHDSEeSvY-8P7kxBvA" sendEvent="_9hKuYHDSEeSvY-8P7kxBvA"/>
         </ownedBehavior>
         <include xmi:type="uml:Include" xmi:id="_8dsG4HDMEeSvY-8P7kxBvA" name="Include1" addition="_qtCIsHDMEeSvY-8P7kxBvA"/>
@@ -213,14 +213,14 @@
           <message xmi:type="uml:Message" xmi:id="_PphRQHGLEeSvZfb17d9O-Q" name="Commande directe des accès (blocage/déblocage)" receiveEvent="_PpgDIHGLEeSvZfb17d9O-Q" sendEvent="_PpfcEHGLEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_cl5BEHGLEeSvZfb17d9O-Q" name="Transfert demande" receiveEvent="_cl3y8XGLEeSvZfb17d9O-Q" sendEvent="_cl3y8HGLEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_hK6EYHGLEeSvZfb17d9O-Q" name="execution" receiveEvent="_hK4PMHGLEeSvZfb17d9O-Q" sendEvent="_hK3oIHGLEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_kg0QQHGLEeSvZfb17d9O-Q" name="confiermation" messageSort="reply" receiveEvent="_kgybEXGLEeSvZfb17d9O-Q" sendEvent="_kgybEHGLEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_kg0QQHGLEeSvZfb17d9O-Q" name="confirmation" messageSort="reply" receiveEvent="_kgybEXGLEeSvZfb17d9O-Q" sendEvent="_kgybEHGLEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_q-wkEHGLEeSvZfb17d9O-Q" name="Enregistrement donnés utilisateur" receiveEvent="_q-uu4HGLEeSvZfb17d9O-Q" sendEvent="_q-uH0HGLEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_v_mnwHGLEeSvZfb17d9O-Q" name="Confiermation serveur" messageSort="reply" receiveEvent="_v_lZoHGLEeSvZfb17d9O-Q" sendEvent="_v_kykHGLEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_x6CUIHGLEeSvZfb17d9O-Q" name="confiermation client" messageSort="reply" receiveEvent="_x6Ae8HGLEeSvZfb17d9O-Q" sendEvent="_x5_34HGLEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_v_mnwHGLEeSvZfb17d9O-Q" name="Confirmation serveur" messageSort="reply" receiveEvent="_v_lZoHGLEeSvZfb17d9O-Q" sendEvent="_v_kykHGLEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_x6CUIHGLEeSvZfb17d9O-Q" name="confirmation client" messageSort="reply" receiveEvent="_x6Ae8HGLEeSvZfb17d9O-Q" sendEvent="_x5_34HGLEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_GzgdYHGMEeSvZfb17d9O-Q" name="Changement de la configuration" receiveEvent="_GzeoMHGMEeSvZfb17d9O-Q" sendEvent="_GzeBIHGMEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_T1-OIHGMEeSvZfb17d9O-Q" name="écriture donnés" receiveEvent="_T18Y8HGMEeSvZfb17d9O-Q" sendEvent="_T17x4HGMEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_XDqSIHGMEeSvZfb17d9O-Q" name="Confiermation serveur " messageSort="reply" receiveEvent="_XDn14HGMEeSvZfb17d9O-Q" sendEvent="_XDnO0HGMEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_c8mbcHGMEeSvZfb17d9O-Q" name="Confiermation client" messageSort="reply" receiveEvent="_c8iKAHGMEeSvZfb17d9O-Q" sendEvent="_c8hi8HGMEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_XDqSIHGMEeSvZfb17d9O-Q" name="Confirmation serveur " messageSort="reply" receiveEvent="_XDn14HGMEeSvZfb17d9O-Q" sendEvent="_XDnO0HGMEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_c8mbcHGMEeSvZfb17d9O-Q" name="Confirmation client" messageSort="reply" receiveEvent="_c8iKAHGMEeSvZfb17d9O-Q" sendEvent="_c8hi8HGMEeSvZfb17d9O-Q"/>
         </ownedBehavior>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_xBrWkHDMEeSvY-8P7kxBvA" name="" memberEnd="_xBrWkXDMEeSvY-8P7kxBvA _xBrWlHDMEeSvY-8P7kxBvA">
@@ -385,11 +385,11 @@
           <message xmi:type="uml:Message" xmi:id="_RBmbUHGHEeSvZfb17d9O-Q" name="Arreter de jouer" receiveEvent="_RBl0QHGHEeSvZfb17d9O-Q" sendEvent="_RBkmIHGHEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_YgtRMHGHEeSvZfb17d9O-Q" name="Ordre de Blocage" receiveEvent="_YgsqIHGHEeSvZfb17d9O-Q" sendEvent="_YgrcAHGHEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_b12oEHGHEeSvZfb17d9O-Q" name="Blocage" messageSort="asynchCall" receiveEvent="_b11Z8HGHEeSvZfb17d9O-Q" sendEvent="_b10L0HGHEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_hSVe4HGHEeSvZfb17d9O-Q" name="Confiermation de blocage" messageSort="reply" receiveEvent="_hSUQwHGHEeSvZfb17d9O-Q" sendEvent="_hSTCoHGHEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_hSVe4HGHEeSvZfb17d9O-Q" name="Confirmation de blocage" messageSort="reply" receiveEvent="_hSUQwHGHEeSvZfb17d9O-Q" sendEvent="_hSTCoHGHEeSvZfb17d9O-Q"/>
           <message xmi:type="uml:Message" xmi:id="_syKYMHGHEeSvZfb17d9O-Q" name="écriture du crédit restant" messageSort="asynchCall" receiveEvent="_syJxIHGHEeSvZfb17d9O-Q" sendEvent="_syIjAHGHEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_zIlHsHGHEeSvZfb17d9O-Q" name="Confiermation d'écriture" messageSort="reply" receiveEvent="_zIkgoHGHEeSvZfb17d9O-Q" sendEvent="_zIjSgHGHEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_107ZMHGHEeSvZfb17d9O-Q" name="Confiermation d'arrêt de jeu." messageSort="reply" receiveEvent="_106yIHGHEeSvZfb17d9O-Q" sendEvent="_10488HGHEeSvZfb17d9O-Q"/>
-          <message xmi:type="uml:Message" xmi:id="_Iiu8IHGIEeSvZfb17d9O-Q" name="Confiermation serveur" messageSort="reply" receiveEvent="_IiuVEHGIEeSvZfb17d9O-Q" sendEvent="_Iisf4HGIEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_zIlHsHGHEeSvZfb17d9O-Q" name="Confirmation d'écriture" messageSort="reply" receiveEvent="_zIkgoHGHEeSvZfb17d9O-Q" sendEvent="_zIjSgHGHEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_107ZMHGHEeSvZfb17d9O-Q" name="Confirmation d'arrêt de jeu." messageSort="reply" receiveEvent="_106yIHGHEeSvZfb17d9O-Q" sendEvent="_10488HGHEeSvZfb17d9O-Q"/>
+          <message xmi:type="uml:Message" xmi:id="_Iiu8IHGIEeSvZfb17d9O-Q" name="Confirmation serveur" messageSort="reply" receiveEvent="_IiuVEHGIEeSvZfb17d9O-Q" sendEvent="_Iisf4HGIEeSvZfb17d9O-Q"/>
         </ownedBehavior>
         <include xmi:type="uml:Include" xmi:id="_yEKhgHGAEeSvZfb17d9O-Q" name="Include1" addition="_qtCIsHDMEeSvY-8P7kxBvA"/>
       </packagedElement>

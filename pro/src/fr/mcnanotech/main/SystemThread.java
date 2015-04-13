@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.joda.time.DateTime;
 
+import com.lcdfx.io.Lcd;
+
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.configloader.SettingsLoader;
@@ -35,6 +37,7 @@ public class SystemThread extends Thread
         try
         {
             I2CTransfer.initI2C(systemparam.getRaspberry());
+            I2CTransfer.initLcd(Lcd.BACKLIGHT_BLUE);
         }
         catch(IOException e)
         {
@@ -52,11 +55,14 @@ public class SystemThread extends Thread
             if(t >= tp)
             {
                 SystemClock.tick(st, userDao);
+                I2CTransfer.updateLcd(st);
                 tp = t + 1;
             }
 
             updateCredit(systemparam, userDao, settingsloader);
             updateInfo(st);
+            
+            
         }
 
     }

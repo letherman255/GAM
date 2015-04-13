@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_QSjcsCXLEd-dqNMA4nrGhQ" activeDiagram="_MdWogHGREeS_Aa6y64wgDw">
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_QSjcsCXLEd-dqNMA4nrGhQ" activeDiagram="_etT2AXGKEeSvZfb17d9O-Q">
   <model href="GAM_V2.sysml#idModel"/>
   <diagrams xmi:id="_QSjcsSXLEd-dqNMA4nrGhQ" position="0,0" size="100,100" name="global overview" viewport="0,102">
     <property xmi:id="_QS2XoCXLEd-dqNMA4nrGhQ" key="pageFormatName" value="A3"/>
@@ -1040,7 +1040,7 @@
       </subdiagrams>
       <subdiagrams xmi:id="_etT2AHGKEeSvZfb17d9O-Q">
         <model href="GAM_V2.sysml#_etTO8HGKEeSvZfb17d9O-Q"/>
-        <diagrams xmi:id="_etT2AXGKEeSvZfb17d9O-Q" position="0,0" size="100,100" name="Gerer le materiel" zoom="0.75" viewport="0,0">
+        <diagrams xmi:id="_etT2AXGKEeSvZfb17d9O-Q" position="0,0" size="100,100" name="Gerer le materiel" zoom="1.5" viewport="0,0">
           <property xmi:id="_ets3kHGKEeSvZfb17d9O-Q" key="pageFormatName" value="A4"/>
           <property xmi:id="_ets3kXGKEeSvZfb17d9O-Q" key="diagramWidth" value="840"/>
           <property xmi:id="_ets3knGKEeSvZfb17d9O-Q" key="diagramHeight" value="1188"/>
@@ -1053,7 +1053,7 @@
           <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_etT2AnGKEeSvZfb17d9O-Q" presentation="org.topcased.modeler.sysml.sequencediagram">
             <element href="GAM_V2.sysml#_etTO8HGKEeSvZfb17d9O-Q"/>
           </semanticModel>
-          <contained xsi:type="di:GraphNode" xmi:id="_h0-xkHGKEeSvZfb17d9O-Q" position="67,40" size="149,974">
+          <contained xsi:type="di:GraphNode" xmi:id="_h0-xkHGKEeSvZfb17d9O-Q" position="67,40" size="149,574">
             <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_h0-xkXGKEeSvZfb17d9O-Q" presentation="default">
               <element href="GAM_V2.sysml#_h1IikHGKEeSvZfb17d9O-Q"/>
             </semanticModel>
@@ -1069,7 +1069,7 @@
               </semanticModel>
             </contained>
           </contained>
-          <contained xsi:type="di:GraphNode" xmi:id="_lreiAHGKEeSvZfb17d9O-Q" position="247,40" size="136,982">
+          <contained xsi:type="di:GraphNode" xmi:id="_lreiAHGKEeSvZfb17d9O-Q" position="247,40" size="136,575">
             <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_lreiAXGKEeSvZfb17d9O-Q" presentation="default">
               <element href="GAM_V2.sysml#_lroTAHGKEeSvZfb17d9O-Q"/>
             </semanticModel>
@@ -1097,7 +1097,7 @@
               </semanticModel>
             </contained>
           </contained>
-          <contained xsi:type="di:GraphNode" xmi:id="_o2qEkHGKEeSvZfb17d9O-Q" position="413,40" size="133,978">
+          <contained xsi:type="di:GraphNode" xmi:id="_o2qEkHGKEeSvZfb17d9O-Q" position="413,40" size="133,571">
             <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_o2qEkXGKEeSvZfb17d9O-Q" presentation="default">
               <element href="GAM_V2.sysml#_o2244HGKEeSvZfb17d9O-Q"/>
             </semanticModel>
@@ -1129,7 +1129,7 @@
               </semanticModel>
             </contained>
           </contained>
-          <contained xsi:type="di:GraphNode" xmi:id="_qUDPoHGKEeSvZfb17d9O-Q" position="582,40" size="135,979">
+          <contained xsi:type="di:GraphNode" xmi:id="_qUDPoHGKEeSvZfb17d9O-Q" position="582,40" size="135,572">
             <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_qUDPoXGKEeSvZfb17d9O-Q" presentation="default">
               <element href="GAM_V2.sysml#_qUNAoHGKEeSvZfb17d9O-Q"/>
             </semanticModel>
