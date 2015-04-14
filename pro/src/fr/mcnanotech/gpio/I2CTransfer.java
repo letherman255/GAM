@@ -6,6 +6,8 @@ import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 
+import fr.mcnanotech.main.SystemStatus;
+
 public class I2CTransfer
 {
     private static I2CDevice[] arduino = new I2CDevice[6];
@@ -106,8 +108,17 @@ public class I2CTransfer
         }
     }
     
-    public static void testTheFuckingScreen()
+    public static void writeName()
     {
-        lcd.write("ICH BIN EINE SC");
+        lcd.write("      GAM      ");
+    }
+
+    public static void updateLcd(SystemStatus st)
+    {
+//        lcd.clear();
+//        lcd.write(" Utilisation :  ");
+//        lcd.setCursorPosition(0, 2);
+//        lcd.write(Integer.toString(st.getSystemUsage()));
+  
     }
 }

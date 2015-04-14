@@ -48,8 +48,7 @@ public class SystemThread extends Thread
         long tp = t + 1;
         
         
-        // TODO remove this tesy=t
-        I2CTransfer.testTheFuckingScreen();
+        I2CTransfer.writeName();
 
         while(true)
         {
@@ -57,7 +56,7 @@ public class SystemThread extends Thread
             if(t >= tp)
             {
                 SystemClock.tick(st, userDao);
-                //TODO I2CTransfer.updateLcd(st);
+                I2CTransfer.updateLcd(st);
                 tp = t + 1;
             }
 
