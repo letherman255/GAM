@@ -24,14 +24,12 @@ public class SystemThread extends Thread
 
     public void run()
     {
-
-        
         SystemParam systemparam = new SystemParam();
         SettingsLoader settingsloader = new SettingsLoader();
 
         systemparam = settingsloader.loadParams(systemparam);
         settingsloader.saveParamChanges(systemparam);
-        
+
         try
         {
             I2CTransfer.initI2C(systemparam.getRaspberry());
@@ -40,11 +38,12 @@ public class SystemThread extends Thread
         {
             e.printStackTrace();
         }
-        
+
         this.userDao = DAOFactory.getInstance().getDaoUser();
         st.setDailyCredit(systemparam.getDailyCredit());
         long t = (System.currentTimeMillis() / TIME_BASE);
         long tp = t + 1;
+        I2CTransfer.testTheFuckingScreen();
 
         while(true)
         {
@@ -100,7 +99,7 @@ public class SystemThread extends Thread
             GamingMachine machine = st.getMachine(consoleId);
             if(machine.getLastPlayersCount() != machine.getTotalPlayers())
             {
-                // nombre de joueur a changé
+                // nombre de joueur a changï¿½
                 machine.setLastPlayersCount(machine.getTotalPlayers());
             }
         }
