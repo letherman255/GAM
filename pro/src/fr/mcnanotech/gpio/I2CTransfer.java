@@ -31,7 +31,7 @@ public class I2CTransfer
                 }
                 isI2Cinit = true;
             }
-            
+
             try
             {
                 int adress = 0x20;
@@ -107,18 +107,21 @@ public class I2CTransfer
             }
         }
     }
-    
+
     public static void writeName()
     {
-        lcd.write("      GAM      ");
+        if(isI2Cinit)
+        {
+            lcd.write("      GAM      ");
+        }
     }
 
     public static void updateLcd(SystemStatus st)
     {
-//        lcd.clear();
-//        lcd.write(" Utilisation :  ");
-//        lcd.setCursorPosition(0, 2);
-//        lcd.write(Integer.toString(st.getSystemUsage()));
-  
+        // lcd.clear();
+        // lcd.write(" Utilisation :  ");
+        // lcd.setCursorPosition(0, 2);
+        // lcd.write(Integer.toString(st.getSystemUsage()));
+
     }
 }

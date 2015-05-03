@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import org.joda.time.DateTime;
 
-import com.lcdfx.io.Lcd;
-
 import fr.mcnanotech.beans.SystemParam;
 import fr.mcnanotech.beans.SystemUser;
 import fr.mcnanotech.configloader.SettingsLoader;
@@ -20,7 +18,8 @@ public class SystemThread extends Thread
      * This is the division factor to determine the system time intervals in milliseconds
      * for example 1000 is a sec. 60 000 is a minute, 3 600 000 is an hour
      */
-    private static final long TIME_BASE = 60000;
+    private static final long TIME_BASE = 1000;
+    private String creditStatus = "full";
     static SystemStatus st = new SystemStatus();
     private UserDao userDao;
 
@@ -35,7 +34,7 @@ public class SystemThread extends Thread
         try
         {
             I2CTransfer.initI2C(systemparam.getRaspberry());
-            //TODO I2CTransfer.initLcd(Lcd.BACKLIGHT_BLUE);
+            // TODO I2CTransfer.initLcd(Lcd.BACKLIGHT_BLUE);
         }
         catch(IOException e)
         {
@@ -46,8 +45,7 @@ public class SystemThread extends Thread
         st.setDailyCredit(systemparam.getDailyCredit());
         long t = (System.currentTimeMillis() / TIME_BASE);
         long tp = t + 1;
-        
-        
+
         I2CTransfer.writeName();
 
         while(true)
@@ -55,15 +53,22 @@ public class SystemThread extends Thread
             t = (System.currentTimeMillis() / TIME_BASE);
             if(t >= tp)
             {
-                SystemClock.tick(st, userDao);
+                if(Credit.half.name() == creditStatus)
+                {
+                    SystemClock.halfTick(st, userDao);
+                }
+
+                if(Credit.full.name() == creditStatus)
+                {
+                    SystemClock.fullTick(st, userDao);
+                }
                 I2CTransfer.updateLcd(st);
                 tp = t + 1;
             }
 
             updateCredit(systemparam, userDao, settingsloader);
             updateInfo(st);
-            
-            
+
         }
 
     }
