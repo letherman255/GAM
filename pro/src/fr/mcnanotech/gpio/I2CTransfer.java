@@ -10,7 +10,7 @@ import fr.mcnanotech.main.SystemStatus;
 
 public class I2CTransfer
 {
-    private static I2CDevice[] arduino = new I2CDevice[6];
+    private static I2CDevice arduino;
     private static boolean isI2Cinit = false;
     private static Lcd lcd;
 
@@ -19,18 +19,17 @@ public class I2CTransfer
         if(raspberry.equals("true"))
         {
             final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
-            for(int i = 0; i < (arduino.length); i++)
-            {
-                if(bus.getDevice(i) != null)
+           
+                if(bus != null)
                 {
-                    arduino[i] = bus.getDevice(i);
+                    arduino = bus.getDevice(1);
                 }
                 else
                 {
-                    System.err.println("Arduino " + i + " not found on the i2c bus.");
+                    System.err.println("Arduino not found on the i2c bus.");
                 }
                 isI2Cinit = true;
-            }
+            
 
             try
             {
@@ -59,11 +58,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino[arduinoAddress].write((byte)10);
+                        arduino.write((byte)10);
                     }
                     else
                     {
-                        arduino[arduinoAddress].write((byte)0);
+                        arduino.write((byte)0);
                     }
                     break;
                 }
@@ -71,11 +70,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino[arduinoAddress].write((byte)11);
+                        arduino.write((byte)11);
                     }
                     else
                     {
-                        arduino[arduinoAddress].write((byte)1);
+                        arduino.write((byte)1);
                     }
                     break;
                 }
@@ -83,11 +82,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino[arduinoAddress].write((byte)12);
+                        arduino.write((byte)12);
                     }
                     else
                     {
-                        arduino[arduinoAddress].write((byte)2);
+                        arduino.write((byte)2);
                     }
                     break;
                 }
@@ -95,11 +94,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino[arduinoAddress].write((byte)13);
+                        arduino.write((byte)13);
                     }
                     else
                     {
-                        arduino[arduinoAddress].write((byte)3);
+                        arduino.write((byte)3);
                     }
                     break;
                 }
