@@ -1,6 +1,7 @@
 package fr.mcnanotech.gpio;
 
 import java.io.IOException;
+import java.util.Random;
 
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
@@ -13,23 +14,20 @@ public class I2CTransfer
     private static I2CDevice arduino;
     private static boolean isI2Cinit = false;
     private static Lcd lcd;
-
     public static void initI2C(String raspberry) throws IOException
     {
         if(raspberry.equals("true"))
         {
             final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
-           
-                if(bus != null)
-                {
-                    arduino = bus.getDevice(1);
-                }
-                else
-                {
-                    System.err.println("Arduino not found on the i2c bus.");
-                }
-                isI2Cinit = true;
-            
+
+            if(bus != null)
+            {
+                arduino = bus.getDevice(10);
+            }
+            else
+            {
+                System.err.println("Arduino not found on the i2c bus.");
+            }
 
             try
             {
@@ -40,7 +38,8 @@ public class I2CTransfer
             {
                 e.printStackTrace();
             }
-
+            System.out.println("l'écran est null ? " + Boolean.valueOf(lcd == null));
+            isI2Cinit = true;
         }
         else
         {
@@ -48,8 +47,9 @@ public class I2CTransfer
         }
     }
 
-    public static void setState(int arduinoAddress, int controller, boolean state) throws IOException
+    public static void setState(int offset, int controller, boolean state) throws IOException
     {
+        offset = offset * 10;
         if(isI2Cinit)
         {
             switch(controller)
@@ -58,11 +58,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino.write((byte)10);
+                        arduino.write((byte)(offset + 20));
                     }
                     else
                     {
-                        arduino.write((byte)0);
+                        arduino.write((byte)(offset + 21));
                     }
                     break;
                 }
@@ -70,11 +70,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino.write((byte)11);
+                        arduino.write((byte)(offset + 22));
                     }
                     else
                     {
-                        arduino.write((byte)1);
+                        arduino.write((byte)(offset + 23));
                     }
                     break;
                 }
@@ -82,11 +82,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino.write((byte)12);
+                        arduino.write((byte)(offset + 24));
                     }
                     else
                     {
-                        arduino.write((byte)2);
+                        arduino.write((byte)(offset + 25));
                     }
                     break;
                 }
@@ -94,11 +94,11 @@ public class I2CTransfer
                 {
                     if(state)
                     {
-                        arduino.write((byte)13);
+                        arduino.write((byte)(offset + 26));
                     }
                     else
                     {
-                        arduino.write((byte)3);
+                        arduino.write((byte)(offset + 27));
                     }
                     break;
                 }
@@ -107,20 +107,49 @@ public class I2CTransfer
         }
     }
 
-    public static void writeName()
+    public static void initLCD()
     {
         if(isI2Cinit)
         {
+            lcd.setBacklight(Lcd.BACKLIGHT_RED);
             lcd.write("      GAM      ");
+        }
+    }
+
+    public static void updateSignal(SystemStatus st)
+    {
+        try
+        {
+            arduino.write((byte)10);
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
         }
     }
 
     public static void updateLcd(SystemStatus st)
     {
-        // lcd.clear();
-        // lcd.write(" Utilisation :  ");
-        // lcd.setCursorPosition(0, 2);
-        // lcd.write(Integer.toString(st.getSystemUsage()));
+        lcd.setCursorHome();
+        lcd.clear();
+        lcd.write("credit : " + String.valueOf(st.getDailyCredit()));
+        lcd.setCursorPosition(1, 0);
+        lcd.write("suivant : " + String.valueOf(st.getNextSystem()));
 
+    }
+
+    public static void systemOnline()
+    {
+        if(isI2Cinit)
+        {
+            try
+            {
+                arduino.write((byte)1);
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 }

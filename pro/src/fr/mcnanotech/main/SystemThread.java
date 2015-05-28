@@ -31,6 +31,7 @@ public class SystemThread extends Thread
         systemparam = settingsloader.loadParams(systemparam);
         settingsloader.saveParamChanges(systemparam);
 
+        System.out.println("démarrage ....................");
         try
         {
             I2CTransfer.initI2C(systemparam.getRaspberry());
@@ -46,7 +47,9 @@ public class SystemThread extends Thread
         long t = (System.currentTimeMillis() / TIME_BASE);
         long tp = t + 1;
 
-        I2CTransfer.writeName();
+        I2CTransfer.initLCD();
+        
+        I2CTransfer.systemOnline();
 
         while(true)
         {
@@ -63,6 +66,7 @@ public class SystemThread extends Thread
                     SystemClock.fullTick(st, userDao);
                 }
                 I2CTransfer.updateLcd(st);
+                I2CTransfer.updateSignal(st);
                 tp = t + 1;
             }
 
