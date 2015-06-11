@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Documents and Settings/Administrateur/Bureau/typon/Carte USB.brd
+Job           : E:/Projet Terminale/GAM/typon/Carte USB.brd
 
-Start at      : 11:12:02 (23/04/2015)
-End at        : 11:16:15 (23/04/2015)
-Elapsed time  : 00:00:22
+Start at      : 12:10:40 (26/04/2015)
+End at        : 12:11:00 (26/04/2015)
+Elapsed time  : 00:00:12
 
-Signals       :    29   RoutingGrid: 9 mil  Layers: 1
+Signals       :    29   RoutingGrid: 23.685 mil  Layers: 1
 Connections   :    36   predefined:  0 ( 0 Vias )
 
-Router memory :   5508
+Router memory :   5194
 
 Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
 
-Time per pass     :  00:00:11  00:00:11  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00
-Number of Ripups  :         0       300         0         0         0         0         0         0         0         0         0         0         0         0
-max. Level        :         0         7         0         0         0         0         0         0         0         0         0         0         0         0
-max. Total        :         0        27         0         0         0         0         0         0         0         0         0         0         0         0
+Time per pass     :  00:00:12  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00
+Number of Ripups  :         0         1         0         0         0         0         0         0         0         0         0         0         0         0
+max. Level        :         0         1         0         0         0         0         0         0         0         0         0         0         0         0
+max. Total        :         0         4         0         0         0         0         0         0         0         0         0         0         0         0
 
-Routed            :        26        32        19        21        22        22        22        22        22        22        22        22        22        22
+Routed            :         7        14         7         7         7         7         7         7         7         7         7         7         7         7
 Vias              :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
-Resolution        :    72.2 %    88.9 %    52.8 %    58.3 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %    61.1 %
+Resolution        :    19.4 %    38.9 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %
 
 Final             : 

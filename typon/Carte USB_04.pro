@@ -1,27 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Documents and Settings/Administrateur/Bureau/typon/Carte USB.brd
+Job           : E:/Projet Terminale/GAM/typon/Carte USB.brd
 
-Start at      : 11:12:02 (23/04/2015)
-End at        : 11:16:38 (23/04/2015)
-Elapsed time  : 00:00:05
+Start at      : 12:10:40 (26/04/2015)
+End at        : 12:10:48 (26/04/2015)
+Elapsed time  : 00:00:00
 
-Signals       :    29   RoutingGrid: 50 mil  Layers: 1
+Signals       :    29   RoutingGrid: 100 mil  Layers: 1
 Connections   :    36   predefined:  0 ( 0 Vias )
 
-Router memory :   11692
+Router memory :   5194
 
-Job has been interrupted!
+Passname          :     Route Optimize1 Optimize2 Optimize3 Optimize4
 
-Passname          :     Route
+Time per pass     :  00:00:00  00:00:00  00:00:00  00:00:00  00:00:00
+Number of Ripups  :         0         0         0         0         0
+max. Level        :         0         0         0         0         0
+max. Total        :         0         0         0         0         0
 
-Time per pass     :  00:00:05
-Number of Ripups  :       389
-max. Level        :         6
-max. Total        :        15
-
-Routed            :        32
-Vias              :         0
-Resolution        :    88.9 %
+Routed            :         7         7         7         7         7
+Vias              :         0         0         0         0         0
+Resolution        :    19.4 %    19.4 %    19.4 %    19.4 %    19.4 %
 
 Final             : 
