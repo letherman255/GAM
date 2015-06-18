@@ -18,7 +18,7 @@ public class SystemThread extends Thread
      * This is the division factor to determine the system time intervals in milliseconds
      * for example 1000 is a sec. 60 000 is a minute, 3 600 000 is an hour
      */
-    private static final long TIME_BASE = 1000;
+    private static final long TIME_BASE = 60000;
     private String creditStatus = "full";
     static SystemStatus st = new SystemStatus();
     private UserDao userDao;

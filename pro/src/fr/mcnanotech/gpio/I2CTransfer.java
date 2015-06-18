@@ -1,7 +1,6 @@
 package fr.mcnanotech.gpio;
 
 import java.io.IOException;
-import java.util.Random;
 
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
@@ -111,7 +110,7 @@ public class I2CTransfer
     {
         if(isI2Cinit)
         {
-            lcd.setBacklight(Lcd.BACKLIGHT_RED);
+            lcd.setBacklight(Lcd.BACKLIGHT_GREEN);
             lcd.write("      GAM      ");
         }
     }
@@ -130,6 +129,7 @@ public class I2CTransfer
 
     public static void updateLcd(SystemStatus st)
     {
+        lcd.setBacklight(Lcd.BACKLIGHT_BLUE);
         lcd.setCursorHome();
         lcd.clear();
         lcd.write("credit : " + String.valueOf(st.getDailyCredit()));
